@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Focusings World</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_section1">Focusings Vlogs</string>
+    <string name="title_section2">Focusings songs</string>
+    <string name="title_section3">YT Songs</string>
+    <string name="hello">hola</string>
+
+</resources>
