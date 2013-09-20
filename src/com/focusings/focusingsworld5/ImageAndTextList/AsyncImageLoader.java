@@ -6,7 +6,6 @@ import java.lang.ref.SoftReference;
 import java.net.URL;
 import java.util.HashMap;
 
-import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Handler;
 import android.os.Message;

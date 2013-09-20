@@ -2,9 +2,7 @@ package com.focusings.focusingsworld5.YoutubeParser;
 
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -15,14 +13,10 @@ import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
-import android.app.Activity;
 import android.os.AsyncTask;
-import android.sax.Element;
-import android.widget.ListView;
 
 import com.focusings.focusingsworld5.AsyncResponse;
 import com.focusings.focusingsworld5.ImageAndTextList.ImageAndText;
-import com.focusings.focusingsworld5.ImageAndTextList.ImageAndTextListAdapter;
 
 public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndText>> {
 

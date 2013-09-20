@@ -1,7 +1,6 @@
 package com.focusings.focusingsworld5.ImageAndTextList;
 
 import com.focusings.focusingsworld5.R;
-import com.focusings.focusingsworld5.R.id;
 
 import android.view.View;
 import android.widget.ImageView;
