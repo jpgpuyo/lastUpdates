@@ -26,7 +26,7 @@ import com.focusings.focusingsworld5.ImageAndTextList.ImageAndTextListAdapter;
 
 public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndText>> {
 
-	public AsyncResponse delegate=null;
+	public static AsyncResponse delegate=null;
 	private int tabNumber=1;
 	
 	@Override

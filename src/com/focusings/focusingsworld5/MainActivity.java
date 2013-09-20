@@ -61,9 +61,6 @@ import android.widget.AdapterView.OnItemClickListener;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener, AsyncResponse {
-
-	static AsyncYoutubeParser asyncYoutubeParser =new AsyncYoutubeParser();
-	static AsyncYoutubeParser asyncYoutubeParser2 =new AsyncYoutubeParser();
 	
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -83,8 +80,7 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		asyncYoutubeParser.delegate = this;
-		asyncYoutubeParser2.delegate = this;
+		AsyncYoutubeParser.delegate = this;
 		setContentView(R.layout.activity_main);
 
 		// Set up the action bar.
@@ -103,14 +99,15 @@ public class MainActivity extends FragmentActivity implements
 		// When swiping between different sections, select the corresponding
 		// tab. We can also use ActionBar.Tab#select() to do this if we have
 		// a reference to the Tab.
-		mViewPager
-				.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+		mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
 					@Override
 					public void onPageSelected(int position) {
 						actionBar.setSelectedNavigationItem(position);
 					}
 				});
 
+		actionBar.removeAllTabs();
+		
 		// For each of the sections in the app, add a tab to the action bar.
 		for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
 			// Create a tab with text corresponding to the page title defined by
@@ -123,6 +120,7 @@ public class MainActivity extends FragmentActivity implements
 						.setTabListener(this));
 			
 		}
+
 	}
 
 	@Override
@@ -220,16 +218,16 @@ public class MainActivity extends FragmentActivity implements
 			
 			//Cas de la primera tab
 			if (currentTab==1){
-				rootView = inflater.inflate(R.layout.fragment_main_dummy,
-						container, false);
+				rootView = inflater.inflate(R.layout.tab1,container, false);
+				
 				//I get all data calling services from Youtube
-				asyncYoutubeParser.execute("https://gdata.youtube.com/feeds/api/users/focusingsvlogs/uploads");
+				new AsyncYoutubeParser().execute("https://gdata.youtube.com/feeds/api/users/focusingsvlogs/uploads");
 			}
 			//Cas de la segona tab
 			if (currentTab==2){				
 				rootView = inflater.inflate(R.layout.tab2, container, false);
 				//I get all data calling services from Youtube
-				asyncYoutubeParser2.execute("https://gdata.youtube.com/feeds/api/users/focusingssongs/uploads");
+				new AsyncYoutubeParser().execute("https://gdata.youtube.com/feeds/api/users/focusingssongs/uploads");
 			}
 			
 			return rootView;
@@ -238,16 +236,8 @@ public class MainActivity extends FragmentActivity implements
 	}
 
 	public void processFinish(List<ImageAndText> list,int tabNumber){
-	     processFinishGeneral(list,tabNumber);
-	}
-	
-	public void processFinish2(List<ImageAndText> list){
-		processFinishGeneral(list,2);
-	}
-
-	private void processFinishGeneral(List<ImageAndText> l1,int tabNumber) {
 		//this you will received result fired from async class of onPostExecute(result) method.
-		ImageAndTextListAdapter adapter = new ImageAndTextListAdapter(this,l1);
+		ImageAndTextListAdapter adapter = new ImageAndTextListAdapter(this,list);
 		
 		ListView listView=null;
 		if (tabNumber==1){
@@ -268,7 +258,8 @@ public class MainActivity extends FragmentActivity implements
             	startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
             }
         };
-        listView.setOnItemClickListener(mMessageClickedHandler);
+	    listView.setOnItemClickListener(mMessageClickedHandler);
 	}
+	
 	
 }
