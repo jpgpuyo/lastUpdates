@@ -25,8 +25,10 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -109,91 +111,35 @@ public class MainActivity extends FragmentActivity implements
 
 		//Case of about
 		if (item.getTitle().equals(getString(R.string.action_about))){
+			
+			//Preparing Popup window
 			LayoutInflater layoutInflater = (LayoutInflater) this.getSystemService(LAYOUT_INFLATER_SERVICE);
 	        View layout = layoutInflater.inflate(R.layout.about, null);
-	
-	        PopupWindow changeSortPopUp = new PopupWindow(this);
-	        changeSortPopUp.setContentView(layout);
-	        changeSortPopUp.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
-	        changeSortPopUp.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
-	        changeSortPopUp.setFocusable(true);
-		
-	    
-	        // Displaying the popup at the specified location, + offsets.
-	        changeSortPopUp.showAtLocation(layout, Gravity.NO_GRAVITY, 100, 100);
+	        
+	        final PopupWindow popup = new PopupWindow(this);
+	        popup.setContentView(layout);
+	        popup.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
+	        popup.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
+	        popup.setFocusable(true);
+	        
+	        //Defining close button in popup window
+	        Button close = (Button) layout.findViewById(R.id.closeButton);
+	        close.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					popup.dismiss();
+				}
+			});
+	        
+	        // Setting the popup in the center of the page
+	        popup.showAtLocation(layout, Gravity.CENTER, 0, 0);
 
 		}
-		//getMenuInflater().inflate(R.menu.main, );
-		
-		//item.get
-		
-		/*TextView txt=(TextView)findViewById(R.id.txt);
-    	switch(item.getItemId()){
-		case 1:
-		     txt.append("you clicked on item "+item.getTitle());
-		     return true;
-	
-	     case 3:
-		     txt.setText("you clicked on item "+item.getTitle());
-		     return true;
-		
-	     }*/
-		//item.getTitle()
-		
-	     return super.onOptionsItemSelected(item);
+			
+	    return super.onOptionsItemSelected(item);
 
     }
-	/*
-	public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
-		super.onCreateContextMenu(menu, v, menuInfo);
 		
-		//If case of about
-		//if (v.getId()==R.id.action_about) {
-			//getMenuInflater().inflate(R.layout.about, menu);
-		
-		
-		   //LinearLayout viewGroup = (LinearLayout) v.getContext().findViewById(R.id.llSortChangePopup);
-	       LayoutInflater layoutInflater = (LayoutInflater) v.getContext().getSystemService(LAYOUT_INFLATER_SERVICE);
-	       View layout = layoutInflater.inflate(R.layout.about, null);
-
-	       PopupWindow changeSortPopUp = new PopupWindow(v.getContext());
-	       changeSortPopUp.setContentView(layout);
-	       changeSortPopUp.setWidth(LinearLayout.LayoutParams.WRAP_CONTENT);
-	       changeSortPopUp.setHeight(LinearLayout.LayoutParams.WRAP_CONTENT);
-	       changeSortPopUp.setFocusable(true);
-		
-	    
-	       // Displaying the popup at the specified location, + offsets.
-	       changeSortPopUp.showAtLocation(layout, Gravity.NO_GRAVITY, 100, 100);
-
-
-	       // Getting a reference to Close button, and close the popup when clicked.
-	       /*Button close = (Button) layout.findViewById(R.id.close);
-	       close.setOnClickListener(new OnClickListener() {
-
-	         @Override
-	         public void onClick(View v) {
-	           popup.dismiss();
-	         }
-	       });
-	       
-		
-			PopupWindow popUp = new PopupWindow(this);
-			
-			
-			
-			PopupWindow pw = new PopupWindow(layoutInflater.inflate(R.layout.about, menu), 100, 100, true);
-			
-			
-			getMenuInflater().inflate(R.layout.about, menu)
-			popUp.setContentView(contentView);
-			
-			
-			
-		//}
-	 
-	}*/
-	
 	@Override
 	public void onTabSelected(ActionBar.Tab tab,
 			FragmentTransaction fragmentTransaction) {
