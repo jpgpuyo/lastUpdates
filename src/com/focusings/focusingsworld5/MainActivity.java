@@ -1,23 +1,42 @@
 package com.focusings.focusingsworld5;
 
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
+import java.util.Properties;
+import java.util.TimeZone;
 
 import com.focusings.focusingsworld5.ImageAndTextList.ImageAndText;
 import com.focusings.focusingsworld5.ImageAndTextList.ImageAndTextListAdapter;
+import com.focusings.focusingsworld5.YoutubeParser.AsyncResponse;
 import com.focusings.focusingsworld5.YoutubeParser.AsyncYoutubeParser;
+import com.focusings.focusingsworld5.notificationManagement.CheckNewUpdatesService;
+import com.focusings.focusingsworld5.notificationManagement.CheckNewUpdatesServiceReceiver;
+import com.focusings.focusingsworld5.notificationManagement.AsyncNotificationResponse;
+import com.focusings.focusingsworld5.notificationManagement.Update;
 
 import android.app.ActionBar;
+import android.app.AlarmManager;
 import android.app.FragmentTransaction;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.NotificationCompat;
 import android.support.v4.view.ViewPager;
+import android.text.format.Time;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Gravity;
@@ -33,11 +52,13 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.PopupWindow;
-import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity implements
-		ActionBar.TabListener, AsyncResponse {
+		ActionBar.TabListener, AsyncResponse, AsyncNotificationResponse	{
 	
+	public static Properties properties;
+	public static String[] lastUpdatePerChannel;
+	//Properties with app info
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
 	 * fragments for each of the sections. We use a
@@ -57,6 +78,10 @@ public class MainActivity extends FragmentActivity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		AsyncYoutubeParser.delegate = this;
+		CheckNewUpdatesService.delegate=this;
+		properties = new Properties();
+		getProperties();
+		lastUpdatePerChannel=new String[Integer.parseInt(properties.getProperty("number_of_tabs"))];
 		setContentView(R.layout.activity_main);
 
 		// Set up the action bar.
@@ -97,8 +122,48 @@ public class MainActivity extends FragmentActivity implements
 			
 		}
 
+		//Setting alarmManager to check if new updates are availables and in such case, show a notification
+		setRecurringAlarm(this);
 	}
 
+	/** Getting all app properties */
+	private void getProperties(){
+		try {
+            /**
+             * getAssets() Return an AssetManager instance for your
+             * application's package. AssetManager Provides access to an
+             * application's raw asset files;
+             */
+            AssetManager assetManager = getAssets();
+            /**
+             * Open an asset using ACCESS_STREAMING mode. This
+             */
+            InputStream inputStream = assetManager.open("app.properties");
+            /**
+             * Loads properties from the specified InputStream,
+             */
+            properties.load(inputStream);
+
+	     } catch (IOException e) {
+	            
+	     }
+	}
+	
+	//Setting a recurring alarm, so that every 5 seconds it checks if there are new updates
+	private void setRecurringAlarm(Context context) {
+		
+		//updateTime.setTimeZone(TimeZone.getDefault());
+		//updateTime.set(Calendar.HOUR_OF_DAY, 12);
+		//updateTime.set(Calendar.MINUTE, 30);
+		Intent downloader = new Intent(context, CheckNewUpdatesServiceReceiver.class);
+		downloader.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+		PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, downloader, PendingIntent.FLAG_CANCEL_CURRENT);
+		AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+		Calendar updateTime = Calendar.getInstance();
+		alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, updateTime.getTimeInMillis(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
+    }
+
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
@@ -182,8 +247,8 @@ public class MainActivity extends FragmentActivity implements
 
 		@Override
 		public int getCount() {
-			// Show 3 total pages.
-			return 2;
+			// Returns the number of tabs
+			return Integer.parseInt(properties.getProperty("number_of_tabs"));
 		}
 
 		@Override
@@ -231,13 +296,13 @@ public class MainActivity extends FragmentActivity implements
 				rootView = inflater.inflate(R.layout.tab1,container, false);
 				
 				//I get all data calling services from Youtube
-				new AsyncYoutubeParser().execute("https://gdata.youtube.com/feeds/api/users/focusingsvlogs/uploads");
+				new AsyncYoutubeParser().execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_1_channel_name")+properties.getProperty("Youtube_URL_part_2"));
 			}
 			//Cas de la segona tab
 			if (currentTab==2){				
 				rootView = inflater.inflate(R.layout.tab2, container, false);
 				//I get all data calling services from Youtube
-				new AsyncYoutubeParser().execute("https://gdata.youtube.com/feeds/api/users/focusingssongs/uploads");
+				new AsyncYoutubeParser().execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_2_channel_name")+properties.getProperty("Youtube_URL_part_2"));
 			}
 			
 			return rootView;
@@ -271,5 +336,32 @@ public class MainActivity extends FragmentActivity implements
 	    listView.setOnItemClickListener(mMessageClickedHandler);
 	}
 	
-	
+	public void sendNotification(List<Update> updates){
+		for (int i=0;i<updates.size();i++){
+			Update currentUpdate=updates.get(i);
+			
+			// Prepare intent which is triggered if the
+			// notification is selected
+
+			Intent intent = new Intent(this, MainActivity.class);
+			PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
+
+			// Build notification
+			// Actions are just fake
+			Notification noti = new Notification.Builder(this)
+			        .setContentTitle("New video in "+currentUpdate.getChannel())
+			        .setContentText(currentUpdate.getTitle())
+			        .setSmallIcon(R.drawable.ic_launcher)
+			        .setContentIntent(pIntent).getNotification();
+			    
+			NotificationManager notificationManager = 
+			  (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+			// Hide the notification after its selected
+			noti.flags |= Notification.FLAG_AUTO_CANCEL;
+
+			notificationManager.notify(i, noti); 
+			
+		}
+	}
 }

@@ -15,7 +15,8 @@ import org.xml.sax.InputSource;
 
 import android.os.AsyncTask;
 
-import com.focusings.focusingsworld5.AsyncResponse;
+import com.focusings.focusingsworld5.YoutubeParser.AsyncResponse;
+import com.focusings.focusingsworld5.MainActivity;
 import com.focusings.focusingsworld5.ImageAndTextList.ImageAndText;
 
 public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndText>> {
@@ -34,10 +35,10 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 		List<ImageAndText> l1=new ArrayList<ImageAndText>();
 		
 		try{
-			if (params[0].contains("focusingsvlogs")){
+			if (params[0].contains(MainActivity.properties.getProperty("tab_1_channel_name"))){
 				tabNumber=1;
 			}
-			if (params[0].contains("focusingssongs")){
+			if (params[0].contains(MainActivity.properties.getProperty("tab_2_channel_name"))){
 				tabNumber=2;
 			}
 				
@@ -61,6 +62,9 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 	            
 	            for (int j=0;j<nodeListEntry.getLength();j++){
 	            	Node currentNode=nodeListEntry.item(j);
+	            	if (i==0 && currentNode.getNodeName().equals("id")){
+	            		MainActivity.lastUpdatePerChannel[tabNumber-1]=currentNode.getTextContent();
+	            	}
 	            	if (currentNode.getNodeName().equals("title")){
 	            		currentTitle=currentNode.getTextContent();
 	            	}
@@ -93,7 +97,7 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 	            l1.add(i1); 
 		   }
 	    } catch (Exception e) {
-	        System.out.println("XML Pasing Excpetion = " + e);
+	        System.out.println("XML Pasing Exception = " + e);
 	    }
 		
 		return l1;
