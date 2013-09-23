@@ -68,7 +68,7 @@ public class CheckNewUpdatesService extends IntentService {
 		            
 		            boolean foundTitle=false;
 		            //If lastId is not the last one, then I look for the title of the video and send a notification
-		            if (lastId!=null && MainActivity.lastUpdatePerChannel[i]!=null && lastId.equals(MainActivity.lastUpdatePerChannel[i])){
+		            if (lastId!=null && MainActivity.lastUpdatePerChannel[i]!=null && !lastId.equals(MainActivity.lastUpdatePerChannel[i])){
 		            	//Send notification
 		            	
 		            	//First, I look for the new title
