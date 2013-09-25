@@ -1,7 +1,9 @@
 package com.focusings.focusingsworld5.YoutubeParser;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
@@ -17,6 +19,7 @@ import android.os.AsyncTask;
 
 import com.focusings.focusingsworld5.YoutubeParser.AsyncResponse;
 import com.focusings.focusingsworld5.MainActivity;
+import com.focusings.focusingsworld5.VideoInfo;
 import com.focusings.focusingsworld5.ImageAndTextList.ImageAndText;
 
 public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndText>> {
@@ -50,6 +53,16 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 	
 	        NodeList nodeList = doc.getElementsByTagName("entry");
 	
+	        //Get first item and save it in lastUpdatePerChannel variable
+	        Node firstNode = nodeList.item(0);		            
+            NodeList firstNodeListEntry=firstNode.getChildNodes();
+            //I get the node that has the id
+            Node IdNode=firstNodeListEntry.item(0);
+            String urlLastVideo=IdNode.getTextContent();            
+            Date publishingDateLastVideo = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(firstNodeListEntry.item(1).getTextContent());
+        	VideoInfo vi=new VideoInfo(urlLastVideo, publishingDateLastVideo);
+        	MainActivity.lastUpdatePerChannel.add(vi);
+	        
 	        for (int i = 0; i < nodeList.getLength() && i<10; i++) {
 	
 	            Node node = nodeList.item(i);
@@ -61,10 +74,7 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 	            boolean foundLink=false;
 	            
 	            for (int j=0;j<nodeListEntry.getLength();j++){
-	            	Node currentNode=nodeListEntry.item(j);
-	            	if (i==0 && currentNode.getNodeName().equals("id")){
-	            		MainActivity.lastUpdatePerChannel[tabNumber-1]=currentNode.getTextContent();
-	            	}
+	            	Node currentNode=nodeListEntry.item(j);	            	
 	            	if (currentNode.getNodeName().equals("title")){
 	            		currentTitle=currentNode.getTextContent();
 	            	}
@@ -85,11 +95,8 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 	    	            		NamedNodeMap nnm=currentNodeMediaGroup.getAttributes();
 	    	            		Node nodeImageUrl=nnm.getNamedItem("url");
 	    	            		currentImage=nodeImageUrl.getTextContent();
-	    	            	}
-	            			
-	            		}
-	            		
-	            		
+	    	            	}	            			
+	            		}	            	
 	            	}
 	            }
 

@@ -1,6 +1,8 @@
 package com.focusings.focusingsworld5.notificationManagement;
 
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -25,6 +27,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v4.app.NotificationCompat;
+import android.text.format.DateFormat;
 
 public class CheckNewUpdatesService extends IntentService {
 
@@ -64,24 +67,37 @@ public class CheckNewUpdatesService extends IntentService {
 		            
 		            //I get the node that has the id
 		            Node firstNode=nodeListEntry.item(0);
-		            String lastId=firstNode.getTextContent();
+		            String lastUrl=firstNode.getTextContent();
 		            
 		            boolean foundTitle=false;
 		            //If lastId is not the last one, then I look for the title of the video and send a notification
-		            if (lastId!=null && MainActivity.lastUpdatePerChannel[i]!=null && !lastId.equals(MainActivity.lastUpdatePerChannel[i])){
-		            	//Send notification
+		            if (lastUrl!=null && MainActivity.lastUpdatePerChannel.get(i)!=null && !lastUrl.equals(MainActivity.lastUpdatePerChannel.get(i).getUrl())){
+		            			            	
+		            	//Check if lastId is newer than the one in MainActivity.lastUpdatePerChannel
+		            	Date publishingDateNewVideo = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(nodeListEntry.item(1).getTextContent());
+		            	Date publishingDateOldVideo = MainActivity.lastUpdatePerChannel.get(i).getPublishingDate();
 		            	
-		            	//First, I look for the new title
-		            	for (int j=0;j<nodeListEntry.getLength() && !foundTitle;j++){
-			            	Node currentNode=nodeListEntry.item(j);
-			            	if (currentNode.getNodeName().equals("title")){
-			            		foundTitle=true;
-			            		Update u=new Update(currentNode.getTextContent(),
-			            				MainActivity.properties.getProperty("tab_"+(i+1)+"_channel_name")
-			            			);
-			            		lu.add(u);
-			            	}
-			            }
+		            	//If new video is newer than the previous one, then I should send a notification
+		            	//Otherwise, it may be the youtuber has deleted the last video, so we
+		            	//shouldn't send the notification
+		            	if (publishingDateNewVideo.after(publishingDateOldVideo)){		            		
+			            	//First, I look for the new title
+			            	//Send notification
+			            	for (int j=0;j<nodeListEntry.getLength() && !foundTitle;j++){
+				            	Node currentNode=nodeListEntry.item(j);
+				            	if (currentNode.getNodeName().equals("title")){
+				            		foundTitle=true;
+				            		Update u=new Update(currentNode.getTextContent(),
+				            				MainActivity.properties.getProperty("tab_"+(i+1)+"_channel_public_name")
+				            			);
+				            		lu.add(u);
+				            	}
+				            }
+		            	}
+			            	
+		            	//In both cases, I update the lastUpdatePerChannel
+		            	MainActivity.lastUpdatePerChannel.get(i).setUrl(lastUrl);		            			            	
+		            	MainActivity.lastUpdatePerChannel.get(i).setPublishingDate(publishingDateNewVideo);		            	
 		            }
 				}
 			}catch (Exception e) {

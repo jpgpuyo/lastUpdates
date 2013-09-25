@@ -4,6 +4,7 @@ package com.focusings.focusingsworld5;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
@@ -57,7 +58,7 @@ public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener, AsyncResponse, AsyncNotificationResponse	{
 	
 	public static Properties properties;
-	public static String[] lastUpdatePerChannel;
+	public static List<VideoInfo> lastUpdatePerChannel=new LinkedList<VideoInfo>();
 	//Properties with app info
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -81,7 +82,6 @@ public class MainActivity extends FragmentActivity implements
 		CheckNewUpdatesService.delegate=this;
 		properties = new Properties();
 		getProperties();
-		lastUpdatePerChannel=new String[Integer.parseInt(properties.getProperty("number_of_tabs"))];
 		setContentView(R.layout.activity_main);
 
 		// Set up the action bar.
@@ -90,6 +90,7 @@ public class MainActivity extends FragmentActivity implements
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.
+		MainActivity.lastUpdatePerChannel.clear();
 		mSectionsPagerAdapter = new SectionsPagerAdapter(
 				getSupportFragmentManager());
 
@@ -149,18 +150,14 @@ public class MainActivity extends FragmentActivity implements
 	     }
 	}
 	
-	//Setting a recurring alarm, so that every 5 seconds it checks if there are new updates
+	//Setting a recurring alarm, so that every 15 minutes it checks if there are new updates
 	private void setRecurringAlarm(Context context) {
-		
-		//updateTime.setTimeZone(TimeZone.getDefault());
-		//updateTime.set(Calendar.HOUR_OF_DAY, 12);
-		//updateTime.set(Calendar.MINUTE, 30);
 		Intent downloader = new Intent(context, CheckNewUpdatesServiceReceiver.class);
 		downloader.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, downloader, PendingIntent.FLAG_CANCEL_CURRENT);
 		AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 		Calendar updateTime = Calendar.getInstance();
-		alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, updateTime.getTimeInMillis(), AlarmManager.INTERVAL_FIFTEEN_MINUTES, pendingIntent);
+		alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, updateTime.getTimeInMillis(), 1000*60, pendingIntent);
     }
 
 	
@@ -254,15 +251,7 @@ public class MainActivity extends FragmentActivity implements
 		@Override
 		public CharSequence getPageTitle(int position) {
 			Locale l = Locale.getDefault();
-			switch (position) {
-			case 0:
-				return getString(R.string.title_section1).toUpperCase(l);
-			case 1:
-				return getString(R.string.title_section2).toUpperCase(l);
-			case 2:
-				return getString(R.string.title_section3).toUpperCase(l);
-			}
-			return null;
+			return properties.getProperty("tab_"+(position+1)+"_channel_public_name").toUpperCase(l);			
 		}
 	}
 

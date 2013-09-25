@@ -3,9 +3,6 @@
 
     <string name="app_name">Focusings World</string>
     <string name="action_about">About</string>
-    <string name="title_section1">Focusings Vlogs</string>
-    <string name="title_section2">Focusings songs</string>
-    <string name="title_section3">YT Songs</string>
     <string name="hello">hola</string>
 	<string name="about_text">This app is developed by Albert Solé. You can leave your comments of the app in Google Play Store or directly to my Twitter account @asole83.</string>
 	<string name="about_text2">All constructive comments are welcome. Please rate the app!</string>
