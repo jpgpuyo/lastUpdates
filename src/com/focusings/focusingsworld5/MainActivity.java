@@ -157,7 +157,7 @@ public class MainActivity extends FragmentActivity implements
 		PendingIntent pendingIntent = PendingIntent.getBroadcast(context, 0, downloader, PendingIntent.FLAG_CANCEL_CURRENT);
 		AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
 		Calendar updateTime = Calendar.getInstance();
-		alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, updateTime.getTimeInMillis(), 1000*60, pendingIntent);
+		alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, updateTime.getTimeInMillis(), 2000*60, pendingIntent);
     }
 
 	
@@ -341,6 +341,7 @@ public class MainActivity extends FragmentActivity implements
 			        .setContentTitle("New video in "+currentUpdate.getChannel())
 			        .setContentText(currentUpdate.getTitle())
 			        .setSmallIcon(R.drawable.ic_launcher)
+			        .setLights(0xff00ff00, 300, 2000)
 			        .setContentIntent(pIntent).getNotification();
 			    
 			NotificationManager notificationManager = 
@@ -348,6 +349,7 @@ public class MainActivity extends FragmentActivity implements
 
 			// Hide the notification after its selected
 			noti.flags |= Notification.FLAG_AUTO_CANCEL;
+			noti.flags |= Notification.FLAG_SHOW_LIGHTS;
 
 			notificationManager.notify(i, noti); 
 			
