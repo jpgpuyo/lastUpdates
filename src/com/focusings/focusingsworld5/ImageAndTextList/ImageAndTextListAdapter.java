@@ -9,13 +9,19 @@ import com.focusings.focusingsworld5.R;
 import com.focusings.focusingsworld5.ImageAndTextList.AsyncImageLoader.ImageCallback;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class ImageAndTextListAdapter extends ArrayAdapter<ImageAndText>{
 
@@ -48,6 +54,18 @@ public class ImageAndTextListAdapter extends ArrayAdapter<ImageAndText>{
         // Set the text on the TextView
         TextView textView = (TextView) rowView.findViewById(R.id.text);
         textView.setText(imageAndText.getText());
+        
+        //When clicking View button, go to watch Youtube video
+        Button viewButton = (Button) rowView.findViewById(R.id.viewButton);
+        ViewVideoOnItemClickListener v1= new ViewVideoOnItemClickListener(imageAndText.getUrl());
+        viewButton.setOnClickListener(v1);
+        //When clicking on the image of the video, also go to watch Youtube video
+        imageView.setOnClickListener(v1);
+        
+        //When clicking View button, go to watch Youtube video
+        Button shareButton = (Button) rowView.findViewById(R.id.shareButton);
+        ShareVideoOnItemClickListener s1= new ShareVideoOnItemClickListener(imageAndText.getUrl(),imageAndText.getText());
+        shareButton.setOnClickListener(s1);
         
         return rowView;
     }

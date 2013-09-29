@@ -310,19 +310,7 @@ public class MainActivity extends FragmentActivity implements
 		if (tabNumber==2){
 			listView = (ListView)findViewById(R.id.list2);
 		}
-		listView.setAdapter(adapter);
-		
-		//Defining what to do when an element is clicked
-	    // Create a message handling object as an anonymous class.
-        OnItemClickListener mMessageClickedHandler = new OnItemClickListener() {
-            public void onItemClick(AdapterView parent, View v, int position, long id) {
-                // Do something in response to the click
-            	ImageAndText it=(ImageAndText)parent.getAdapter().getItem(position);
-            	String url=it.getUrl();
-            	startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
-            }
-        };
-	    listView.setOnItemClickListener(mMessageClickedHandler);
+		listView.setAdapter(adapter);		
 	}
 	
 	public void sendNotification(List<Update> updates){
