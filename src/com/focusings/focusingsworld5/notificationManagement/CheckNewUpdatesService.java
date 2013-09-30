@@ -15,6 +15,7 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 import com.focusings.focusingsworld5.MainActivity;
+import com.focusings.focusingsworld5.VideoInfo;
 import com.focusings.focusingsworld5.ImageAndTextList.ImageAndText;
 import com.focusings.focusingsworld5.YoutubeParser.AsyncResponse;
 
@@ -70,12 +71,19 @@ public class CheckNewUpdatesService extends IntentService {
 		            String lastUrl=firstNode.getTextContent();
 		            
 		            boolean foundTitle=false;
+		            
+		            //Case MainActivity.lastUpdatePerChannel not initialized
+		            if (MainActivity.lastUpdatePerChannel[i]==null){
+		            	VideoInfo vi=new VideoInfo(lastUrl, new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(nodeListEntry.item(1).getTextContent()));
+		            	MainActivity.lastUpdatePerChannel[i]=vi;
+		            }
+		            
 		            //If lastId is not the last one, then I look for the title of the video and send a notification
-		            if (lastUrl!=null && MainActivity.lastUpdatePerChannel.get(i)!=null && !lastUrl.equals(MainActivity.lastUpdatePerChannel.get(i).getUrl())){
+		            if (lastUrl!=null && MainActivity.lastUpdatePerChannel[i]!=null && !lastUrl.equals(MainActivity.lastUpdatePerChannel[i].getUrl())){
 		            			            	
 		            	//Check if lastId is newer than the one in MainActivity.lastUpdatePerChannel
 		            	Date publishingDateNewVideo = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(nodeListEntry.item(1).getTextContent());
-		            	Date publishingDateOldVideo = MainActivity.lastUpdatePerChannel.get(i).getPublishingDate();
+		            	Date publishingDateOldVideo = MainActivity.lastUpdatePerChannel[i].getPublishingDate();
 		            	
 		            	//If new video is newer than the previous one, then I should send a notification
 		            	//Otherwise, it may be the youtuber has deleted the last video, so we
@@ -88,16 +96,16 @@ public class CheckNewUpdatesService extends IntentService {
 				            	if (currentNode.getNodeName().equals("title")){
 				            		foundTitle=true;
 				            		Update u=new Update(currentNode.getTextContent(),
-				            				MainActivity.properties.getProperty("tab_"+(i+1)+"_channel_public_name")
-				            			);
+				            				MainActivity.properties.getProperty("tab_"+(i+1)+"_channel_public_name"),
+				            				i);
 				            		lu.add(u);
 				            	}
 				            }
 		            	}
 			            	
 		            	//In both cases, I update the lastUpdatePerChannel
-		            	MainActivity.lastUpdatePerChannel.get(i).setUrl(lastUrl);		            			            	
-		            	MainActivity.lastUpdatePerChannel.get(i).setPublishingDate(publishingDateNewVideo);		            	
+		            	MainActivity.lastUpdatePerChannel[i].setUrl(lastUrl);		            			            	
+		            	MainActivity.lastUpdatePerChannel[i].setPublishingDate(publishingDateNewVideo);		            	
 		            }
 				}
 			}catch (Exception e) {

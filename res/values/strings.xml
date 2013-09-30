@@ -7,6 +7,7 @@
 	<string name="close">Close</string>
 	<string name="view">View</string>
 	<string name="share">Share</string>
+	<string name="newVideo">New video in</string>
 	<string name="shareVideoVia">Share this video via</string>
 	<string name="shareVideoRecommendation">I recommend you to watch</string>
 </resources>

@@ -61,7 +61,9 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
             String urlLastVideo=IdNode.getTextContent();            
             Date publishingDateLastVideo = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").parse(firstNodeListEntry.item(1).getTextContent());
         	VideoInfo vi=new VideoInfo(urlLastVideo, publishingDateLastVideo);
-        	MainActivity.lastUpdatePerChannel.add(vi);
+        	
+        	//I create the MainActivity.lastUpdatePerChannel in the proper order
+        	MainActivity.lastUpdatePerChannel[tabNumber-1]=vi;
 	        
 	        for (int i = 0; i < nodeList.getLength() && i<10; i++) {
 	

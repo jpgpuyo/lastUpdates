@@ -58,7 +58,7 @@ public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener, AsyncResponse, AsyncNotificationResponse	{
 	
 	public static Properties properties;
-	public static List<VideoInfo> lastUpdatePerChannel=new LinkedList<VideoInfo>();
+	public static VideoInfo[] lastUpdatePerChannel;
 	//Properties with app info
 	/**
 	 * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -76,7 +76,7 @@ public class MainActivity extends FragmentActivity implements
 	ViewPager mViewPager;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) {		
 		super.onCreate(savedInstanceState);
 		AsyncYoutubeParser.delegate = this;
 		CheckNewUpdatesService.delegate=this;
@@ -90,7 +90,8 @@ public class MainActivity extends FragmentActivity implements
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.
-		MainActivity.lastUpdatePerChannel.clear();
+		MainActivity.lastUpdatePerChannel= new VideoInfo[Integer.parseInt(properties.getProperty("number_of_tabs"))];
+		
 		mSectionsPagerAdapter = new SectionsPagerAdapter(
 				getSupportFragmentManager());
 
@@ -123,6 +124,14 @@ public class MainActivity extends FragmentActivity implements
 			
 		}
 
+		//If the tab to be selected is passed by parameter, I go to that tab
+		Bundle b = getIntent().getExtras();
+		int tabToBeSelected=0;
+		if (b!=null){
+			tabToBeSelected = b.getInt("tabNumber");
+			mViewPager.setCurrentItem(tabToBeSelected);
+		}
+		
 		//Setting alarmManager to check if new updates are availables and in such case, show a notification
 		setRecurringAlarm(this);
 	}
@@ -317,16 +326,17 @@ public class MainActivity extends FragmentActivity implements
 		for (int i=0;i<updates.size();i++){
 			Update currentUpdate=updates.get(i);
 			
-			// Prepare intent which is triggered if the
-			// notification is selected
-
+			// Prepare intent which is triggered if the notification is selected
 			Intent intent = new Intent(this, MainActivity.class);
+			Bundle b = new Bundle();
+			b.putInt("tabNumber", currentUpdate.getTabNumber()); 
+			intent.putExtras(b);			
 			PendingIntent pIntent = PendingIntent.getActivity(this, 0, intent, 0);
 
 			// Build notification
 			// Actions are just fake
 			Notification noti = new Notification.Builder(this)
-			        .setContentTitle("New video in "+currentUpdate.getChannel())
+			        .setContentTitle(getString(R.string.newVideo)+" "+currentUpdate.getChannel())
 			        .setContentText(currentUpdate.getTitle())
 			        .setSmallIcon(R.drawable.ic_launcher)
 			        .setLights(0xff00ff00, 300, 2000)
