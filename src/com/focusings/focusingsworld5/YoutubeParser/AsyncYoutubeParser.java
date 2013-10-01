@@ -26,6 +26,7 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 
 	public static AsyncResponse delegate=null;
 	private int tabNumber=1;
+	private boolean needToCallOnRefreshComplete=false;
 	
 	@Override
 	protected void onPreExecute() {
@@ -43,6 +44,9 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 			}
 			if (params[0].contains(MainActivity.properties.getProperty("tab_2_channel_name"))){
 				tabNumber=2;
+			}
+			if (params[1].equals("true")){
+				needToCallOnRefreshComplete=true;
 			}
 				
 			URL url = new URL(params[0]);
@@ -115,6 +119,6 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 	
 	@Override
 	protected void onPostExecute(List<ImageAndText> result) {
-		delegate.processFinish(result,tabNumber);	
+		delegate.processFinish(result,tabNumber,needToCallOnRefreshComplete);	
 	}
 }

@@ -10,4 +10,9 @@
 	<string name="newVideo">New video in</string>
 	<string name="shareVideoVia">Share this video via</string>
 	<string name="shareVideoRecommendation">I recommend you to watch</string>
+	
+	<string name="ptr_pull_to_refresh">Pull to refresh</string>
+	<string name="ptr_release_to_refresh">Release to refresh</string>
+	<string name="ptr_refreshing">Refreshing…</string>
+	<string name="ptr_last_updated">Updated: %1$s</string>
 </resources>

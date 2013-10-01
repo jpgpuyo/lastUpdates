@@ -10,6 +10,9 @@ import java.util.Locale;
 import java.util.Properties;
 import java.util.TimeZone;
 
+import pullToRefreshLibrary.PullToRefreshListView;
+import pullToRefreshLibrary.PullToRefreshOnRefreshListener;
+
 import com.focusings.focusingsworld5.ImageAndTextList.ImageAndText;
 import com.focusings.focusingsworld5.ImageAndTextList.ImageAndTextListAdapter;
 import com.focusings.focusingsworld5.YoutubeParser.AsyncResponse;
@@ -294,13 +297,13 @@ public class MainActivity extends FragmentActivity implements
 				rootView = inflater.inflate(R.layout.tab1,container, false);
 				
 				//I get all data calling services from Youtube
-				new AsyncYoutubeParser().execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_1_channel_name")+properties.getProperty("Youtube_URL_part_2"));
+				new AsyncYoutubeParser().execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_1_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
 			}
 			//Cas de la segona tab
 			if (currentTab==2){				
 				rootView = inflater.inflate(R.layout.tab2, container, false);
 				//I get all data calling services from Youtube
-				new AsyncYoutubeParser().execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_2_channel_name")+properties.getProperty("Youtube_URL_part_2"));
+				new AsyncYoutubeParser().execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_2_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
 			}
 			
 			return rootView;
@@ -308,18 +311,28 @@ public class MainActivity extends FragmentActivity implements
 				
 	}
 
-	public void processFinish(List<ImageAndText> list,int tabNumber){
+	public void processFinish(List<ImageAndText> list,int tabNumber,boolean needToCallOnRefreshComplete){
 		//this you will received result fired from async class of onPostExecute(result) method.
 		ImageAndTextListAdapter adapter = new ImageAndTextListAdapter(this,list);
 		
-		ListView listView=null;
+		PullToRefreshListView listView=null;
 		if (tabNumber==1){
-			listView = (ListView)findViewById(R.id.list);
+			listView = (PullToRefreshListView)findViewById(R.id.pull_to_refresh_listview1);
 		}
 		if (tabNumber==2){
-			listView = (ListView)findViewById(R.id.list2);
+			listView = (PullToRefreshListView)findViewById(R.id.pull_to_refresh_listview2);
 		}
-		listView.setAdapter(adapter);		
+		
+		//According to the pullToRefresh library I'm using, I need to call listView.onRefreshComplete() 
+		//so that the spinner stops, but I only need to do this if I come from onRefreshListener (because it
+		//means the spinner was already been displayed), if I come from initializations the spinner isn't displayed,
+		//so, I shouldn't call listView.onRefreshComplete()
+		if (needToCallOnRefreshComplete && listView!=null){
+			listView.onRefreshComplete();
+		}
+		
+		listView.setOnRefreshListener(new PullToRefreshOnRefreshListener(tabNumber));		
+		listView.setAdapter(adapter);				
 	}
 	
 	public void sendNotification(List<Update> updates){
