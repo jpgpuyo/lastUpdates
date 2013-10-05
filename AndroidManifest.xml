@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.focusings.focusingsworld5"
+    package="com.focusings.focusingsworld"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     
     <uses-sdk
         android:minSdkVersion="11"
-        android:targetSdkVersion="17" />
+        android:targetSdkVersion="18" />
 
     <application
         android:allowBackup="true"
@@ -16,7 +17,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.focusings.focusingsworld5.MainActivity"
+            android:name="com.focusings.focusingsworld.MainActivity"
             android:configChanges="orientation"
             android:label="@string/app_name" >
             <intent-filter>
@@ -26,7 +27,8 @@
             </intent-filter>
         </activity>
         
-        <service android:name="com.focusings.focusingsworld5.notificationManagement.CheckNewUpdatesService" ></service><receiver android:name="com.focusings.focusingsworld5.notificationManagement.CheckNewUpdatesServiceReceiver" ></receiver>
+        <service android:name="com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesService" ></service>
+        <receiver android:name="com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesServiceReceiver" ></receiver>
     </application>
 
 </manifest>
