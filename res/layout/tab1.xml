@@ -10,6 +10,8 @@
     
     <com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshListView
 	    android:id="@+id/pull_to_refresh_listview1"
+	    android:divider="@android:color/transparent"
+  		android:dividerHeight="20.0sp"
 	    android:layout_height="fill_parent"
 	    android:layout_width="fill_parent" />
     

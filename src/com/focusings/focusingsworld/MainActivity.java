@@ -46,6 +46,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.GridView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -347,8 +348,21 @@ public class MainActivity extends FragmentActivity implements
 			listView.onRefreshComplete();
 		}
 		
-		listView.setOnRefreshListener(new PullToRefreshOnRefreshListener(tabNumber));		
-		listView.setAdapter(adapter);				
+		//Case of listView
+		if (listView!=null){
+			listView.setOnRefreshListener(new PullToRefreshOnRefreshListener(tabNumber));		
+			listView.setAdapter(adapter);
+		}/*else{
+			GridView gridView=null;
+			if (tabNumber==1){
+				gridView = (GridView)findViewById(R.id.gridview1);
+				gridView.setAdapter(adapter);
+			}
+			if (tabNumber==2){
+				gridView = (GridView)findViewById(R.id.gridview2);
+				gridView.setAdapter(adapter);
+			}
+		}*/
 	}
 	
 	public void sendNotification(List<Update> updates){
