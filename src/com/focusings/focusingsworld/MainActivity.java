@@ -32,6 +32,7 @@ import android.content.Intent;
 import android.content.res.AssetManager;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -195,6 +196,16 @@ public class MainActivity extends FragmentActivity implements
 	        close.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
+					popup.dismiss();
+				}
+			});
+	        
+	        //Defining close button in popup window
+	        Button rateApp = (Button) layout.findViewById(R.id.rateAppButton);
+	        rateApp.setOnClickListener(new OnClickListener() {
+				@Override
+				public void onClick(View v) {
+					startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + "com.focusings.focusingsworld")));
 					popup.dismiss();
 				}
 			});

@@ -17,9 +17,9 @@
 	   android:textAppearance="?android:attr/textAppearanceLarge" />
 	
 	<View
-    android:layout_width="fill_parent"
-    android:layout_height="3dp"
-    android:background="@android:color/darker_gray"/>
+	    android:layout_width="fill_parent"
+	    android:layout_height="3dp"
+	    android:background="@android:color/darker_gray"/>
 	
 	<TextView
 	   android:id="@+id/textView2"
@@ -43,13 +43,28 @@
 	   android:paddingBottom="5dp"
 	   android:text="@string/about_text2" />
 	
-	<Button
-	   android:id="@+id/closeButton"
-	   android:layout_marginTop="10dp"
-	   android:textColor="#FFFFFF"
-	   android:layout_gravity="center_horizontal"
+	<LinearLayout
 	   android:layout_width="wrap_content"
 	   android:layout_height="wrap_content"
-	   android:text="@string/close" />
- 
+	   android:paddingLeft="5dp"
+	   android:orientation="horizontal" >
+	
+		<Button
+		   android:id="@+id/rateAppButton"
+		   android:layout_marginTop="10dp"
+		   android:textColor="#FFFFFF"
+		   android:layout_gravity="center_horizontal"
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:text="@string/rateTheApp" />
+		
+		<Button
+		   android:id="@+id/closeButton"
+		   android:layout_marginTop="10dp"
+		   android:textColor="#FFFFFF"
+		   android:layout_gravity="center_horizontal"
+		   android:layout_width="wrap_content"
+		   android:layout_height="wrap_content"
+		   android:text="@string/close" />
+	 </LinearLayout>
 </LinearLayout>
