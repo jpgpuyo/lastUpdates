@@ -11,14 +11,19 @@ import java.util.Properties;
 
 import com.focusings.focusingsworld.ImageAndTextList.ImageAndText;
 import com.focusings.focusingsworld.ImageAndTextList.ImageAndTextListAdapter;
-import com.focusings.focusingsworld.YoutubeParser.AsyncResponse;
+import com.focusings.focusingsworld.TwitterParser.AsyncTwitterParser;
+import com.focusings.focusingsworld.TwitterParser.AsyncTwitterResponse;
+import com.focusings.focusingsworld.TwitterParser.TweetInfo;
+import com.focusings.focusingsworld.TwitterParser.TweetsListAdapter;
+import com.focusings.focusingsworld.YoutubeParser.AsyncYoutubeResponse;
 import com.focusings.focusingsworld.YoutubeParser.AsyncYoutubeParser;
 import com.focusings.focusingsworld.notificationManagement.AsyncNotificationResponse;
 import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesService;
 import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesServiceReceiver;
 import com.focusings.focusingsworld.notificationManagement.Update;
 import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshListView;
-import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshOnRefreshListener;
+import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshTwitterOnRefreshListener;
+import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshYoutubeOnRefreshListener;
 import com.focusings.focusingsworld.R;
 
 import android.app.ActionBar;
@@ -53,7 +58,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity implements
-		ActionBar.TabListener, AsyncResponse, AsyncNotificationResponse	{
+		ActionBar.TabListener, AsyncYoutubeResponse, 
+		AsyncNotificationResponse,AsyncTwitterResponse	{
 	
 	public static Properties properties;
 	public static VideoInfo[] lastUpdatePerChannel;
@@ -78,6 +84,7 @@ public class MainActivity extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 		AsyncYoutubeParser.delegate = this;
 		CheckNewUpdatesService.delegate=this;
+		AsyncTwitterParser.delegate=this;
 		properties = new Properties();
 		getProperties();
 		setContentView(R.layout.activity_main);
@@ -110,18 +117,23 @@ public class MainActivity extends FragmentActivity implements
 		actionBar.removeAllTabs();
 		
 		// For each of the sections in the app, add a tab to the action bar.
-		for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
+		for (int i = 0; i < Integer.parseInt(properties.getProperty("number_of_tabs")); i++) {
 			// Create a tab with text corresponding to the page title defined by
 			// the adapter. Also specify this Activity object, which implements
 			// the TabListener interface, as the callback (listener) for when
-			// this tab is selected.
-			
+			// this tab is selected.			
 			actionBar.addTab(actionBar.newTab()
 						.setText(mSectionsPagerAdapter.getPageTitle(i))
-						.setTabListener(this));
-			
+						.setTabListener(this));			
 		}
-
+		
+		//If Twitter account is enabled, then I add a Twitter tab
+		if (properties.getProperty("enable_twitter").equals("yes")){
+			actionBar.addTab(actionBar.newTab()
+					.setText("Twitter")
+					.setTabListener(this));
+		}
+		
 		//If the tab to be selected is passed by parameter, I go to that tab
 		Bundle b = getIntent().getExtras();
 		int tabToBeSelected=0;
@@ -262,6 +274,11 @@ public class MainActivity extends FragmentActivity implements
 		@Override
 		public int getCount() {
 			// Returns the number of tabs
+			
+			//If twitter is enabled then I add a tab
+			if (properties.getProperty("enable_twitter").equals("yes")){
+				return Integer.parseInt(properties.getProperty("number_of_tabs"))+1;
+			}
 			return Integer.parseInt(properties.getProperty("number_of_tabs"));
 		}
 
@@ -311,6 +328,13 @@ public class MainActivity extends FragmentActivity implements
 				new AsyncYoutubeParser().execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_2_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
 			}
 			
+			//Case Twitter tab
+			if (currentTab==Integer.parseInt(properties.getProperty("number_of_tabs"))+1){
+				rootView = inflater.inflate(R.layout.twitter_tab, container, false);
+				//I get all data calling services from Twitter
+				new AsyncTwitterParser().execute("false");
+			}
+			
 			return rootView;
 		}
 				
@@ -326,7 +350,7 @@ public class MainActivity extends FragmentActivity implements
 	    return false;
 	}
 
-	public void processFinish(List<ImageAndText> list,int tabNumber,boolean needToCallOnRefreshComplete){
+	public void printYoutubeElements(List<ImageAndText> list,int tabNumber,boolean needToCallOnRefreshComplete){
 		//this you will received result fired from async class of onPostExecute(result) method.
 		ImageAndTextListAdapter adapter = new ImageAndTextListAdapter(this,list);
 		
@@ -339,6 +363,10 @@ public class MainActivity extends FragmentActivity implements
 		if (tabNumber==2){
 			errorLog=(TextView)findViewById(R.id.errorLog2);
 			listView = (PullToRefreshListView)findViewById(R.id.pull_to_refresh_listview2);
+		}
+		if (tabNumber==3){
+			errorLog=(TextView)findViewById(R.id.errorLogTwitter);
+			listView = (PullToRefreshListView)findViewById(R.id.pull_to_refresh_listview_twitter);
 		}
 		
 		if (list.size()==0){
@@ -361,7 +389,7 @@ public class MainActivity extends FragmentActivity implements
 		
 		//Case of listView
 		if (listView!=null){
-			listView.setOnRefreshListener(new PullToRefreshOnRefreshListener(tabNumber));		
+			listView.setOnRefreshListener(new PullToRefreshYoutubeOnRefreshListener(tabNumber));		
 			listView.setAdapter(adapter);
 		}/*else{
 			GridView gridView=null;
@@ -374,6 +402,43 @@ public class MainActivity extends FragmentActivity implements
 				gridView.setAdapter(adapter);
 			}
 		}*/
+	}
+	
+	public void printTwitterElements(List<TweetInfo> list,boolean needToCallOnRefreshComplete){
+		//this you will received result fired from async class of onPostExecute(result) method.
+		TweetsListAdapter adapter = new TweetsListAdapter(this,list);
+		
+		TextView loadingTwitterView=(TextView)findViewById(R.id.loadingTwitter);
+		loadingTwitterView.setText("");
+		
+		TextView errorLog=null;
+		PullToRefreshListView listView=null;
+		errorLog=(TextView)findViewById(R.id.errorLogTwitter);
+		listView = (PullToRefreshListView)findViewById(R.id.pull_to_refresh_listview_twitter);
+		
+		if (list.size()==0){
+			if (isOnline()==false){				
+				errorLog.setText(R.string.noInternetConnection);
+			}else{
+				errorLog.setText(R.string.noTwitterConnection);
+			}
+		}else{
+			errorLog.setText("");
+		}
+		
+		//According to the pullToRefresh library I'm using, I need to call listView.onRefreshComplete() 
+		//so that the spinner stops, but I only need to do this if I come from onRefreshListener (because it
+		//means the spinner was already been displayed), if I come from initializations the spinner isn't displayed,
+		//so, I shouldn't call listView.onRefreshComplete()
+		if (needToCallOnRefreshComplete && listView!=null){
+			listView.onRefreshComplete();
+		}
+		
+		//Case of listView
+		if (listView!=null){
+			listView.setOnRefreshListener(new PullToRefreshTwitterOnRefreshListener());		
+			listView.setAdapter(adapter);
+		}
 	}
 	
 	public void sendNotification(List<Update> updates){

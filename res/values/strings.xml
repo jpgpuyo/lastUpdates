@@ -19,6 +19,8 @@
 	<string name="shareVideoRecommendation">I recommend you to watch</string>
 	<string name="noInternetConnection">No Internet connection, please check your Internet connection</string>
 	<string name="noYoutubeConnection">Youtube API seems not to be working, please try it again later</string>
+	<string name="noTwitterConnection">Twitter API seems not to be working, please try it again later</string>
 	<string name="rateTheApp">Rate the app</string>
+	<string name="loading">Loading..</string>
 	
 </resources>

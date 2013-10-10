@@ -4,11 +4,11 @@ import com.focusings.focusingsworld.MainActivity;
 import com.focusings.focusingsworld.YoutubeParser.AsyncYoutubeParser;
 
 
-public class PullToRefreshOnRefreshListener implements PullToRefreshListView.OnRefreshListener{
+public class PullToRefreshYoutubeOnRefreshListener implements PullToRefreshListView.OnRefreshListener{
 
 	private int tabNumber;
 	
-    public PullToRefreshOnRefreshListener(int tabNumber){
+    public PullToRefreshYoutubeOnRefreshListener(int tabNumber){
         this.tabNumber=tabNumber;
     }
 

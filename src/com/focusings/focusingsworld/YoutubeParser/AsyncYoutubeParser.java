@@ -20,11 +20,11 @@ import android.os.AsyncTask;
 import com.focusings.focusingsworld.MainActivity;
 import com.focusings.focusingsworld.VideoInfo;
 import com.focusings.focusingsworld.ImageAndTextList.ImageAndText;
-import com.focusings.focusingsworld.YoutubeParser.AsyncResponse;
+import com.focusings.focusingsworld.YoutubeParser.AsyncYoutubeResponse;
 
 public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndText>> {
 
-	public static AsyncResponse delegate=null;
+	public static AsyncYoutubeResponse delegate=null;
 	private int tabNumber=1;
 	private boolean needToCallOnRefreshComplete=false;
 	
@@ -119,6 +119,6 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 	
 	@Override
 	protected void onPostExecute(List<ImageAndText> result) {
-		delegate.processFinish(result,tabNumber,needToCallOnRefreshComplete);	
+		delegate.printYoutubeElements(result,tabNumber,needToCallOnRefreshComplete);	
 	}
 }
