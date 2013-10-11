@@ -1,0 +1,25 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:orientation="vertical"
+	android:layout_width="wrap_content"
+	android:layout_height="wrap_content">
+    
+    <TextView
+	   android:id="@+id/staffText"
+	   android:layout_width="wrap_content"
+	   android:layout_height="wrap_content"
+	   android:paddingBottom="15dp"
+	   android:paddingTop="10dp"
+	   android:paddingLeft="5dp"
+	   android:text="@string/getLastStaff"
+	   android:textAppearance="?android:attr/textAppearanceLarge" />
+    
+     <ImageView android:id="@+id/staffImage"      
+        android:contentDescription="@+id/text"     
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:clickable="true"
+        android:src="@drawable/tshirt"
+        android:layout_marginLeft="5dp"/>
+    
+</LinearLayout>

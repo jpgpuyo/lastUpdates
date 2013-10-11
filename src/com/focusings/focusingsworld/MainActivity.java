@@ -24,6 +24,7 @@ import com.focusings.focusingsworld.notificationManagement.Update;
 import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshListView;
 import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshTwitterOnRefreshListener;
 import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshYoutubeOnRefreshListener;
+import com.focusings.focusingsworld.shop.GoToStaffWebsiteOnClickListener;
 import com.focusings.focusingsworld.R;
 
 import android.app.ActionBar;
@@ -53,6 +54,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -131,6 +133,13 @@ public class MainActivity extends FragmentActivity implements
 		if (properties.getProperty("enable_twitter").equals("yes")){
 			actionBar.addTab(actionBar.newTab()
 					.setText("Twitter")
+					.setTabListener(this));
+		}
+		
+		//If shop is enabled, then I add a Shop tab
+		if (properties.getProperty("enable_shop").equals("yes")){
+			actionBar.addTab(actionBar.newTab()
+					.setText("Shop")
 					.setTabListener(this));
 		}
 		
@@ -274,12 +283,19 @@ public class MainActivity extends FragmentActivity implements
 		@Override
 		public int getCount() {
 			// Returns the number of tabs
+			int tabNumber=Integer.parseInt(properties.getProperty("number_of_tabs"));
 			
 			//If twitter is enabled then I add a tab
 			if (properties.getProperty("enable_twitter").equals("yes")){
-				return Integer.parseInt(properties.getProperty("number_of_tabs"))+1;
+				tabNumber++;
 			}
-			return Integer.parseInt(properties.getProperty("number_of_tabs"));
+			
+			//If shop is enabled then I add a tab
+			if (properties.getProperty("enable_shop").equals("yes")){
+				tabNumber++;
+			}
+			
+			return tabNumber;
 		}
 
 		@Override
@@ -333,6 +349,14 @@ public class MainActivity extends FragmentActivity implements
 				rootView = inflater.inflate(R.layout.twitter_tab, container, false);
 				//I get all data calling services from Twitter
 				new AsyncTwitterParser().execute("false");
+			}
+			
+			//Case Shop tab
+			if (currentTab==Integer.parseInt(properties.getProperty("number_of_tabs"))+2){
+				rootView = inflater.inflate(R.layout.shop_tab, container, false);
+				//ImageView listView = (ImageView)findViewById(R.id.staffImage);
+				ImageView image =(ImageView)rootView.findViewById(R.id.staffImage);
+				image.setOnClickListener(new GoToStaffWebsiteOnClickListener());
 			}
 			
 			return rootView;
