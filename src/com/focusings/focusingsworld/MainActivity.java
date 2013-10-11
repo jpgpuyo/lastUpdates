@@ -3,7 +3,9 @@ package com.focusings.focusingsworld;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.Properties;
@@ -141,6 +143,11 @@ public class MainActivity extends FragmentActivity implements
 			actionBar.addTab(actionBar.newTab()
 					.setText("Shop")
 					.setTabListener(this));
+		}
+		
+		//If birthday is enabled, then I add a Shop tab
+		if (properties.getProperty("enable_birthday_notification").equals("yes")){
+			notifyIfItsBirthday();
 		}
 		
 		//If the tab to be selected is passed by parameter, I go to that tab
@@ -494,6 +501,35 @@ public class MainActivity extends FragmentActivity implements
 
 			notificationManager.notify(i, noti); 
 			
+		}
+	}
+	
+	public void notifyIfItsBirthday(){
+		SimpleDateFormat dateFormat = new SimpleDateFormat("MM");
+		Date date = new Date();
+		int currentMonth=Integer.parseInt(dateFormat.format(date));
+		
+		dateFormat = new SimpleDateFormat("dd");
+		int currentDay=Integer.parseInt(dateFormat.format(date));
+		
+		//If today is the day of the birthday, then I show a notification
+		if (currentMonth==Integer.parseInt(MainActivity.properties.getProperty("birthday_month"))
+			&& currentDay==Integer.parseInt(MainActivity.properties.getProperty("birthday_day"))){
+			// Build notification
+			// Actions are just fake
+			Notification noti = new Notification.Builder(this)
+			        .setContentTitle(getString(R.string.helloPeople))
+			        .setContentText(getString(R.string.birthdayText))
+			        .setSmallIcon(R.drawable.ic_launcher)
+			        .getNotification();
+			    
+			NotificationManager notificationManager = 
+			  (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
+
+			// Hide the notification after its selected
+			noti.flags |= Notification.FLAG_AUTO_CANCEL;
+			
+			notificationManager.notify(100, noti);
 		}
 	}
 }
