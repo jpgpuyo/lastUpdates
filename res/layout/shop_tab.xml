@@ -20,6 +20,7 @@
         android:adjustViewBounds="true"
         android:clickable="true"
         android:src="@drawable/tshirt"
-        android:layout_marginLeft="5dp"/>
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"/>
     
 </LinearLayout>

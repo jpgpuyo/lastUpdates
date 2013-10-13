@@ -1,17 +1,22 @@
 package com.focusings.focusingsworld.pullToRefreshLibrary;
 
+import com.focusings.focusingsworld.MainActivity;
 import com.focusings.focusingsworld.TwitterParser.AsyncTwitterParser;
 
 
 
 public class PullToRefreshTwitterOnRefreshListener implements PullToRefreshListView.OnRefreshListener{
 	
-    public PullToRefreshTwitterOnRefreshListener(){}
+	private MainActivity mainActivity;
+	
+    public PullToRefreshTwitterOnRefreshListener(MainActivity mainActivity){
+    	this.mainActivity=mainActivity;
+    }
 
     @Override
     public void onRefresh() {
         // Your code to refresh the list contents
-    	new AsyncTwitterParser().execute("true");
+    	new AsyncTwitterParser(mainActivity).execute("true");
     	
         // Make sure you call listView.onRefreshComplete()
         // when the loading is done. This can be done from here or any

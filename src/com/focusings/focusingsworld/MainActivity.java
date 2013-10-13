@@ -11,13 +11,9 @@ import java.util.Locale;
 import java.util.Properties;
 
 
-import com.focusings.focusingsworld.ImageAndTextList.ImageAndText;
-import com.focusings.focusingsworld.ImageAndTextList.ImageAndTextListAdapter;
 import com.focusings.focusingsworld.TwitterParser.AsyncTwitterParser;
-import com.focusings.focusingsworld.TwitterParser.AsyncTwitterResponse;
 import com.focusings.focusingsworld.TwitterParser.TweetInfo;
 import com.focusings.focusingsworld.TwitterParser.TweetsListAdapter;
-import com.focusings.focusingsworld.YoutubeParser.AsyncYoutubeResponse;
 import com.focusings.focusingsworld.YoutubeParser.AsyncYoutubeParser;
 import com.focusings.focusingsworld.notificationManagement.AsyncNotificationResponse;
 import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesService;
@@ -25,7 +21,6 @@ import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesServic
 import com.focusings.focusingsworld.notificationManagement.Update;
 import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshListView;
 import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshTwitterOnRefreshListener;
-import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshYoutubeOnRefreshListener;
 import com.focusings.focusingsworld.shop.GoToStaffWebsiteOnClickListener;
 import com.focusings.focusingsworld.R;
 
@@ -55,15 +50,13 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity implements
-		ActionBar.TabListener, AsyncYoutubeResponse, 
-		AsyncNotificationResponse,AsyncTwitterResponse	{
+		ActionBar.TabListener, AsyncNotificationResponse{
 	
 	public static Properties properties;
 	public static VideoInfo[] lastUpdatePerChannel;
@@ -86,9 +79,7 @@ public class MainActivity extends FragmentActivity implements
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {		
 		super.onCreate(savedInstanceState);
-		AsyncYoutubeParser.delegate = this;
 		CheckNewUpdatesService.delegate=this;
-		AsyncTwitterParser.delegate=this;
 		properties = new Properties();
 		getProperties();
 		setContentView(R.layout.activity_main);
@@ -342,20 +333,20 @@ public class MainActivity extends FragmentActivity implements
 				rootView = inflater.inflate(R.layout.tab1,container, false);
 				
 				//I get all data calling services from Youtube
-				new AsyncYoutubeParser().execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_1_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
+				new AsyncYoutubeParser((MainActivity)this.getActivity()).execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_1_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
 			}
 			//Cas de la segona tab
 			if (currentTab==2){				
 				rootView = inflater.inflate(R.layout.tab2, container, false);
 				//I get all data calling services from Youtube
-				new AsyncYoutubeParser().execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_2_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
+				new AsyncYoutubeParser((MainActivity)this.getActivity()).execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_2_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
 			}
 			
 			//Case Twitter tab
 			if (currentTab==Integer.parseInt(properties.getProperty("number_of_tabs"))+1){
 				rootView = inflater.inflate(R.layout.twitter_tab, container, false);
 				//I get all data calling services from Twitter
-				new AsyncTwitterParser().execute("false");
+				new AsyncTwitterParser((MainActivity)this.getActivity()).execute("false");
 			}
 			
 			//Case Shop tab
@@ -379,97 +370,6 @@ public class MainActivity extends FragmentActivity implements
 	        return true;
 	    }
 	    return false;
-	}
-
-	public void printYoutubeElements(List<ImageAndText> list,int tabNumber,boolean needToCallOnRefreshComplete){
-		//this you will received result fired from async class of onPostExecute(result) method.
-		ImageAndTextListAdapter adapter = new ImageAndTextListAdapter(this,list);
-		
-		TextView errorLog=null;
-		PullToRefreshListView listView=null;
-		if (tabNumber==1){
-			errorLog=(TextView)findViewById(R.id.errorLog1);
-			listView = (PullToRefreshListView)findViewById(R.id.pull_to_refresh_listview1);
-		}
-		if (tabNumber==2){
-			errorLog=(TextView)findViewById(R.id.errorLog2);
-			listView = (PullToRefreshListView)findViewById(R.id.pull_to_refresh_listview2);
-		}
-		if (tabNumber==3){
-			errorLog=(TextView)findViewById(R.id.errorLogTwitter);
-			listView = (PullToRefreshListView)findViewById(R.id.pull_to_refresh_listview_twitter);
-		}
-		
-		if (list.size()==0){
-			if (isOnline()==false){				
-				errorLog.setText(R.string.noInternetConnection);
-			}else{
-				errorLog.setText(R.string.noYoutubeConnection);
-			}
-		}else{
-			errorLog.setText("");
-		}
-		
-		//According to the pullToRefresh library I'm using, I need to call listView.onRefreshComplete() 
-		//so that the spinner stops, but I only need to do this if I come from onRefreshListener (because it
-		//means the spinner was already been displayed), if I come from initializations the spinner isn't displayed,
-		//so, I shouldn't call listView.onRefreshComplete()
-		if (needToCallOnRefreshComplete && listView!=null){
-			listView.onRefreshComplete();
-		}
-		
-		//Case of listView
-		if (listView!=null){
-			listView.setOnRefreshListener(new PullToRefreshYoutubeOnRefreshListener(tabNumber));		
-			listView.setAdapter(adapter);
-		}/*else{
-			GridView gridView=null;
-			if (tabNumber==1){
-				gridView = (GridView)findViewById(R.id.gridview1);
-				gridView.setAdapter(adapter);
-			}
-			if (tabNumber==2){
-				gridView = (GridView)findViewById(R.id.gridview2);
-				gridView.setAdapter(adapter);
-			}
-		}*/
-	}
-	
-	public void printTwitterElements(List<TweetInfo> list,boolean needToCallOnRefreshComplete){
-		//this you will received result fired from async class of onPostExecute(result) method.
-		TweetsListAdapter adapter = new TweetsListAdapter(this,list);
-		
-		TextView loadingTwitterView=(TextView)findViewById(R.id.loadingTwitter);
-		loadingTwitterView.setText("");
-		
-		TextView errorLog=null;
-		PullToRefreshListView listView=null;
-		errorLog=(TextView)findViewById(R.id.errorLogTwitter);
-		listView = (PullToRefreshListView)findViewById(R.id.pull_to_refresh_listview_twitter);
-		
-		if (list.size()==0){
-			if (isOnline()==false){				
-				errorLog.setText(R.string.noInternetConnection);
-			}else{
-				errorLog.setText(R.string.noTwitterConnection);
-			}
-		}else{
-			errorLog.setText("");
-		}
-		
-		//According to the pullToRefresh library I'm using, I need to call listView.onRefreshComplete() 
-		//so that the spinner stops, but I only need to do this if I come from onRefreshListener (because it
-		//means the spinner was already been displayed), if I come from initializations the spinner isn't displayed,
-		//so, I shouldn't call listView.onRefreshComplete()
-		if (needToCallOnRefreshComplete && listView!=null){
-			listView.onRefreshComplete();
-		}
-		
-		//Case of listView
-		if (listView!=null){
-			listView.setOnRefreshListener(new PullToRefreshTwitterOnRefreshListener());		
-			listView.setAdapter(adapter);
-		}
 	}
 	
 	public void sendNotification(List<Update> updates){

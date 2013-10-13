@@ -16,17 +16,25 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.InputSource;
 
 import android.os.AsyncTask;
+import android.widget.TextView;
 
 import com.focusings.focusingsworld.MainActivity;
+import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.VideoInfo;
 import com.focusings.focusingsworld.ImageAndTextList.ImageAndText;
-import com.focusings.focusingsworld.YoutubeParser.AsyncYoutubeResponse;
+import com.focusings.focusingsworld.ImageAndTextList.ImageAndTextListAdapter;
+import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshListView;
+import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshYoutubeOnRefreshListener;
 
 public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndText>> {
 
-	public static AsyncYoutubeResponse delegate=null;
 	private int tabNumber=1;
 	private boolean needToCallOnRefreshComplete=false;
+	private MainActivity mainActivity;
+	
+	public AsyncYoutubeParser(MainActivity mainActivity) {
+        this.mainActivity = mainActivity;
+    }
 	
 	@Override
 	protected void onPreExecute() {
@@ -119,6 +127,56 @@ public class AsyncYoutubeParser extends AsyncTask<String, Integer,List<ImageAndT
 	
 	@Override
 	protected void onPostExecute(List<ImageAndText> result) {
-		delegate.printYoutubeElements(result,tabNumber,needToCallOnRefreshComplete);	
+		//this you will received result fired from async class of onPostExecute(result) method.
+		ImageAndTextListAdapter adapter = new ImageAndTextListAdapter(mainActivity,result);
+		
+		TextView errorLog=null;
+		PullToRefreshListView listView=null;
+		if (tabNumber==1){
+			errorLog=(TextView)mainActivity.findViewById(R.id.errorLog1);
+			listView = (PullToRefreshListView)mainActivity.findViewById(R.id.pull_to_refresh_listview1);
+		}
+		if (tabNumber==2){
+			errorLog=(TextView)mainActivity.findViewById(R.id.errorLog2);
+			listView = (PullToRefreshListView)mainActivity.findViewById(R.id.pull_to_refresh_listview2);
+		}
+		if (tabNumber==3){
+			errorLog=(TextView)mainActivity.findViewById(R.id.errorLogTwitter);
+			listView = (PullToRefreshListView)mainActivity.findViewById(R.id.pull_to_refresh_listview_twitter);
+		}
+		
+		if (result.size()==0){
+			if (mainActivity.isOnline()==false){				
+				errorLog.setText(R.string.noInternetConnection);
+			}else{
+				errorLog.setText(R.string.noYoutubeConnection);
+			}
+		}else{
+			errorLog.setText("");
+		}
+		
+		//According to the pullToRefresh library I'm using, I need to call listView.onRefreshComplete() 
+		//so that the spinner stops, but I only need to do this if I come from onRefreshListener (because it
+		//means the spinner was already been displayed), if I come from initializations the spinner isn't displayed,
+		//so, I shouldn't call listView.onRefreshComplete()
+		if (needToCallOnRefreshComplete && listView!=null){
+			listView.onRefreshComplete();
+		}
+		
+		//Case of listView
+		if (listView!=null){
+			listView.setOnRefreshListener(new PullToRefreshYoutubeOnRefreshListener(tabNumber,mainActivity));		
+			listView.setAdapter(adapter);
+		}/*else{
+			GridView gridView=null;
+			if (tabNumber==1){
+				gridView = (GridView)findViewById(R.id.gridview1);
+				gridView.setAdapter(adapter);
+			}
+			if (tabNumber==2){
+				gridView = (GridView)findViewById(R.id.gridview2);
+				gridView.setAdapter(adapter);
+			}
+		}*/	
 	}
 }
