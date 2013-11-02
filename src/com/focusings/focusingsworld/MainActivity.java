@@ -422,7 +422,7 @@ public class MainActivity extends FragmentActivity implements
 			Notification noti = new Notification.Builder(this)
 			        .setContentTitle(getString(R.string.helloPeople))
 			        .setContentText(getString(R.string.birthdayText))
-			        .setSmallIcon(R.drawable.ic_launcher)
+			        .setSmallIcon(R.drawable.happy_birthday)
 			        .getNotification();
 			    
 			NotificationManager notificationManager = 
