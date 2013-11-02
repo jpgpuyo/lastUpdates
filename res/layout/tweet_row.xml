@@ -6,7 +6,7 @@
 	android:background="@color/gray">
     
     <ImageView android:id="@+id/userImage"      
-        android:contentDescription="@+id/userTwitterAccount"     
+        android:contentDescription="@string/imageDescription"     
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         />

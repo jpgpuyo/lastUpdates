@@ -12,15 +12,11 @@ import java.util.Properties;
 
 
 import com.focusings.focusingsworld.TwitterParser.AsyncTwitterParser;
-import com.focusings.focusingsworld.TwitterParser.TweetInfo;
-import com.focusings.focusingsworld.TwitterParser.TweetsListAdapter;
 import com.focusings.focusingsworld.YoutubeParser.AsyncYoutubeParser;
 import com.focusings.focusingsworld.notificationManagement.AsyncNotificationResponse;
 import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesService;
 import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesServiceReceiver;
 import com.focusings.focusingsworld.notificationManagement.Update;
-import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshListView;
-import com.focusings.focusingsworld.pullToRefreshLibrary.PullToRefreshTwitterOnRefreshListener;
 import com.focusings.focusingsworld.shop.GoToStaffWebsiteOnClickListener;
 import com.focusings.focusingsworld.R;
 
@@ -53,7 +49,6 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
-import android.widget.TextView;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener, AsyncNotificationResponse{
