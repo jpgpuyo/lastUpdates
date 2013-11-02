@@ -59,6 +59,7 @@ public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener, AsyncNotificationResponse{
 	
 	public static Properties properties;
+	public static Properties twitterProperties;
 	public static VideoInfo[] lastUpdatePerChannel;
 	//Properties with app info
 	/**
@@ -81,6 +82,7 @@ public class MainActivity extends FragmentActivity implements
 		super.onCreate(savedInstanceState);
 		CheckNewUpdatesService.delegate=this;
 		properties = new Properties();
+		twitterProperties = new Properties();
 		getProperties();
 		setContentView(R.layout.activity_main);
 
@@ -166,10 +168,15 @@ public class MainActivity extends FragmentActivity implements
              * Open an asset using ACCESS_STREAMING mode. This
              */
             InputStream inputStream = assetManager.open("app.properties");
+            
             /**
              * Loads properties from the specified InputStream,
              */
             properties.load(inputStream);
+            
+            AssetManager assetTwitterManager = getAssets();
+            InputStream inputTwitterStream = assetTwitterManager.open("twitter.properties");
+            twitterProperties.load(inputTwitterStream);
 
 	     } catch (IOException e) {
 	            

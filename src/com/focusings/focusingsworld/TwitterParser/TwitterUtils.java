@@ -30,7 +30,7 @@ public class TwitterUtils {
 			httpConnection.setDoOutput(true);
 			httpConnection.setDoInput(true);
 
-			String accessCredential = MainActivity.properties.getProperty("twitter_consumer_key") + ":" + MainActivity.properties.getProperty("twitter_consumer_secret");
+			String accessCredential = MainActivity.twitterProperties.getProperty("twitter_consumer_key") + ":" + MainActivity.twitterProperties.getProperty("twitter_consumer_secret");
 			String authorization = "Basic " + Base64.encodeToString(accessCredential.getBytes(), Base64.NO_WRAP);
 			String param = "grant_type=client_credentials";
 
