@@ -1,4 +1,8 @@
-bin/classes
-bin
-gen
-assets/twitter.properties
+*.iml
+.gradle
+/local.properties
+/.idea
+.DS_Store
+/build
+*/build
+/captures
