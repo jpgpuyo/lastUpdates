@@ -1,7 +1,7 @@
 package com.focusings.focusingsworld.pullToRefreshLibrary;
 
 import com.focusings.focusingsworld.MainActivity;
-import com.focusings.focusingsworld.YoutubeParser.AsyncYoutubeParser;
+import com.focusings.focusingsworld.YoutubeParser.MockAsyncYoutubeParser;
 
 
 public class PullToRefreshYoutubeOnRefreshListener implements PullToRefreshListView.OnRefreshListener{
@@ -17,7 +17,7 @@ public class PullToRefreshYoutubeOnRefreshListener implements PullToRefreshListV
     @Override
     public void onRefresh() {
         // Your code to refresh the list contents
-    	new AsyncYoutubeParser(mainActivity).execute(MainActivity.properties.getProperty("Youtube_URL_part_1")+MainActivity.properties.getProperty("tab_"+tabNumber+"_channel_name")+MainActivity.properties.getProperty("Youtube_URL_part_2"),"true");
+    	new MockAsyncYoutubeParser(mainActivity).execute(MainActivity.properties.getProperty("Youtube_URL_part_1")+MainActivity.properties.getProperty("tab_"+tabNumber+"_channel_name")+MainActivity.properties.getProperty("Youtube_URL_part_2"),"true");
     	
         // Make sure you call listView.onRefreshComplete()
         // when the loading is done. This can be done from here or any

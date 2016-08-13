@@ -1,25 +1,6 @@
 package com.focusings.focusingsworld;
 
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.Locale;
-import java.util.Properties;
-
-
-import com.focusings.focusingsworld.TwitterParser.AsyncTwitterParser;
-import com.focusings.focusingsworld.YoutubeParser.AsyncYoutubeParser;
-import com.focusings.focusingsworld.notificationManagement.AsyncNotificationResponse;
-import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesService;
-import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesServiceReceiver;
-import com.focusings.focusingsworld.notificationManagement.Update;
-import com.focusings.focusingsworld.shop.GoToStaffWebsiteOnClickListener;
-import com.focusings.focusingsworld.R;
-
 import android.app.ActionBar;
 import android.app.AlarmManager;
 import android.app.FragmentTransaction;
@@ -49,6 +30,24 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+
+import com.focusings.focusingsworld.TwitterParser.AsyncTwitterParser;
+import com.focusings.focusingsworld.TwitterParser.MockAsyncTwitterParser;
+import com.focusings.focusingsworld.YoutubeParser.MockAsyncYoutubeParser;
+import com.focusings.focusingsworld.notificationManagement.AsyncNotificationResponse;
+import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesService;
+import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesServiceReceiver;
+import com.focusings.focusingsworld.notificationManagement.Update;
+import com.focusings.focusingsworld.shop.GoToStaffWebsiteOnClickListener;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.List;
+import java.util.Locale;
+import java.util.Properties;
 
 public class MainActivity extends FragmentActivity implements
 		ActionBar.TabListener, AsyncNotificationResponse{
@@ -335,20 +334,20 @@ public class MainActivity extends FragmentActivity implements
 				rootView = inflater.inflate(R.layout.tab1,container, false);
 				
 				//I get all data calling services from Youtube
-				new AsyncYoutubeParser((MainActivity)this.getActivity()).execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_1_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
+				new MockAsyncYoutubeParser((MainActivity)this.getActivity()).execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_1_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
 			}
 			//Cas de la segona tab
 			if (currentTab==2){				
 				rootView = inflater.inflate(R.layout.tab2, container, false);
 				//I get all data calling services from Youtube
-				new AsyncYoutubeParser((MainActivity)this.getActivity()).execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_2_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
+				new MockAsyncYoutubeParser((MainActivity)this.getActivity()).execute(properties.getProperty("Youtube_URL_part_1")+properties.getProperty("tab_2_channel_name")+properties.getProperty("Youtube_URL_part_2"),"false");
 			}
 			
 			//Case Twitter tab
 			if (currentTab==Integer.parseInt(properties.getProperty("number_of_tabs"))+1){
 				rootView = inflater.inflate(R.layout.twitter_tab, container, false);
 				//I get all data calling services from Twitter
-				new AsyncTwitterParser((MainActivity)this.getActivity()).execute("false");
+				new MockAsyncTwitterParser((MainActivity)this.getActivity()).execute("false");
 			}
 			
 			//Case Shop tab
