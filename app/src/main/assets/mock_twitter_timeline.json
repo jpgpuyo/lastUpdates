@@ -1,0 +1,3783 @@
+[
+  {
+    "created_at": "Sat Aug 13 21:25:59 +0000 2016",
+    "id": 764573742341230600,
+    "id_str": "764573742341230592",
+    "text": "RT @_LaLa_Pooh_: Como cuando no sigues a @ChristianCorom pero te enteras de todos sus twitts gracias a @focusings XD",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "_LaLa_Pooh_",
+          "name": "Laura ~ Monokuma :$",
+          "id": 701488292181758000,
+          "id_str": "701488292181757952",
+          "indices": [
+            3,
+            15
+          ]
+        },
+        {
+          "screen_name": "ChristianCorom",
+          "name": "Christian Córom",
+          "id": 70289969,
+          "id_str": "70289969",
+          "indices": [
+            41,
+            56
+          ]
+        },
+        {
+          "screen_name": "focusings",
+          "name": "ℳel",
+          "id": 150431827,
+          "id_str": "150431827",
+          "indices": [
+            103,
+            113
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Sat Aug 13 21:25:06 +0000 2016",
+      "id": 764573519489273900,
+      "id_str": "764573519489273857",
+      "text": "Como cuando no sigues a @ChristianCorom pero te enteras de todos sus twitts gracias a @focusings XD",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "ChristianCorom",
+            "name": "Christian Córom",
+            "id": 70289969,
+            "id_str": "70289969",
+            "indices": [
+              24,
+              39
+            ]
+          },
+          {
+            "screen_name": "focusings",
+            "name": "ℳel",
+            "id": 150431827,
+            "id_str": "150431827",
+            "indices": [
+              86,
+              96
+            ]
+          }
+        ],
+        "urls": []
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 701488292181758000,
+        "id_str": "701488292181757952",
+        "name": "Laura ~ Monokuma :$",
+        "screen_name": "_LaLa_Pooh_",
+        "location": "Vilanova i la Geltrú, España",
+        "description": "Una chica Otaku y amante de Youtube, ¿Hace falta añadir algo mas? :3",
+        "url": "https://t.co/8IwjiyHecu",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/8IwjiyHecu",
+                "expanded_url": "https://www.instagram.com/mayacathh/",
+                "display_url": "instagram.com/mayacathh/",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 71,
+        "friends_count": 197,
+        "listed_count": 1,
+        "created_at": "Sun Feb 21 19:26:56 +0000 2016",
+        "favourites_count": 1219,
+        "utc_offset": -25200,
+        "time_zone": "Pacific Time (US & Canada)",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 1169,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "000000",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/755100945382604800/Dik3mFTj_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/755100945382604800/Dik3mFTj_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/701488292181757952/1466893854",
+        "profile_link_color": "E81C4F",
+        "profile_sidebar_border_color": "000000",
+        "profile_sidebar_fill_color": "000000",
+        "profile_text_color": "000000",
+        "profile_use_background_image": false,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 2,
+      "favorite_count": 3,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "es"
+    },
+    "is_quote_status": false,
+    "retweet_count": 2,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 21:22:50 +0000 2016",
+    "id": 764572947768078300,
+    "id_str": "764572947768078336",
+    "text": "RT @ChristianCorom: Estoy intentando editar nuevo video para mañana ya que llevo varios días afónico y no puedo grabar voz aún para los vid…",
+    "truncated": false,
+    "entities": {
+      "hashtags": [
+        {
+          "text": "Tomorrowland",
+          "indices": [
+            139,
+            140
+          ]
+        }
+      ],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "ChristianCorom",
+          "name": "Christian Córom",
+          "id": 70289969,
+          "id_str": "70289969",
+          "indices": [
+            3,
+            18
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Sat Aug 13 21:21:03 +0000 2016",
+      "id": 764572501116616700,
+      "id_str": "764572501116616704",
+      "text": "Estoy intentando editar nuevo video para mañana ya que llevo varios días afónico y no puedo grabar voz aún para los videos de #Tomorrowland.",
+      "truncated": false,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "Tomorrowland",
+            "indices": [
+              126,
+              139
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": []
+      },
+      "source": "<a href=\"http://www.hootsuite.com\" rel=\"nofollow\">Hootsuite</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 70289969,
+        "id_str": "70289969",
+        "name": "Christian Córom",
+        "screen_name": "ChristianCorom",
+        "location": "Madrid, ESPAÑA",
+        "description": "Creador de contenido de entretenimiento y viajes en YouTube y en el mundo real. Contacto:https://t.co/jcSfix0b6H",
+        "url": "https://t.co/aYnEm7f8ot",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/aYnEm7f8ot",
+                "expanded_url": "http://www.youtube.com/inexplorando",
+                "display_url": "youtube.com/inexplorando",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "https://t.co/jcSfix0b6H",
+                "expanded_url": "http://inexplorando.com/contacto",
+                "display_url": "inexplorando.com/contacto",
+                "indices": [
+                  89,
+                  112
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 3734,
+        "friends_count": 183,
+        "listed_count": 69,
+        "created_at": "Mon Aug 31 02:58:52 +0000 2009",
+        "favourites_count": 4838,
+        "utc_offset": 7200,
+        "time_zone": "Madrid",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 16992,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "222222",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/661988937385291777/hc-_BctY.jpg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/661988937385291777/hc-_BctY.jpg",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/752112494592794624/_HmAiU45_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/752112494592794624/_HmAiU45_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/70289969/1455163366",
+        "profile_link_color": "179ACA",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "171106",
+        "profile_text_color": "8A7302",
+        "profile_use_background_image": false,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 1,
+      "favorite_count": 10,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "es"
+    },
+    "is_quote_status": false,
+    "retweet_count": 1,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 21:20:53 +0000 2016",
+    "id": 764572457869074400,
+    "id_str": "764572457869074432",
+    "text": "Esperando al autobús\n\n#roma #rome #palatino #trip #memories https://t.co/tvADcObGWr",
+    "truncated": false,
+    "entities": {
+      "hashtags": [
+        {
+          "text": "roma",
+          "indices": [
+            22,
+            27
+          ]
+        },
+        {
+          "text": "rome",
+          "indices": [
+            28,
+            33
+          ]
+        },
+        {
+          "text": "palatino",
+          "indices": [
+            34,
+            43
+          ]
+        },
+        {
+          "text": "trip",
+          "indices": [
+            44,
+            49
+          ]
+        },
+        {
+          "text": "memories",
+          "indices": [
+            50,
+            59
+          ]
+        }
+      ],
+      "symbols": [],
+      "user_mentions": [],
+      "urls": [
+        {
+          "url": "https://t.co/tvADcObGWr",
+          "expanded_url": "https://www.instagram.com/p/BJEFKYlh0v1/",
+          "display_url": "instagram.com/p/BJEFKYlh0v1/",
+          "indices": [
+            60,
+            83
+          ]
+        }
+      ]
+    },
+    "source": "<a href=\"http://instagram.com\" rel=\"nofollow\">Instagram</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 1,
+    "favorite_count": 8,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 21:10:32 +0000 2016",
+    "id": 764569851201544200,
+    "id_str": "764569851201544193",
+    "text": "@marinadragon3 creo que dijeron el 10 de octubre. Cruzo los dedos!",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "marinadragon3",
+          "name": "Marina",
+          "id": 3752465009,
+          "id_str": "3752465009",
+          "indices": [
+            0,
+            14
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": 764569387911225300,
+    "in_reply_to_status_id_str": "764569387911225344",
+    "in_reply_to_user_id": 3752465009,
+    "in_reply_to_user_id_str": "3752465009",
+    "in_reply_to_screen_name": "marinadragon3",
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 21:01:59 +0000 2016",
+    "id": 764567701981425700,
+    "id_str": "764567701981425664",
+    "text": "RT @CandelaSend00: ¿es o no es verdad @focusings? O_o -.-\" https://t.co/J5cZavNoBu",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "CandelaSend00",
+          "name": "candelasendon",
+          "id": 787092374,
+          "id_str": "787092374",
+          "indices": [
+            3,
+            17
+          ]
+        },
+        {
+          "screen_name": "focusings",
+          "name": "ℳel",
+          "id": 150431827,
+          "id_str": "150431827",
+          "indices": [
+            38,
+            48
+          ]
+        }
+      ],
+      "urls": [],
+      "media": [
+        {
+          "id": 764567485492367400,
+          "id_str": "764567485492367360",
+          "indices": [
+            59,
+            82
+          ],
+          "media_url": "http://pbs.twimg.com/media/CpxKE8OWEAASMGf.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/CpxKE8OWEAASMGf.jpg",
+          "url": "https://t.co/J5cZavNoBu",
+          "display_url": "pic.twitter.com/J5cZavNoBu",
+          "expanded_url": "http://twitter.com/CandelaSend00/status/764567495428702208/photo/1",
+          "type": "photo",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "medium": {
+              "w": 454,
+              "h": 496,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 454,
+              "h": 496,
+              "resize": "fit"
+            },
+            "small": {
+              "w": 454,
+              "h": 496,
+              "resize": "fit"
+            }
+          },
+          "source_status_id": 764567495428702200,
+          "source_status_id_str": "764567495428702208",
+          "source_user_id": 787092374,
+          "source_user_id_str": "787092374"
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "id": 764567485492367400,
+          "id_str": "764567485492367360",
+          "indices": [
+            59,
+            82
+          ],
+          "media_url": "http://pbs.twimg.com/media/CpxKE8OWEAASMGf.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/CpxKE8OWEAASMGf.jpg",
+          "url": "https://t.co/J5cZavNoBu",
+          "display_url": "pic.twitter.com/J5cZavNoBu",
+          "expanded_url": "http://twitter.com/CandelaSend00/status/764567495428702208/photo/1",
+          "type": "photo",
+          "sizes": {
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "medium": {
+              "w": 454,
+              "h": 496,
+              "resize": "fit"
+            },
+            "large": {
+              "w": 454,
+              "h": 496,
+              "resize": "fit"
+            },
+            "small": {
+              "w": 454,
+              "h": 496,
+              "resize": "fit"
+            }
+          },
+          "source_status_id": 764567495428702200,
+          "source_status_id_str": "764567495428702208",
+          "source_user_id": 787092374,
+          "source_user_id_str": "787092374"
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Sat Aug 13 21:01:10 +0000 2016",
+      "id": 764567495428702200,
+      "id_str": "764567495428702208",
+      "text": "¿es o no es verdad @focusings? O_o -.-\" https://t.co/J5cZavNoBu",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "focusings",
+            "name": "ℳel",
+            "id": 150431827,
+            "id_str": "150431827",
+            "indices": [
+              19,
+              29
+            ]
+          }
+        ],
+        "urls": [],
+        "media": [
+          {
+            "id": 764567485492367400,
+            "id_str": "764567485492367360",
+            "indices": [
+              40,
+              63
+            ],
+            "media_url": "http://pbs.twimg.com/media/CpxKE8OWEAASMGf.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/CpxKE8OWEAASMGf.jpg",
+            "url": "https://t.co/J5cZavNoBu",
+            "display_url": "pic.twitter.com/J5cZavNoBu",
+            "expanded_url": "http://twitter.com/CandelaSend00/status/764567495428702208/photo/1",
+            "type": "photo",
+            "sizes": {
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "medium": {
+                "w": 454,
+                "h": 496,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 454,
+                "h": 496,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 454,
+                "h": 496,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "extended_entities": {
+        "media": [
+          {
+            "id": 764567485492367400,
+            "id_str": "764567485492367360",
+            "indices": [
+              40,
+              63
+            ],
+            "media_url": "http://pbs.twimg.com/media/CpxKE8OWEAASMGf.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/CpxKE8OWEAASMGf.jpg",
+            "url": "https://t.co/J5cZavNoBu",
+            "display_url": "pic.twitter.com/J5cZavNoBu",
+            "expanded_url": "http://twitter.com/CandelaSend00/status/764567495428702208/photo/1",
+            "type": "photo",
+            "sizes": {
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "medium": {
+                "w": 454,
+                "h": 496,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 454,
+                "h": 496,
+                "resize": "fit"
+              },
+              "small": {
+                "w": 454,
+                "h": 496,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 787092374,
+        "id_str": "787092374",
+        "name": "candelasendon",
+        "screen_name": "CandelaSend00",
+        "location": "aquí para ti estés donde estés",
+        "description": "A veces manteniéndome fuerte y otras escriviviendo// Simple Plan - Welcome to my life// Si lees esto te debo una lluvia de abrazos. [La nostalgia es mi bandera]",
+        "url": "https://t.co/LG5tfP9mKY",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/LG5tfP9mKY",
+                "expanded_url": "https://www.instagram.com/candelasendon/",
+                "display_url": "instagram.com/candelasendon/",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 1413,
+        "friends_count": 659,
+        "listed_count": 19,
+        "created_at": "Tue Aug 28 14:08:27 +0000 2012",
+        "favourites_count": 3624,
+        "utc_offset": 10800,
+        "time_zone": "Athens",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 41200,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "C0DEED",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/750031637463887872/itBnhAjh_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/750031637463887872/itBnhAjh_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/787092374/1467656450",
+        "profile_link_color": "ABB8C2",
+        "profile_sidebar_border_color": "C0DEED",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": false,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 25,
+      "favorite_count": 24,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "es"
+    },
+    "is_quote_status": false,
+    "retweet_count": 25,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 20:31:51 +0000 2016",
+    "id": 764560117887017000,
+    "id_str": "764560117887016960",
+    "text": "@marinadragon3 yo me enganché a Supergirl y ahora sufro también porque quiero que sea octubre :(",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "marinadragon3",
+          "name": "Marina",
+          "id": 3752465009,
+          "id_str": "3752465009",
+          "indices": [
+            0,
+            14
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": 764559678844104700,
+    "in_reply_to_status_id_str": "764559678844104705",
+    "in_reply_to_user_id": 3752465009,
+    "in_reply_to_user_id_str": "3752465009",
+    "in_reply_to_screen_name": "marinadragon3",
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 20:29:21 +0000 2016",
+    "id": 764559489752305700,
+    "id_str": "764559489752305665",
+    "text": "@JulenHernandez yo a ti te odio mucho",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "JulenHernandez",
+          "name": "Julen Hernandez",
+          "id": 129578136,
+          "id_str": "129578136",
+          "indices": [
+            0,
+            15
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": 764559441266081800,
+    "in_reply_to_status_id_str": "764559441266081792",
+    "in_reply_to_user_id": 129578136,
+    "in_reply_to_user_id_str": "129578136",
+    "in_reply_to_screen_name": "JulenHernandez",
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 8,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 20:28:25 +0000 2016",
+    "id": 764559254619623400,
+    "id_str": "764559254619623426",
+    "text": "Necesito gente con quien compartir mi impaciencia por ver de una vez Star Trek Beyond. Qué lentos pasan los días!!! :(",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 4,
+    "favorite_count": 26,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 20:18:02 +0000 2016",
+    "id": 764556639236132900,
+    "id_str": "764556639236132868",
+    "text": "RT @Bufon_burlon: Me ha gustado un vídeo de @YouTube de @focusings (https://t.co/jyVn1mtQ1s - ¿ALGUNA VEZ ME HA GUSTADO UNA CHICA? #focurre…",
+    "truncated": false,
+    "entities": {
+      "hashtags": [
+        {
+          "text": "focurrespuestas",
+          "indices": [
+            131,
+            140
+          ]
+        }
+      ],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "Bufon_burlon",
+          "name": "Bufón Burlón",
+          "id": 502064099,
+          "id_str": "502064099",
+          "indices": [
+            3,
+            16
+          ]
+        },
+        {
+          "screen_name": "YouTube",
+          "name": "YouTube",
+          "id": 10228272,
+          "id_str": "10228272",
+          "indices": [
+            44,
+            52
+          ]
+        },
+        {
+          "screen_name": "focusings",
+          "name": "ℳel",
+          "id": 150431827,
+          "id_str": "150431827",
+          "indices": [
+            56,
+            66
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https://t.co/jyVn1mtQ1s",
+          "expanded_url": "http://youtu.be/a46Me73ykcQ?a",
+          "display_url": "youtu.be/a46Me73ykcQ?a",
+          "indices": [
+            68,
+            91
+          ]
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Sat Aug 13 20:13:07 +0000 2016",
+      "id": 764555401291567100,
+      "id_str": "764555401291567105",
+      "text": "Me ha gustado un vídeo de @YouTube de @focusings (https://t.co/jyVn1mtQ1s - ¿ALGUNA VEZ ME HA GUSTADO UNA CHICA? #focurrespuestas).",
+      "truncated": false,
+      "entities": {
+        "hashtags": [
+          {
+            "text": "focurrespuestas",
+            "indices": [
+              113,
+              129
+            ]
+          }
+        ],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "YouTube",
+            "name": "YouTube",
+            "id": 10228272,
+            "id_str": "10228272",
+            "indices": [
+              26,
+              34
+            ]
+          },
+          {
+            "screen_name": "focusings",
+            "name": "ℳel",
+            "id": 150431827,
+            "id_str": "150431827",
+            "indices": [
+              38,
+              48
+            ]
+          }
+        ],
+        "urls": [
+          {
+            "url": "https://t.co/jyVn1mtQ1s",
+            "expanded_url": "http://youtu.be/a46Me73ykcQ?a",
+            "display_url": "youtu.be/a46Me73ykcQ?a",
+            "indices": [
+              50,
+              73
+            ]
+          }
+        ]
+      },
+      "source": "<a href=\"http://www.google.com/\" rel=\"nofollow\">Google</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 502064099,
+        "id_str": "502064099",
+        "name": "Bufón Burlón",
+        "screen_name": "Bufon_burlon",
+        "location": "Puerto Real (Cádiz)",
+        "description": "Es privilegio de bufones decir verdades que todos callan | Subo videos a YouTube 1000 SUSCRIPTORES |",
+        "url": "https://t.co/0c6o7dwpS2",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/0c6o7dwpS2",
+                "expanded_url": "https://www.youtube.com/user/BufonBurlon",
+                "display_url": "youtube.com/user/BufonBurl…",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 347,
+        "friends_count": 88,
+        "listed_count": 5,
+        "created_at": "Fri Feb 24 19:33:44 +0000 2012",
+        "favourites_count": 73,
+        "utc_offset": null,
+        "time_zone": null,
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 19137,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "0B0563",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000104886529/94f05222838dac190d8e4e19df8f475e.jpeg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000104886529/94f05222838dac190d8e4e19df8f475e.jpeg",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/538345075936210944/2NwPYuJ1_normal.jpeg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/538345075936210944/2NwPYuJ1_normal.jpeg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/502064099/1417186463",
+        "profile_link_color": "3B94D9",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": false,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 1,
+      "favorite_count": 2,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "es"
+    },
+    "is_quote_status": false,
+    "retweet_count": 1,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 19:38:28 +0000 2016",
+    "id": 764546681278988300,
+    "id_str": "764546681278988288",
+    "text": "RT @HayQueSaberlo: Pensar en el futuro por lo general te mantiene despierto en la noche, pensar en el pasado por lo general te ayuda a dorm…",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "HayQueSaberlo",
+          "name": "¡Hay que saberlo!",
+          "id": 233543018,
+          "id_str": "233543018",
+          "indices": [
+            3,
+            17
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Sat Aug 13 19:37:14 +0000 2016",
+      "id": 764546371663913000,
+      "id_str": "764546371663912960",
+      "text": "Pensar en el futuro por lo general te mantiene despierto en la noche, pensar en el pasado por lo general te ayuda a dormir.",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": []
+      },
+      "source": "<a href=\"https://about.twitter.com/products/tweetdeck\" rel=\"nofollow\">TweetDeck</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 233543018,
+        "id_str": "233543018",
+        "name": "¡Hay que saberlo!",
+        "screen_name": "HayQueSaberlo",
+        "location": "Valencia, Venezuela",
+        "description": "Con nosotros aprenderás algo nuevo cada día. Aquí hay información que debes almacenar en tu cerebro. Info: @MediaInv. https://t.co/lh5tXo5j8b",
+        "url": "https://t.co/BeMAD6cjse",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/BeMAD6cjse",
+                "expanded_url": "http://www.facebook.com/HayQueSaberlo",
+                "display_url": "facebook.com/HayQueSaberlo",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "https://t.co/lh5tXo5j8b",
+                "expanded_url": "http://www.instagram.com/hayquesaberlo",
+                "display_url": "instagram.com/hayquesaberlo",
+                "indices": [
+                  118,
+                  141
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 1567832,
+        "friends_count": 169448,
+        "listed_count": 5011,
+        "created_at": "Mon Jan 03 14:18:19 +0000 2011",
+        "favourites_count": 411,
+        "utc_offset": -16200,
+        "time_zone": "Caracas",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 57183,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "FFFFFF",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/790318249/ff665e1d4c9a29099b4ecba10ecc12ad.jpeg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/790318249/ff665e1d4c9a29099b4ecba10ecc12ad.jpeg",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/752658941767745536/AlFxKHEc_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/752658941767745536/AlFxKHEc_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/233543018/1470680050",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "EBEBEB",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 146,
+      "favorite_count": 233,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "es"
+    },
+    "is_quote_status": false,
+    "retweet_count": 146,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 19:38:13 +0000 2016",
+    "id": 764546619719217200,
+    "id_str": "764546619719217152",
+    "text": "Hablemos del poder que tienen mis auriculares. Cada vez que me los pongo me llama todo el mundo. No es una sensación https://t.co/CCW6EIPxLx",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [],
+      "urls": [
+        {
+          "url": "https://t.co/CCW6EIPxLx",
+          "expanded_url": "https://twitter.com/revistasuperpop/status/764544770995814401",
+          "display_url": "twitter.com/revistasuperpo…",
+          "indices": [
+            117,
+            140
+          ]
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": true,
+    "quoted_status_id": 764544770995814400,
+    "quoted_status_id_str": "764544770995814401",
+    "quoted_status": {
+      "created_at": "Sat Aug 13 19:30:52 +0000 2016",
+      "id": 764544770995814400,
+      "id_str": "764544770995814401",
+      "text": "¡Ja, ja! Like si a ti también te pasa… 😂😂😂 https://t.co/RY2P6DXIL2",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [],
+        "media": [
+          {
+            "id": 764544768902885400,
+            "id_str": "764544768902885376",
+            "indices": [
+              43,
+              66
+            ],
+            "media_url": "http://pbs.twimg.com/media/Cpw1aqVW8AAq-wb.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/Cpw1aqVW8AAq-wb.jpg",
+            "url": "https://t.co/RY2P6DXIL2",
+            "display_url": "pic.twitter.com/RY2P6DXIL2",
+            "expanded_url": "http://twitter.com/revistasuperpop/status/764544770995814401/photo/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 611,
+                "h": 331,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 611,
+                "h": 331,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "small": {
+                "w": 611,
+                "h": 331,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "extended_entities": {
+        "media": [
+          {
+            "id": 764544768902885400,
+            "id_str": "764544768902885376",
+            "indices": [
+              43,
+              66
+            ],
+            "media_url": "http://pbs.twimg.com/media/Cpw1aqVW8AAq-wb.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/Cpw1aqVW8AAq-wb.jpg",
+            "url": "https://t.co/RY2P6DXIL2",
+            "display_url": "pic.twitter.com/RY2P6DXIL2",
+            "expanded_url": "http://twitter.com/revistasuperpop/status/764544770995814401/photo/1",
+            "type": "photo",
+            "sizes": {
+              "medium": {
+                "w": 611,
+                "h": 331,
+                "resize": "fit"
+              },
+              "large": {
+                "w": 611,
+                "h": 331,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "small": {
+                "w": 611,
+                "h": 331,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "source": "<a href=\"http://www.hootsuite.com\" rel=\"nofollow\">Hootsuite</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 112751046,
+        "id_str": "112751046",
+        "name": "Revista Súper POP",
+        "screen_name": "revistasuperpop",
+        "location": "España",
+        "description": "Página oficial de la revista Súper POP en Twitter.",
+        "url": "http://t.co/JPJ4IkdmF9",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/JPJ4IkdmF9",
+                "expanded_url": "http://www.superpop.es",
+                "display_url": "superpop.es",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 30824,
+        "friends_count": 1158,
+        "listed_count": 123,
+        "created_at": "Tue Feb 09 15:53:35 +0000 2010",
+        "favourites_count": 250,
+        "utc_offset": 7200,
+        "time_zone": "Madrid",
+        "geo_enabled": false,
+        "verified": false,
+        "statuses_count": 20003,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "F5ABB5",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/486126058312200193/0CyWzE07.jpeg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/486126058312200193/0CyWzE07.jpeg",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/706806625445801984/JC5W7Pr4_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/706806625445801984/JC5W7Pr4_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/112751046/1403073497",
+        "profile_link_color": "CC3366",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "FFFFFF",
+        "profile_text_color": "333333",
+        "profile_use_background_image": false,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 21,
+      "favorite_count": 37,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "es"
+    },
+    "retweet_count": 7,
+    "favorite_count": 18,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 19:35:25 +0000 2016",
+    "id": 764545914937770000,
+    "id_str": "764545914937769984",
+    "text": "@sigroneta es una cosa de flacuchas. Nadie nos entenderá",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "sigroneta",
+          "name": "(((ミレ/NekoASMR)))",
+          "id": 36997636,
+          "id_str": "36997636",
+          "indices": [
+            0,
+            10
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": 764545512011882500,
+    "in_reply_to_status_id_str": "764545512011882496",
+    "in_reply_to_user_id": 36997636,
+    "in_reply_to_user_id_str": "36997636",
+    "in_reply_to_screen_name": "sigroneta",
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 1,
+    "favorite_count": 2,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 19:34:54 +0000 2016",
+    "id": 764545787456004100,
+    "id_str": "764545787456004098",
+    "text": "@manelvideoblogs @adriamusica96 https://t.co/nkkdggsarl",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "manelvideoblogs",
+          "name": "Manel",
+          "id": 252307871,
+          "id_str": "252307871",
+          "indices": [
+            0,
+            16
+          ]
+        },
+        {
+          "screen_name": "adriamusica96",
+          "name": "ADRO",
+          "id": 256698876,
+          "id_str": "256698876",
+          "indices": [
+            17,
+            31
+          ]
+        }
+      ],
+      "urls": [],
+      "media": [
+        {
+          "id": 764545764374745100,
+          "id_str": "764545764374745088",
+          "indices": [
+            32,
+            55
+          ],
+          "media_url": "http://pbs.twimg.com/tweet_video_thumb/Cpw2UmwWEAAjTqy.jpg",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/Cpw2UmwWEAAjTqy.jpg",
+          "url": "https://t.co/nkkdggsarl",
+          "display_url": "pic.twitter.com/nkkdggsarl",
+          "expanded_url": "http://twitter.com/focusings/status/764545787456004098/photo/1",
+          "type": "photo",
+          "sizes": {
+            "medium": {
+              "w": 244,
+              "h": 190,
+              "resize": "fit"
+            },
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "large": {
+              "w": 244,
+              "h": 190,
+              "resize": "fit"
+            },
+            "small": {
+              "w": 244,
+              "h": 190,
+              "resize": "fit"
+            }
+          }
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "id": 764545764374745100,
+          "id_str": "764545764374745088",
+          "indices": [
+            32,
+            55
+          ],
+          "media_url": "http://pbs.twimg.com/tweet_video_thumb/Cpw2UmwWEAAjTqy.jpg",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/Cpw2UmwWEAAjTqy.jpg",
+          "url": "https://t.co/nkkdggsarl",
+          "display_url": "pic.twitter.com/nkkdggsarl",
+          "expanded_url": "http://twitter.com/focusings/status/764545787456004098/photo/1",
+          "type": "animated_gif",
+          "sizes": {
+            "medium": {
+              "w": 244,
+              "h": 190,
+              "resize": "fit"
+            },
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "large": {
+              "w": 244,
+              "h": 190,
+              "resize": "fit"
+            },
+            "small": {
+              "w": 244,
+              "h": 190,
+              "resize": "fit"
+            }
+          },
+          "video_info": {
+            "aspect_ratio": [
+              122,
+              95
+            ],
+            "variants": [
+              {
+                "bitrate": 0,
+                "content_type": "video/mp4",
+                "url": "https://pbs.twimg.com/tweet_video/Cpw2UmwWEAAjTqy.mp4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": 764544258783252500,
+    "in_reply_to_status_id_str": "764544258783252480",
+    "in_reply_to_user_id": 252307871,
+    "in_reply_to_user_id_str": "252307871",
+    "in_reply_to_screen_name": "manelvideoblogs",
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 0,
+    "favorite_count": 3,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "und"
+  },
+  {
+    "created_at": "Sat Aug 13 19:34:51 +0000 2016",
+    "id": 764545771614208000,
+    "id_str": "764545771614208001",
+    "text": "RT @manelvideoblogs: @adriamusica96 no haces kdd porque nadie iría.",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "manelvideoblogs",
+          "name": "Manel",
+          "id": 252307871,
+          "id_str": "252307871",
+          "indices": [
+            3,
+            19
+          ]
+        },
+        {
+          "screen_name": "adriamusica96",
+          "name": "ADRO",
+          "id": 256698876,
+          "id_str": "256698876",
+          "indices": [
+            21,
+            35
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Sat Aug 13 19:28:50 +0000 2016",
+      "id": 764544258783252500,
+      "id_str": "764544258783252480",
+      "text": "@adriamusica96 no haces kdd porque nadie iría.",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [
+          {
+            "screen_name": "adriamusica96",
+            "name": "ADRO",
+            "id": 256698876,
+            "id_str": "256698876",
+            "indices": [
+              0,
+              14
+            ]
+          }
+        ],
+        "urls": []
+      },
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "in_reply_to_status_id": 764543328331456500,
+      "in_reply_to_status_id_str": "764543328331456514",
+      "in_reply_to_user_id": 256698876,
+      "in_reply_to_user_id_str": "256698876",
+      "in_reply_to_screen_name": "adriamusica96",
+      "user": {
+        "id": 252307871,
+        "id_str": "252307871",
+        "name": "Manel",
+        "screen_name": "manelvideoblogs",
+        "location": "Barcelona",
+        "description": "Diseñador gráfico. Tengo la mandíbula cuadrada, los ojos marrones y los labios carnosos. Cada martes nuevo vídeo.\nSígueme en Instagram/Snapchat: manelvideoblogs",
+        "url": "http://t.co/Ijx5nM7Utf",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "http://t.co/Ijx5nM7Utf",
+                "expanded_url": "http://youtube.com/manelvideoblogs",
+                "display_url": "youtube.com/manelvideoblogs",
+                "indices": [
+                  0,
+                  22
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 18624,
+        "friends_count": 215,
+        "listed_count": 94,
+        "created_at": "Mon Feb 14 22:56:09 +0000 2011",
+        "favourites_count": 8359,
+        "utc_offset": -7200,
+        "time_zone": "Greenland",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 70957,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "FFFFFF",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/593695394/6sx3w2iie9b8145jbtm8.gif",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/593695394/6sx3w2iie9b8145jbtm8.gif",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/552958700516683777/uogBEpnd_normal.jpeg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/552958700516683777/uogBEpnd_normal.jpeg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/252307871/1424365055",
+        "profile_link_color": "919191",
+        "profile_sidebar_border_color": "A4B1B8",
+        "profile_sidebar_fill_color": "DEDEDE",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 2,
+      "favorite_count": 5,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "es"
+    },
+    "is_quote_status": false,
+    "retweet_count": 2,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 19:26:39 +0000 2016",
+    "id": 764543708075360300,
+    "id_str": "764543708075360256",
+    "text": "RT @adriamusica96: ¡NUEVO VLOG! Por qué no hago quedadas...\n\nhttps://t.co/oYPIFoONJI",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "adriamusica96",
+          "name": "ADRO",
+          "id": 256698876,
+          "id_str": "256698876",
+          "indices": [
+            3,
+            17
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https://t.co/oYPIFoONJI",
+          "expanded_url": "https://youtu.be/-Agu8hDsosY",
+          "display_url": "youtu.be/-Agu8hDsosY",
+          "indices": [
+            61,
+            84
+          ]
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Sat Aug 13 19:25:08 +0000 2016",
+      "id": 764543328331456500,
+      "id_str": "764543328331456514",
+      "text": "¡NUEVO VLOG! Por qué no hago quedadas...\n\nhttps://t.co/oYPIFoONJI",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/oYPIFoONJI",
+            "expanded_url": "https://youtu.be/-Agu8hDsosY",
+            "display_url": "youtu.be/-Agu8hDsosY",
+            "indices": [
+              42,
+              65
+            ]
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 256698876,
+        "id_str": "256698876",
+        "name": "ADRO",
+        "screen_name": "adriamusica96",
+        "location": "Barcelona",
+        "description": "Unos 20. Youtuber, gilipoller, estudianter. Me gusta ir de compras de pelucas. Amante de los gatos. #PazYGatos",
+        "url": "https://t.co/6OoCvAp6UI",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/6OoCvAp6UI",
+                "expanded_url": "http://youtube.com/adriamusica96",
+                "display_url": "youtube.com/adriamusica96",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 28064,
+        "friends_count": 537,
+        "listed_count": 170,
+        "created_at": "Wed Feb 23 22:22:22 +0000 2011",
+        "favourites_count": 1680,
+        "utc_offset": 7200,
+        "time_zone": "Madrid",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 52850,
+        "lang": "en",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "9AE4E8",
+        "profile_background_image_url": "http://abs.twimg.com/images/themes/theme16/bg.gif",
+        "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme16/bg.gif",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/561875860165500928/Ak4jrjkX_normal.jpeg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/561875860165500928/Ak4jrjkX_normal.jpeg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/256698876/1467727443",
+        "profile_link_color": "0084B4",
+        "profile_sidebar_border_color": "BDDCAD",
+        "profile_sidebar_fill_color": "DDFFCC",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": false,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 7,
+      "favorite_count": 16,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "es"
+    },
+    "is_quote_status": false,
+    "retweet_count": 7,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 18:16:17 +0000 2016",
+    "id": 764526000793382900,
+    "id_str": "764526000793382912",
+    "text": "Por cierto, mi crush femenino es @talalona . La adoro 😍😍 Marry me",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "talalona",
+          "name": "Alona Tal",
+          "id": 194426031,
+          "id_str": "194426031",
+          "indices": [
+            33,
+            42
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": 764120140577374200,
+    "in_reply_to_status_id_str": "764120140577374208",
+    "in_reply_to_user_id": 150431827,
+    "in_reply_to_user_id_str": "150431827",
+    "in_reply_to_screen_name": "focusings",
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 1,
+    "favorite_count": 11,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 18:15:50 +0000 2016",
+    "id": 764525886641242100,
+    "id_str": "764525886641242112",
+    "text": "RT @focusings: NUEVO FOCURRESPUESTAS!! ¿ALGUNA VEZ ME HA GUSTADO UNA CHICA?\n\nhttps://t.co/9OKA0Fb82R",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "focusings",
+          "name": "ℳel",
+          "id": 150431827,
+          "id_str": "150431827",
+          "indices": [
+            3,
+            13
+          ]
+        }
+      ],
+      "urls": [
+        {
+          "url": "https://t.co/9OKA0Fb82R",
+          "expanded_url": "https://www.youtube.com/watch?v=a46Me73ykcQ",
+          "display_url": "youtube.com/watch?v=a46Me7…",
+          "indices": [
+            77,
+            100
+          ]
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Fri Aug 12 15:23:32 +0000 2016",
+      "id": 764120140577374200,
+      "id_str": "764120140577374208",
+      "text": "NUEVO FOCURRESPUESTAS!! ¿ALGUNA VEZ ME HA GUSTADO UNA CHICA?\n\nhttps://t.co/9OKA0Fb82R",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [
+          {
+            "url": "https://t.co/9OKA0Fb82R",
+            "expanded_url": "https://www.youtube.com/watch?v=a46Me73ykcQ",
+            "display_url": "youtube.com/watch?v=a46Me7…",
+            "indices": [
+              62,
+              85
+            ]
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com\" rel=\"nofollow\">Twitter Web Client</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 150431827,
+        "id_str": "150431827",
+        "name": "ℳel",
+        "screen_name": "focusings",
+        "location": "Choquera en Barcelona  ",
+        "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+        "url": "https://t.co/YG0ztGUM8J",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/YG0ztGUM8J",
+                "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+                "display_url": "youtube.com/focusingsvlogs…",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 26679,
+        "friends_count": 506,
+        "listed_count": 174,
+        "created_at": "Mon May 31 22:52:41 +0000 2010",
+        "favourites_count": 164,
+        "utc_offset": -10800,
+        "time_zone": "Santiago",
+        "geo_enabled": false,
+        "verified": true,
+        "statuses_count": 105923,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "709397",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+        "profile_link_color": "9266CC",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 8,
+      "favorite_count": 34,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "es"
+    },
+    "is_quote_status": false,
+    "retweet_count": 8,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 18:14:50 +0000 2016",
+    "id": 764525634982965200,
+    "id_str": "764525634982965249",
+    "text": "RT @BelenaGaynor: Me da mucho mal rollo estar pensando en la vida de alguien y que justo en ese momento me abra por Whatsapp.",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "BelenaGaynor",
+          "name": "BelenaGaynor",
+          "id": 185214590,
+          "id_str": "185214590",
+          "indices": [
+            3,
+            16
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Sat Aug 13 17:46:32 +0000 2016",
+      "id": 764518514858352600,
+      "id_str": "764518514858352641",
+      "text": "Me da mucho mal rollo estar pensando en la vida de alguien y que justo en ese momento me abra por Whatsapp.",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": []
+      },
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 185214590,
+        "id_str": "185214590",
+        "name": "BelenaGaynor",
+        "screen_name": "BelenaGaynor",
+        "location": "Barcelona",
+        "description": "Youtuber&Influencer|Digital manager at @sidecarbcn |Adicta a todo reality. El pelo azul es para no desentonar con Twitter. [belenagaynor@gmail.com]",
+        "url": "https://t.co/W6twY3ijye",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/W6twY3ijye",
+                "expanded_url": "http://www.youtube.com/BelenaGaynor",
+                "display_url": "youtube.com/BelenaGaynor",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": []
+          }
+        },
+        "protected": false,
+        "followers_count": 14528,
+        "friends_count": 1143,
+        "listed_count": 113,
+        "created_at": "Tue Aug 31 13:40:52 +0000 2010",
+        "favourites_count": 45389,
+        "utc_offset": 7200,
+        "time_zone": "Amsterdam",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 141228,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "FFFFFF",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/700376386/004f9f34a4426017a48ea4d3245f9fb8.jpeg",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/700376386/004f9f34a4426017a48ea4d3245f9fb8.jpeg",
+        "profile_background_tile": false,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/643229443704639488/h-m93x-z_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/643229443704639488/h-m93x-z_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/185214590/1440447699",
+        "profile_link_color": "47DAFF",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "000000",
+        "profile_text_color": "FF8B33",
+        "profile_use_background_image": false,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 23,
+      "favorite_count": 80,
+      "favorited": false,
+      "retweeted": false,
+      "lang": "es"
+    },
+    "is_quote_status": false,
+    "retweet_count": 23,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  },
+  {
+    "created_at": "Sat Aug 13 17:30:36 +0000 2016",
+    "id": 764514506273853400,
+    "id_str": "764514506273853440",
+    "text": "RT @Pelloque: https://t.co/C4eZZGU19O",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "Pelloque",
+          "name": "Pedro",
+          "id": 1059967976,
+          "id_str": "1059967976",
+          "indices": [
+            3,
+            12
+          ]
+        }
+      ],
+      "urls": [],
+      "media": [
+        {
+          "id": 746472710121885700,
+          "id_str": "746472710121885696",
+          "indices": [
+            14,
+            37
+          ],
+          "media_url": "http://pbs.twimg.com/media/ClwA-ZFWkAAdZga.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/ClwA-ZFWkAAdZga.jpg",
+          "url": "https://t.co/C4eZZGU19O",
+          "display_url": "pic.twitter.com/C4eZZGU19O",
+          "expanded_url": "http://twitter.com/Pelloque/status/746472720402104320/photo/1",
+          "type": "photo",
+          "sizes": {
+            "small": {
+              "w": 680,
+              "h": 510,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 1200,
+              "h": 900,
+              "resize": "fit"
+            },
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "large": {
+              "w": 2048,
+              "h": 1536,
+              "resize": "fit"
+            }
+          },
+          "source_status_id": 746472720402104300,
+          "source_status_id_str": "746472720402104320",
+          "source_user_id": 1059967976,
+          "source_user_id_str": "1059967976"
+        }
+      ]
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "id": 746472710121885700,
+          "id_str": "746472710121885696",
+          "indices": [
+            14,
+            37
+          ],
+          "media_url": "http://pbs.twimg.com/media/ClwA-ZFWkAAdZga.jpg",
+          "media_url_https": "https://pbs.twimg.com/media/ClwA-ZFWkAAdZga.jpg",
+          "url": "https://t.co/C4eZZGU19O",
+          "display_url": "pic.twitter.com/C4eZZGU19O",
+          "expanded_url": "http://twitter.com/Pelloque/status/746472720402104320/photo/1",
+          "type": "photo",
+          "sizes": {
+            "small": {
+              "w": 680,
+              "h": 510,
+              "resize": "fit"
+            },
+            "medium": {
+              "w": 1200,
+              "h": 900,
+              "resize": "fit"
+            },
+            "thumb": {
+              "w": 150,
+              "h": 150,
+              "resize": "crop"
+            },
+            "large": {
+              "w": 2048,
+              "h": 1536,
+              "resize": "fit"
+            }
+          },
+          "source_status_id": 746472720402104300,
+          "source_status_id_str": "746472720402104320",
+          "source_user_id": 1059967976,
+          "source_user_id_str": "1059967976"
+        }
+      ]
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "in_reply_to_screen_name": null,
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "retweeted_status": {
+      "created_at": "Fri Jun 24 22:38:59 +0000 2016",
+      "id": 746472720402104300,
+      "id_str": "746472720402104320",
+      "text": "https://t.co/C4eZZGU19O",
+      "truncated": false,
+      "entities": {
+        "hashtags": [],
+        "symbols": [],
+        "user_mentions": [],
+        "urls": [],
+        "media": [
+          {
+            "id": 746472710121885700,
+            "id_str": "746472710121885696",
+            "indices": [
+              0,
+              23
+            ],
+            "media_url": "http://pbs.twimg.com/media/ClwA-ZFWkAAdZga.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/ClwA-ZFWkAAdZga.jpg",
+            "url": "https://t.co/C4eZZGU19O",
+            "display_url": "pic.twitter.com/C4eZZGU19O",
+            "expanded_url": "http://twitter.com/Pelloque/status/746472720402104320/photo/1",
+            "type": "photo",
+            "sizes": {
+              "small": {
+                "w": 680,
+                "h": 510,
+                "resize": "fit"
+              },
+              "medium": {
+                "w": 1200,
+                "h": 900,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "large": {
+                "w": 2048,
+                "h": 1536,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "extended_entities": {
+        "media": [
+          {
+            "id": 746472710121885700,
+            "id_str": "746472710121885696",
+            "indices": [
+              0,
+              23
+            ],
+            "media_url": "http://pbs.twimg.com/media/ClwA-ZFWkAAdZga.jpg",
+            "media_url_https": "https://pbs.twimg.com/media/ClwA-ZFWkAAdZga.jpg",
+            "url": "https://t.co/C4eZZGU19O",
+            "display_url": "pic.twitter.com/C4eZZGU19O",
+            "expanded_url": "http://twitter.com/Pelloque/status/746472720402104320/photo/1",
+            "type": "photo",
+            "sizes": {
+              "small": {
+                "w": 680,
+                "h": 510,
+                "resize": "fit"
+              },
+              "medium": {
+                "w": 1200,
+                "h": 900,
+                "resize": "fit"
+              },
+              "thumb": {
+                "w": 150,
+                "h": 150,
+                "resize": "crop"
+              },
+              "large": {
+                "w": 2048,
+                "h": 1536,
+                "resize": "fit"
+              }
+            }
+          }
+        ]
+      },
+      "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+      "in_reply_to_status_id": null,
+      "in_reply_to_status_id_str": null,
+      "in_reply_to_user_id": null,
+      "in_reply_to_user_id_str": null,
+      "in_reply_to_screen_name": null,
+      "user": {
+        "id": 1059967976,
+        "id_str": "1059967976",
+        "name": "Pedro",
+        "screen_name": "Pelloque",
+        "location": "Gandia/Valencia",
+        "description": "https://t.co/KNxrkCmf70",
+        "url": "https://t.co/vS0A2U0KZV",
+        "entities": {
+          "url": {
+            "urls": [
+              {
+                "url": "https://t.co/vS0A2U0KZV",
+                "expanded_url": "http://www.llokee.com",
+                "display_url": "llokee.com",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          },
+          "description": {
+            "urls": [
+              {
+                "url": "https://t.co/KNxrkCmf70",
+                "expanded_url": "https://www.youtube.com/pelloque",
+                "display_url": "youtube.com/pelloque",
+                "indices": [
+                  0,
+                  23
+                ]
+              }
+            ]
+          }
+        },
+        "protected": false,
+        "followers_count": 3094,
+        "friends_count": 96,
+        "listed_count": 12,
+        "created_at": "Fri Jan 04 09:11:42 +0000 2013",
+        "favourites_count": 17588,
+        "utc_offset": 7200,
+        "time_zone": "Madrid",
+        "geo_enabled": true,
+        "verified": false,
+        "statuses_count": 54746,
+        "lang": "es",
+        "contributors_enabled": false,
+        "is_translator": false,
+        "is_translation_enabled": false,
+        "profile_background_color": "6CE67A",
+        "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/434796548719771649/hiweeYTT.png",
+        "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/434796548719771649/hiweeYTT.png",
+        "profile_background_tile": true,
+        "profile_image_url": "http://pbs.twimg.com/profile_images/750010809431027712/3-a54Mqf_normal.jpg",
+        "profile_image_url_https": "https://pbs.twimg.com/profile_images/750010809431027712/3-a54Mqf_normal.jpg",
+        "profile_banner_url": "https://pbs.twimg.com/profile_banners/1059967976/1442530068",
+        "profile_link_color": "6AE6C3",
+        "profile_sidebar_border_color": "FFFFFF",
+        "profile_sidebar_fill_color": "DDEEF6",
+        "profile_text_color": "333333",
+        "profile_use_background_image": true,
+        "has_extended_profile": true,
+        "default_profile": false,
+        "default_profile_image": false,
+        "following": null,
+        "follow_request_sent": null,
+        "notifications": null
+      },
+      "geo": null,
+      "coordinates": null,
+      "place": null,
+      "contributors": null,
+      "is_quote_status": false,
+      "retweet_count": 1168,
+      "favorite_count": 1239,
+      "favorited": false,
+      "retweeted": false,
+      "possibly_sensitive": false,
+      "lang": "und"
+    },
+    "is_quote_status": false,
+    "retweet_count": 1168,
+    "favorite_count": 0,
+    "favorited": false,
+    "retweeted": false,
+    "possibly_sensitive": false,
+    "lang": "und"
+  },
+  {
+    "created_at": "Sat Aug 13 15:24:14 +0000 2016",
+    "id": 764482703630663700,
+    "id_str": "764482703630663680",
+    "text": "@lauuuuu8 @YouTube gracias!!!! 😍😍😍",
+    "truncated": false,
+    "entities": {
+      "hashtags": [],
+      "symbols": [],
+      "user_mentions": [
+        {
+          "screen_name": "lauuuuu8",
+          "name": "Awkrd",
+          "id": 195782630,
+          "id_str": "195782630",
+          "indices": [
+            0,
+            9
+          ]
+        },
+        {
+          "screen_name": "YouTube",
+          "name": "YouTube",
+          "id": 10228272,
+          "id_str": "10228272",
+          "indices": [
+            10,
+            18
+          ]
+        }
+      ],
+      "urls": []
+    },
+    "source": "<a href=\"http://twitter.com/download/android\" rel=\"nofollow\">Twitter for Android</a>",
+    "in_reply_to_status_id": 764471220876283900,
+    "in_reply_to_status_id_str": "764471220876283904",
+    "in_reply_to_user_id": 195782630,
+    "in_reply_to_user_id_str": "195782630",
+    "in_reply_to_screen_name": "lauuuuu8",
+    "user": {
+      "id": 150431827,
+      "id_str": "150431827",
+      "name": "ℳel",
+      "screen_name": "focusings",
+      "location": "Choquera en Barcelona  ",
+      "description": "Quiero pizza\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSnapchat: focusings.",
+      "url": "https://t.co/YG0ztGUM8J",
+      "entities": {
+        "url": {
+          "urls": [
+            {
+              "url": "https://t.co/YG0ztGUM8J",
+              "expanded_url": "http://www.youtube.com/focusingsvlogs/?sub_confirmation=1",
+              "display_url": "youtube.com/focusingsvlogs…",
+              "indices": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        "description": {
+          "urls": []
+        }
+      },
+      "protected": false,
+      "followers_count": 26679,
+      "friends_count": 506,
+      "listed_count": 174,
+      "created_at": "Mon May 31 22:52:41 +0000 2010",
+      "favourites_count": 164,
+      "utc_offset": -10800,
+      "time_zone": "Santiago",
+      "geo_enabled": false,
+      "verified": true,
+      "statuses_count": 105923,
+      "lang": "es",
+      "contributors_enabled": false,
+      "is_translator": false,
+      "is_translation_enabled": false,
+      "profile_background_color": "709397",
+      "profile_background_image_url": "http://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_image_url_https": "https://pbs.twimg.com/profile_background_images/378800000182278444/lAxebnse.jpeg",
+      "profile_background_tile": true,
+      "profile_image_url": "http://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/723815070032101376/4DFLe987_normal.jpg",
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/150431827/1457992991",
+      "profile_link_color": "9266CC",
+      "profile_sidebar_border_color": "FFFFFF",
+      "profile_sidebar_fill_color": "DDEEF6",
+      "profile_text_color": "333333",
+      "profile_use_background_image": true,
+      "has_extended_profile": true,
+      "default_profile": false,
+      "default_profile_image": false,
+      "following": null,
+      "follow_request_sent": null,
+      "notifications": null
+    },
+    "geo": null,
+    "coordinates": null,
+    "place": null,
+    "contributors": null,
+    "is_quote_status": false,
+    "retweet_count": 1,
+    "favorite_count": 1,
+    "favorited": false,
+    "retweeted": false,
+    "lang": "es"
+  }
+]

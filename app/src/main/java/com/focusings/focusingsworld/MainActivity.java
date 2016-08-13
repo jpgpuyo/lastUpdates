@@ -32,6 +32,7 @@ import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 
 import com.focusings.focusingsworld.TwitterParser.AsyncTwitterParser;
+import com.focusings.focusingsworld.TwitterParser.MockAsyncTwitterParser;
 import com.focusings.focusingsworld.YoutubeParser.MockAsyncYoutubeParser;
 import com.focusings.focusingsworld.notificationManagement.AsyncNotificationResponse;
 import com.focusings.focusingsworld.notificationManagement.CheckNewUpdatesService;
@@ -346,7 +347,7 @@ public class MainActivity extends FragmentActivity implements
 			if (currentTab==Integer.parseInt(properties.getProperty("number_of_tabs"))+1){
 				rootView = inflater.inflate(R.layout.twitter_tab, container, false);
 				//I get all data calling services from Twitter
-				new AsyncTwitterParser((MainActivity)this.getActivity()).execute("false");
+				new MockAsyncTwitterParser((MainActivity)this.getActivity()).execute("false");
 			}
 			
 			//Case Shop tab
