@@ -1,4 +1,4 @@
-package com.vogella.android.data;
+package com.focusings.focusingsworld.data;
 
 import org.junit.Test;
 
