@@ -27,13 +27,13 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     @Inject
     MainChannelPresenter mainChannelPresenter;
 
-    @InjectView(R.id.fragment_list_rv)
+    @InjectView(R.id.rv_youtube_videos)
     RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment, container, false);
+        View view = inflater.inflate(R.layout.main_channel_fragment, container, false);
         ButterKnife.inject(this, view);
         setupRecyclerView();
         return view;
