@@ -42,11 +42,17 @@ public class JobExecutor implements ThreadExecutor {
 
     private final ThreadFactory threadFactory;
 
+    private static JobExecutor INSTANCE = new JobExecutor();
+
     public JobExecutor() {
         this.workQueue = new LinkedBlockingQueue<>();
         this.threadFactory = new JobThreadFactory();
         this.threadPoolExecutor = new ThreadPoolExecutor(INITIAL_POOL_SIZE, MAX_POOL_SIZE,
                 KEEP_ALIVE_TIME, KEEP_ALIVE_TIME_UNIT, this.workQueue, this.threadFactory);
+    }
+
+    public static JobExecutor getInstance() {
+        return INSTANCE;
     }
 
     @Override public void execute(Runnable runnable) {
