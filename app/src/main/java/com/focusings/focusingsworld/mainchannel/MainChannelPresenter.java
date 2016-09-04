@@ -1,6 +1,6 @@
 package com.focusings.focusingsworld.mainchannel;
 
-import com.focusings.focusingsworld.bo.ImageAndText;
+import com.focusings.focusingsworld.bo.YoutubeVideo;
 import com.focusings.focusingsworld.interactor.DefaultSubscriber;
 import com.focusings.focusingsworld.interactor.UseCase;
 import com.focusings.focusingsworld.mainchannel.mapper.YoutubeVideoModelDataMapper;
@@ -25,7 +25,7 @@ public class MainChannelPresenter {
         getYoutubeVideosFromChannelUseCase.execute(new GetYoutubeVideosFromChannelSubscriber());
     }
 
-    private final class GetYoutubeVideosFromChannelSubscriber extends DefaultSubscriber<List<ImageAndText>> {
+    private final class GetYoutubeVideosFromChannelSubscriber extends DefaultSubscriber<List<YoutubeVideo>> {
 
         @Override
         public void onCompleted() {
@@ -38,7 +38,7 @@ public class MainChannelPresenter {
         }
 
         @Override
-        public void onNext(List<ImageAndText> youtubeVideoCollection) {
+        public void onNext(List<YoutubeVideo> youtubeVideoCollection) {
             super.onNext(youtubeVideoCollection);
             List<YoutubeVideoModel> youtubeVideoModelCollection = new YoutubeVideoModelDataMapper().transform(youtubeVideoCollection);
             mainChannelView.renderYoutubeVideoList(youtubeVideoModelCollection);
