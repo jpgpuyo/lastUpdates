@@ -13,7 +13,7 @@ public class GetYoutubeVideosFromChannelUseCase extends UseCase {
 
     private final YoutubeRepository youtubeRepository;
 
-    protected GetYoutubeVideosFromChannelUseCase(ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread, YoutubeRepository youtubeRepository) {
+    public GetYoutubeVideosFromChannelUseCase(ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread, YoutubeRepository youtubeRepository) {
         super(threadExecutor, postExecutionThread);
         this.youtubeRepository = youtubeRepository;
     }

@@ -1,6 +1,7 @@
 package com.focusings.focusingsworld.mainchannel;
 
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,36 +10,65 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
+import com.focusings.focusingsworld.UIThread;
+import com.focusings.focusingsworld.executor.JobExecutor;
+import com.focusings.focusingsworld.executor.PostExecutionThread;
+import com.focusings.focusingsworld.executor.ThreadExecutor;
+import com.focusings.focusingsworld.interactor.GetYoutubeVideosFromChannelUseCase;
+import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
+import com.focusings.focusingsworld.repository.YoutubeRepository;
+import com.focusings.focusingsworld.repository.YoutubeRepositoryImpl;
 
-import java.util.*;
+import java.util.List;
 
-public class MainChannelFragment extends Fragment {
+import butterknife.ButterKnife;
+import butterknife.InjectView;
 
-    private MainChannelAdapter mAdapter;
+public class MainChannelFragment extends Fragment implements MainChannelView{
 
-    private String mItemData = "Lorem Ipsum is simply dummy text of the printing and "
-            + "typesetting industry Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+    private MainChannelAdapter mainChannelAdapter;
+    private MainChannelPresenter mainChannelPresenter;
+
+    @InjectView(R.id.fragment_list_rv)
+    RecyclerView recyclerView;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment, container, false);
+        ButterKnife.inject(this, view);
+        setupRecyclerView();
+        return view;
+    }
 
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(
-                R.id.fragment_list_rv);
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initializePresenter();
+        mainChannelPresenter.getLastVideosFromYoutubeChannel();
+    }
 
+    private void setupRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setHasFixedSize(true);
 
-        String[] listItems = mItemData.split(" ");
+        mainChannelAdapter = new MainChannelAdapter();
+        recyclerView.setAdapter(mainChannelAdapter);
+    }
 
-        List<String> list = new ArrayList<String>();
-        Collections.addAll(list, listItems);
+    private void initializePresenter() {
+        ThreadExecutor threadExecutor = JobExecutor.getInstance();
+        PostExecutionThread postExecutionThread = UIThread.getInstance();
+        YoutubeRepository youtubeRepository = new YoutubeRepositoryImpl();
+        GetYoutubeVideosFromChannelUseCase getYoutubeVideosFromChannelUseCase = new GetYoutubeVideosFromChannelUseCase(threadExecutor,postExecutionThread,youtubeRepository);
 
-        mAdapter = new MainChannelAdapter(list);
-        recyclerView.setAdapter(mAdapter);
+        mainChannelPresenter = new MainChannelPresenter(getYoutubeVideosFromChannelUseCase);
+        mainChannelPresenter.setView(this);
+    }
 
-        return view;
+    @Override
+    public void renderYoutubeVideoList(List<YoutubeVideoModel> youtubeVideoModelCollection) {
+        mainChannelAdapter.setYoutubeVideoCollection(youtubeVideoModelCollection);
     }
 }
