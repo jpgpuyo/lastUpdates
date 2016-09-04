@@ -2,7 +2,6 @@ package com.focusings.focusingsworld.mainchannel;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -10,24 +9,23 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.UIThread;
-import com.focusings.focusingsworld.executor.JobExecutor;
-import com.focusings.focusingsworld.executor.PostExecutionThread;
-import com.focusings.focusingsworld.executor.ThreadExecutor;
-import com.focusings.focusingsworld.interactor.GetYoutubeVideosFromChannelUseCase;
+import com.focusings.focusingsworld.dagger.peractivity.components.ActivityComponent;
+import com.focusings.focusingsworld.BaseFragment;
 import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
-import com.focusings.focusingsworld.repository.YoutubeRepository;
-import com.focusings.focusingsworld.repository.YoutubeRepositoryImpl;
 
 import java.util.List;
+
+import javax.inject.Inject;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainChannelFragment extends Fragment implements MainChannelView{
+public class MainChannelFragment extends BaseFragment implements MainChannelView{
 
     private MainChannelAdapter mainChannelAdapter;
-    private MainChannelPresenter mainChannelPresenter;
+
+    @Inject
+    MainChannelPresenter mainChannelPresenter;
 
     @InjectView(R.id.fragment_list_rv)
     RecyclerView recyclerView;
@@ -41,13 +39,6 @@ public class MainChannelFragment extends Fragment implements MainChannelView{
         return view;
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        initializePresenter();
-        mainChannelPresenter.getLastVideosFromYoutubeChannel();
-    }
-
     private void setupRecyclerView() {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -57,13 +48,19 @@ public class MainChannelFragment extends Fragment implements MainChannelView{
         recyclerView.setAdapter(mainChannelAdapter);
     }
 
-    private void initializePresenter() {
-        ThreadExecutor threadExecutor = JobExecutor.getInstance();
-        PostExecutionThread postExecutionThread = UIThread.getInstance();
-        YoutubeRepository youtubeRepository = new YoutubeRepositoryImpl();
-        GetYoutubeVideosFromChannelUseCase getYoutubeVideosFromChannelUseCase = new GetYoutubeVideosFromChannelUseCase(threadExecutor,postExecutionThread,youtubeRepository);
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        initializePresenter();
+        mainChannelPresenter.getLastVideosFromYoutubeChannel();
+    }
 
-        mainChannelPresenter = new MainChannelPresenter(getYoutubeVideosFromChannelUseCase);
+    @Override
+    protected void initializeInjector() {
+        this.getComponent(ActivityComponent.class).inject(this);
+    }
+
+    private void initializePresenter() {
         mainChannelPresenter.setView(this);
     }
 

@@ -9,9 +9,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
+import com.focusings.focusingsworld.dagger.HasComponent;
+import com.focusings.focusingsworld.dagger.peractivity.components.ActivityComponent;
+import com.focusings.focusingsworld.dagger.peractivity.components.DaggerActivityComponent;
 import com.focusings.focusingsworld.mainchannel.MainChannelFragment;
 
 import java.util.ArrayList;
@@ -20,7 +22,7 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends BaseActivity implements HasComponent<ActivityComponent>{
 
     @InjectView(R.id.collapse_toolbar)
     CollapsingToolbarLayout collapsingToolbar;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity{
     TabLayout tabLayout;
     @InjectView(R.id.viewpager)
     ViewPager viewPager;
+    private ActivityComponent activityComponent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -43,6 +46,18 @@ public class MainActivity extends AppCompatActivity{
         setupCollapsingToolbar();
 
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    @Override
+    protected void initializeInjector() {
+        this.activityComponent = DaggerActivityComponent.builder()
+                .applicationComponent(getApplicationComponent())
+                .activityModule(getActivityModule()).build();
+    }
+
+    @Override
+    public ActivityComponent getComponent() {
+        return activityComponent;
     }
 
     private void setupToolbar() {

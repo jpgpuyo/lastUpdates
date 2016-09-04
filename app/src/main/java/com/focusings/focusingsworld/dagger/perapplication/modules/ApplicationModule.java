@@ -33,12 +33,12 @@ public class ApplicationModule {
     @Provides
     @Singleton
     ThreadExecutor provideThreadExecutor() {
-        return JobExecutor.getInstance();
+        return new JobExecutor();
     }
 
     @Provides
     @Singleton
     PostExecutionThread providePostExecutionThread() {
-        return UIThread.getInstance();
+        return new UIThread();
     }
 }

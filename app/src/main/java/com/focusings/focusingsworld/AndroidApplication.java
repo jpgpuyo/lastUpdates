@@ -7,9 +7,6 @@ import com.focusings.focusingsworld.dagger.perapplication.components.DaggerAppli
 import com.focusings.focusingsworld.dagger.perapplication.modules.ApplicationModule;
 import com.focusings.focusingsworld.dagger.perapplication.modules.RepositoryModule;
 
-/**
- * Created by usuario on 04/09/2016.
- */
 public class AndroidApplication extends Application {
 
     private ApplicationComponent applicationComponent;
@@ -29,6 +26,5 @@ public class AndroidApplication extends Application {
                 .applicationModule(new ApplicationModule(this))
                 .repositoryModule(new RepositoryModule(this))
                 .build();
-        applicationComponent.inject(this);
     }
 }

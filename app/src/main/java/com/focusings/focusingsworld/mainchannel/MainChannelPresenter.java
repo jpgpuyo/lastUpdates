@@ -1,6 +1,7 @@
 package com.focusings.focusingsworld.mainchannel;
 
 import com.focusings.focusingsworld.bo.YoutubeVideo;
+import com.focusings.focusingsworld.dagger.PerActivity;
 import com.focusings.focusingsworld.interactor.DefaultSubscriber;
 import com.focusings.focusingsworld.interactor.UseCase;
 import com.focusings.focusingsworld.mainchannel.mapper.YoutubeVideoModelDataMapper;
@@ -8,11 +9,15 @@ import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
+@PerActivity
 public class MainChannelPresenter {
 
     private final UseCase getYoutubeVideosFromChannelUseCase;
     private MainChannelView mainChannelView;
 
+    @Inject
     public MainChannelPresenter(UseCase getYoutubeVideosFromChannelUseCase) {
         this.getYoutubeVideosFromChannelUseCase = getYoutubeVideosFromChannelUseCase;
     }
