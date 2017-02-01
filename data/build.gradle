@@ -1,11 +1,21 @@
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath "com.fernandocejas.frodo:frodo-plugin:0.8.2"
+    }
+}
+
 apply plugin: 'com.android.library'
+apply plugin: 'com.fernandocejas.frodo'
 
 android {
     compileSdkVersion 17
     buildToolsVersion "23.0.3"
 
     defaultConfig {
-        minSdkVersion 11
+        minSdkVersion 14
         targetSdkVersion 18
     }
 

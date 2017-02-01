@@ -1,5 +1,8 @@
 package com.focusings.focusingsworld.repository;
 
+import android.util.Log;
+
+import com.fernandocejas.frodo.annotation.RxLogObservable;
 import com.focusings.focusingsworld.bo.YoutubeVideo;
 
 import java.util.ArrayList;
@@ -12,6 +15,7 @@ import rx.Observable;
  */
 public class YoutubeRepositoryImpl implements YoutubeRepository {
 
+    @RxLogObservable(RxLogObservable.Scope.SCHEDULERS)
     @Override
     public Observable<List<YoutubeVideo>> getLastVideosFromChannel() {
         List<YoutubeVideo> videosList = new ArrayList<YoutubeVideo>();

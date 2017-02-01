@@ -1,5 +1,8 @@
 package com.focusings.focusingsworld.mainchannel;
 
+import android.util.Log;
+
+import com.fernandocejas.frodo.annotation.RxLogSubscriber;
 import com.focusings.focusingsworld.bo.YoutubeVideo;
 import com.focusings.focusingsworld.dagger.PerActivity;
 import com.focusings.focusingsworld.interactor.DefaultSubscriber;
@@ -30,6 +33,7 @@ public class MainChannelPresenter {
         getYoutubeVideosFromChannelUseCase.execute(new GetYoutubeVideosFromChannelSubscriber());
     }
 
+    @RxLogSubscriber
     private final class GetYoutubeVideosFromChannelSubscriber extends DefaultSubscriber<List<YoutubeVideo>> {
 
         @Override
