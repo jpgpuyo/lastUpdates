@@ -1,0 +1,6 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.focusings.focusingsworld.data">
+
+    <application android:allowBackup="true" />
+
+</manifest>
