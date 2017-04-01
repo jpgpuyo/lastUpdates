@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.mainchannel;
+package com.focusings.focusingsworld.mainchannel.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -10,7 +10,8 @@ import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.dagger.peractivity.components.ActivityComponent;
-import com.focusings.focusingsworld.BaseFragment;
+import com.focusings.focusingsworld.base.BaseFragment;
+import com.focusings.focusingsworld.mainchannel.presenter.MainChannelPresenter;
 import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
 
 import java.util.List;
@@ -20,7 +21,7 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainChannelFragment extends BaseFragment implements MainChannelView{
+public class MainChannelFragment extends BaseFragment implements MainChannelView {
 
     private MainChannelAdapter mainChannelAdapter;
 

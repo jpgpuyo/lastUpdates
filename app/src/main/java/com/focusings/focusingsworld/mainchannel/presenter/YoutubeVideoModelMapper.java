@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.mainchannel.mapper;
+package com.focusings.focusingsworld.mainchannel.presenter;
 
 import com.focusings.focusingsworld.bo.YoutubeVideo;
 import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
@@ -6,7 +6,7 @@ import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class YoutubeVideoModelDataMapper {
+public class YoutubeVideoModelMapper {
 
     public List<YoutubeVideoModel> transform(List<YoutubeVideo> youtubeVideosCollection){
         List<YoutubeVideoModel> youtubeVideoModelsCollection = new ArrayList<>();

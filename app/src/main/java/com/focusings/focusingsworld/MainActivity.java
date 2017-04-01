@@ -11,10 +11,11 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
+import com.focusings.focusingsworld.base.BaseActivity;
 import com.focusings.focusingsworld.dagger.HasComponent;
 import com.focusings.focusingsworld.dagger.peractivity.components.ActivityComponent;
 import com.focusings.focusingsworld.dagger.peractivity.components.DaggerActivityComponent;
-import com.focusings.focusingsworld.mainchannel.MainChannelFragment;
+import com.focusings.focusingsworld.mainchannel.view.MainChannelFragment;
 
 import java.util.ArrayList;
 import java.util.List;

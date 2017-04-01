@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.mainchannel;
+package com.focusings.focusingsworld.mainchannel.view;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
