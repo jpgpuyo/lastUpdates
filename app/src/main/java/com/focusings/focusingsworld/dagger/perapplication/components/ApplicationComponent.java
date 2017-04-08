@@ -5,6 +5,7 @@ import com.focusings.focusingsworld.dagger.perapplication.modules.ApplicationMod
 import com.focusings.focusingsworld.executor.PostExecutionThread;
 import com.focusings.focusingsworld.executor.ThreadExecutor;
 import com.focusings.focusingsworld.repository.YoutubeRepository;
+import com.focusings.focusingsworld.repository.youtube.remote.YoutubeRemoteDataStore;
 
 import javax.inject.Singleton;
 
@@ -17,6 +18,7 @@ public interface ApplicationComponent {
     PostExecutionThread postExecutionThread();
 
     YoutubeRepository youtubeRepository();
+    YoutubeRemoteDataStore youtubeRemoteDataStore();
 
     void inject(AndroidApplication androidApplication);
 }

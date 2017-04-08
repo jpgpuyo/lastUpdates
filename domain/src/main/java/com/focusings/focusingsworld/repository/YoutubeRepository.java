@@ -10,5 +10,5 @@ import rx.Observable;
  * Created by usuario on 14/08/2016.
  */
 public interface YoutubeRepository {
-    Observable<List<YoutubeVideo>> getLastVideosFromChannel();
+    Observable<List<YoutubeVideo>> getRecentVideosFromChannel(String channelId);
 }

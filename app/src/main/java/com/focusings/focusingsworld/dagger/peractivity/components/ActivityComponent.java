@@ -1,5 +1,6 @@
 package com.focusings.focusingsworld.dagger.peractivity.components;
 
+import com.focusings.focusingsworld.MainActivity;
 import com.focusings.focusingsworld.dagger.PerActivity;
 import com.focusings.focusingsworld.dagger.peractivity.modules.ActivityModule;
 import com.focusings.focusingsworld.dagger.perapplication.components.ApplicationComponent;

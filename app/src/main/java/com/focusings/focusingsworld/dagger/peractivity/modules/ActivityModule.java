@@ -13,7 +13,7 @@ import dagger.Provides;
  * This module is going to be added to the graph generated for every activity while the activity
  * creation lifecycle.
  */
-@Module(includes = {ActivityUseCasesModule.class})
+@Module(includes = {MainChannelModule.class})
 public class ActivityModule {
 
     private final Activity activity;

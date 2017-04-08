@@ -68,5 +68,6 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     @Override
     public void renderYoutubeVideoList(List<YoutubeVideoModel> youtubeVideoModelCollection) {
         mainChannelAdapter.setYoutubeVideoCollection(youtubeVideoModelCollection);
+        mainChannelAdapter.notifyDataSetChanged();
     }
 }

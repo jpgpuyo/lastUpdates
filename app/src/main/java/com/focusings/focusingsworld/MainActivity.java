@@ -15,6 +15,7 @@ import com.focusings.focusingsworld.base.BaseActivity;
 import com.focusings.focusingsworld.dagger.HasComponent;
 import com.focusings.focusingsworld.dagger.peractivity.components.ActivityComponent;
 import com.focusings.focusingsworld.dagger.peractivity.components.DaggerActivityComponent;
+import com.focusings.focusingsworld.dagger.peractivity.modules.MainChannelModule;
 import com.focusings.focusingsworld.mainchannel.view.MainChannelFragment;
 
 import java.util.ArrayList;
@@ -53,7 +54,9 @@ public class MainActivity extends BaseActivity implements HasComponent<ActivityC
     protected void initializeInjector() {
         this.activityComponent = DaggerActivityComponent.builder()
                 .applicationComponent(getApplicationComponent())
-                .activityModule(getActivityModule()).build();
+                .activityModule(getActivityModule())
+                .mainChannelModule(new MainChannelModule())
+                .build();
     }
 
     @Override

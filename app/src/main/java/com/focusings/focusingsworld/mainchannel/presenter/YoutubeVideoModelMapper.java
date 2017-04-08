@@ -1,5 +1,6 @@
 package com.focusings.focusingsworld.mainchannel.presenter;
 
+import com.focusings.focusingsworld.bo.Thumbnail;
 import com.focusings.focusingsworld.bo.YoutubeVideo;
 import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
 
@@ -18,11 +19,14 @@ public class YoutubeVideoModelMapper {
 
     private YoutubeVideoModel transform(YoutubeVideo youtubeVideo) {
         if (youtubeVideo == null) {
-            throw new IllegalArgumentException("Cannot transform a null value");
+            throw new IllegalArgumentException("Cannot parse a null value");
         }
+
+        Thumbnail thumbnail = youtubeVideo.getThumbnails().getDefaultThumbnail();
+
         YoutubeVideoModel youtubeVideoModel = new YoutubeVideoModel();
         youtubeVideoModel.setTitle(youtubeVideo.getTitle());
-        youtubeVideoModel.setImage(youtubeVideo.getImage());
+        youtubeVideoModel.setImage(thumbnail.getUrl());
         youtubeVideoModel.setUrl(youtubeVideo.getUrl());
        return youtubeVideoModel;
     }
