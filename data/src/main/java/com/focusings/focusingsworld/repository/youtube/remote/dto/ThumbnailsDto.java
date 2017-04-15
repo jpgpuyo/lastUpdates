@@ -14,7 +14,7 @@ public class ThumbnailsDto {
     @SerializedName("medium")
     private ThumbnailDto mediumThumbnail;
 
-    @SerializedName("highThumbnail")
+    @SerializedName("high")
     private ThumbnailDto highThumbnail;
 
     public ThumbnailDto getDefaultThumbnail() {
