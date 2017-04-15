@@ -13,7 +13,7 @@
  *   limitations under the License.
  */
 
-package com.focusings.focusingsworld.data.unit.youtube.infrastructure;
+package unit.youtube.infrastructure;
 
 import org.hamcrest.core.StringContains;
 import org.junit.After;
@@ -79,7 +79,7 @@ public class ApiClientTest {
         }
     }
 
-    protected String getBaseEndpoint() {
+    public String getBaseEndpoint() {
         return server.url("/").toString();
     }
 }
