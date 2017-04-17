@@ -56,18 +56,18 @@ public class RecentVideosFromChannelTest extends ApiClientTest {
                 youtubeRemoteDataStore.getRecentVideosFromChannel(ANY_CHANNEL_ID)
                         .toBlocking().first();
 
-        assertFirstVideoisProperlyTransformedToBo(youtubeVideoList);
+        assertFirstVideoIsProperlyTransformedToBo(youtubeVideoList);
     }
 
-    private void assertFirstVideoisProperlyTransformedToBo(List<YoutubeVideo> youtubeVideoList) {
+    private void assertFirstVideoIsProperlyTransformedToBo(List<YoutubeVideo> youtubeVideoList) {
         YoutubeVideo youtubeVideo = youtubeVideoList.get(0);
         assertEquals("Es hora de hablar claro", youtubeVideo.getTitle());
         assertEquals("https://www.youtube.com/watch?v=yA2aXLboWBM", youtubeVideo.getUrl());
+        assertEquals("https://i.ytimg.com/vi/yA2aXLboWBM/mqdefault.jpg", youtubeVideo.getImage());
 
         Thumbnail defaultThumbnail = youtubeVideo.getThumbnails().getDefaultThumbnail();
         Thumbnail mediumThumbnail = youtubeVideo.getThumbnails().getMediumThumbnail();
         Thumbnail highThumbnail = youtubeVideo.getThumbnails().getHighThumbnail();
-
 
         assertEquals("https://i.ytimg.com/vi/yA2aXLboWBM/default.jpg", defaultThumbnail.getUrl());
         assertEquals(120, defaultThumbnail.getWidth());

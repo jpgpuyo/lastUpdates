@@ -45,6 +45,7 @@ public final class YoutubeDataParser {
             youtubeVideo = new YoutubeVideo();
             youtubeVideo.setUrl(parseUrl(youtubeVideoDto));
             youtubeVideo.setTitle(parseTitle(youtubeVideoDto));
+            youtubeVideo.setImage(parseImage(youtubeVideoDto));
             youtubeVideo.setThumbnails(parseThumbnails(youtubeVideoDto));
         }
         return youtubeVideo;
@@ -70,6 +71,21 @@ public final class YoutubeDataParser {
             title.append(snippetDto.getTitle());
         }
         return title.toString();
+    }
+
+    private static String parseImage(YoutubeVideoDto youtubeVideoDto) {
+        StringBuilder image = new StringBuilder();
+        SnippetDto snippetDto = youtubeVideoDto.getSnippet();
+        if (snippetDto != null) {
+            ThumbnailsDto thumbnailsDto = snippetDto.getThumbnails();
+            if (thumbnailsDto != null) {
+                ThumbnailDto mediumThumbnail = thumbnailsDto.getMediumThumbnail();
+                if (mediumThumbnail != null) {
+                    image.append(mediumThumbnail.getUrl());
+                }
+            }
+        }
+        return image.toString();
     }
 
     private static Thumbnails parseThumbnails(YoutubeVideoDto youtubeVideoDto) {

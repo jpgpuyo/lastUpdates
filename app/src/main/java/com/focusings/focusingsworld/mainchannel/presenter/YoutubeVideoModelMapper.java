@@ -26,7 +26,7 @@ public class YoutubeVideoModelMapper {
 
         YoutubeVideoModel youtubeVideoModel = new YoutubeVideoModel();
         youtubeVideoModel.setTitle(youtubeVideo.getTitle());
-        youtubeVideoModel.setImage(thumbnail.getUrl());
+        youtubeVideoModel.setImage(youtubeVideo.getImage());
         youtubeVideoModel.setUrl(youtubeVideo.getUrl());
        return youtubeVideoModel;
     }
