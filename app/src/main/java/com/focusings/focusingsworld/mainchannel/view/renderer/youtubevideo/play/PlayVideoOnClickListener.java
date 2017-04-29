@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.mainchannel.view.play;
+package com.focusings.focusingsworld.mainchannel.view.renderer.youtubevideo.play;
 
 import android.content.Intent;
 import android.net.Uri;

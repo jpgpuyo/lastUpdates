@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.mainchannel.view.share;
+package com.focusings.focusingsworld.mainchannel.view.renderer.youtubevideo.share;
 
 import android.content.Context;
 import android.content.Intent;

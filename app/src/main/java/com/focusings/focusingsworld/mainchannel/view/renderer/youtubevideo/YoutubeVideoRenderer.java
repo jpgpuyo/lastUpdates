@@ -10,13 +10,13 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
-import com.focusings.focusingsworld.mainchannel.view.play.PlayVideoOnClickListener;
-import com.focusings.focusingsworld.mainchannel.view.share.ShareVideoOnItemClickListener;
+import com.focusings.focusingsworld.mainchannel.view.renderer.youtubevideo.play.PlayVideoOnClickListener;
+import com.focusings.focusingsworld.mainchannel.view.renderer.youtubevideo.share.ShareVideoOnItemClickListener;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class YoutubeVideoViewHolder extends RecyclerView.ViewHolder {
+public class YoutubeVideoRenderer extends RecyclerView.ViewHolder {
 
     private final View view;
 
@@ -33,7 +33,7 @@ public class YoutubeVideoViewHolder extends RecyclerView.ViewHolder {
         return view;
     }
 
-    public YoutubeVideoViewHolder(@NonNull View view) {
+    public YoutubeVideoRenderer(@NonNull View view) {
         super(view);
         this.view = view;
         ButterKnife.inject(this, view);
