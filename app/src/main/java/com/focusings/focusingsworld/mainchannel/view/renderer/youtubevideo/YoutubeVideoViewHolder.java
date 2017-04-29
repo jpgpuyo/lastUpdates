@@ -10,6 +10,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
+import com.focusings.focusingsworld.mainchannel.view.play.PlayVideoOnClickListener;
 import com.focusings.focusingsworld.mainchannel.view.share.ShareVideoOnItemClickListener;
 
 import butterknife.ButterKnife;
@@ -17,8 +18,7 @@ import butterknife.InjectView;
 
 public class YoutubeVideoViewHolder extends RecyclerView.ViewHolder {
 
-    private final View rootView;
-    private final OnViewHolderClickListener listener;
+    private final View view;
 
     @InjectView(R.id.tvTitle)
     TextView title;
@@ -30,25 +30,13 @@ public class YoutubeVideoViewHolder extends RecyclerView.ViewHolder {
     Button share;
 
     protected View getView() {
-        return rootView;
+        return view;
     }
 
-    public YoutubeVideoViewHolder(@NonNull View view, @NonNull OnViewHolderClickListener listener) {
+    public YoutubeVideoViewHolder(@NonNull View view) {
         super(view);
-        this.rootView = view;
-        this.listener = listener;
+        this.view = view;
         ButterKnife.inject(this, view);
-        initializeListeners();
-    }
-
-    private void initializeListeners() {
-        rootView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                int position = getAdapterPosition();
-                listener.onViewHolderClick(YoutubeVideoViewHolder.this, position);
-            }
-        });
     }
 
     public void render(@NonNull YoutubeVideoModel youtubeVideoModel) {
@@ -65,10 +53,15 @@ public class YoutubeVideoViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void setListeners(@NonNull YoutubeVideoModel youtubeVideoModel) {
+        setPlayVideoListener(youtubeVideoModel);
+        setShareVideoListener(youtubeVideoModel);
+    }
+
+    private void setShareVideoListener(@NonNull YoutubeVideoModel youtubeVideoModel) {
         share.setOnClickListener(new ShareVideoOnItemClickListener(youtubeVideoModel.getTitle(), youtubeVideoModel.getUrl()));
     }
 
-    public interface OnViewHolderClickListener {
-        void onViewHolderClick(RecyclerView.ViewHolder holder, int position);
+    private void setPlayVideoListener(@NonNull YoutubeVideoModel youtubeVideoModel) {
+        view.setOnClickListener(new PlayVideoOnClickListener(youtubeVideoModel.getUrl()));
     }
 }

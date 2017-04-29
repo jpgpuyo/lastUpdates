@@ -1,7 +1,6 @@
 package com.focusings.focusingsworld.mainchannel.view;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -10,10 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.dagger.peractivity.components.ActivityComponent;
 import com.focusings.focusingsworld.base.BaseFragment;
-import com.focusings.focusingsworld.mainchannel.presenter.MainChannelPresenter;
+import com.focusings.focusingsworld.dagger.peractivity.components.ActivityComponent;
 import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
+import com.focusings.focusingsworld.mainchannel.presenter.MainChannelPresenter;
 
 import java.util.List;
 
@@ -22,7 +21,7 @@ import javax.inject.Inject;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainChannelFragment extends BaseFragment implements MainChannelView, MainChannelAdapter.Listener {
+public class MainChannelFragment extends BaseFragment implements MainChannelView {
 
     private MainChannelAdapter mainChannelAdapter;
 
@@ -47,7 +46,6 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
         recyclerView.setHasFixedSize(true);
 
         mainChannelAdapter = new MainChannelAdapter();
-        mainChannelAdapter.setListener(this);
         recyclerView.setAdapter(mainChannelAdapter);
     }
 
@@ -71,10 +69,5 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     public void renderYoutubeVideoList(List<YoutubeVideoModel> youtubeVideoModelCollection) {
         mainChannelAdapter.clear();
         mainChannelAdapter.addAll(youtubeVideoModelCollection);
-    }
-
-    @Override
-    public void onVideoClicked(@NonNull YoutubeVideoModel youtubeVideoModel) {
-
     }
 }
