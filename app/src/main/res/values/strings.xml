@@ -2,5 +2,10 @@
 <resources>
 	<string name="app_name">Focusings World</string>
 	<string name="vlogsFragmentTitle">VLOGS</string>
+
+	<!-- main channel fragment -->
 	<string name="mainChannelFragmentTitle">VLOGS</string>
+    <string name="share">share</string>
+	<string name="shareVideoRecommendation">I recommend you to watch \"%1$s\" - %2$s</string>
+	<string name="shareVideoVia">Share this video via</string>
 </resources>

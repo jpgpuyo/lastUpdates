@@ -1,26 +1,19 @@
-package com.focusings.focusingsworld.mainchannel;
-
-import android.util.Log;
+package com.focusings.focusingsworld.mainchannel.presenter;
 
 import com.fernandocejas.frodo.annotation.RxLogSubscriber;
 import com.focusings.focusingsworld.bo.YoutubeVideo;
-import com.focusings.focusingsworld.dagger.PerActivity;
 import com.focusings.focusingsworld.interactor.DefaultSubscriber;
 import com.focusings.focusingsworld.interactor.UseCase;
-import com.focusings.focusingsworld.mainchannel.mapper.YoutubeVideoModelDataMapper;
 import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
+import com.focusings.focusingsworld.mainchannel.view.MainChannelView;
 
 import java.util.List;
 
-import javax.inject.Inject;
-
-@PerActivity
 public class MainChannelPresenter {
 
     private final UseCase getYoutubeVideosFromChannelUseCase;
     private MainChannelView mainChannelView;
 
-    @Inject
     public MainChannelPresenter(UseCase getYoutubeVideosFromChannelUseCase) {
         this.getYoutubeVideosFromChannelUseCase = getYoutubeVideosFromChannelUseCase;
     }
@@ -49,7 +42,7 @@ public class MainChannelPresenter {
         @Override
         public void onNext(List<YoutubeVideo> youtubeVideoCollection) {
             super.onNext(youtubeVideoCollection);
-            List<YoutubeVideoModel> youtubeVideoModelCollection = new YoutubeVideoModelDataMapper().transform(youtubeVideoCollection);
+            List<YoutubeVideoModel> youtubeVideoModelCollection = new YoutubeVideoModelMapper().transform(youtubeVideoCollection);
             mainChannelView.renderYoutubeVideoList(youtubeVideoModelCollection);
         }
     }

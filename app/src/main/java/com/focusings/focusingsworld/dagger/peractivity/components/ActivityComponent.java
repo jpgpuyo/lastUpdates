@@ -1,9 +1,10 @@
 package com.focusings.focusingsworld.dagger.peractivity.components;
 
+import com.focusings.focusingsworld.MainActivity;
 import com.focusings.focusingsworld.dagger.PerActivity;
 import com.focusings.focusingsworld.dagger.peractivity.modules.ActivityModule;
 import com.focusings.focusingsworld.dagger.perapplication.components.ApplicationComponent;
-import com.focusings.focusingsworld.mainchannel.MainChannelFragment;
+import com.focusings.focusingsworld.mainchannel.view.MainChannelFragment;
 
 import dagger.Component;
 

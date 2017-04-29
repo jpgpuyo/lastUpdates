@@ -5,7 +5,7 @@ import android.app.Application;
 import com.focusings.focusingsworld.dagger.perapplication.components.ApplicationComponent;
 import com.focusings.focusingsworld.dagger.perapplication.components.DaggerApplicationComponent;
 import com.focusings.focusingsworld.dagger.perapplication.modules.ApplicationModule;
-import com.focusings.focusingsworld.dagger.perapplication.modules.RepositoryModule;
+import com.focusings.focusingsworld.dagger.perapplication.modules.YoutubeModule;
 
 public class AndroidApplication extends Application {
 
@@ -24,7 +24,7 @@ public class AndroidApplication extends Application {
     private void initializeInjector() {
         applicationComponent = DaggerApplicationComponent.builder()
                 .applicationModule(new ApplicationModule(this))
-                .repositoryModule(new RepositoryModule(this))
+                .youtubeModule(new YoutubeModule(this))
                 .build();
     }
 }

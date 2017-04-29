@@ -1,9 +1,10 @@
-package com.focusings.focusingsworld;
+package com.focusings.focusingsworld.base;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
+import com.focusings.focusingsworld.AndroidApplication;
 import com.focusings.focusingsworld.dagger.peractivity.modules.ActivityModule;
 import com.focusings.focusingsworld.dagger.perapplication.components.ApplicationComponent;
 
