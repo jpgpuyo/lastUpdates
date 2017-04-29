@@ -50,4 +50,20 @@ public class YoutubeVideo {
     public void setThumbnails(Thumbnails thumbnails) {
         this.thumbnails = thumbnails;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        YoutubeVideo that = (YoutubeVideo) o;
+
+        return url.equals(that.url);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return url.hashCode();
+    }
 }

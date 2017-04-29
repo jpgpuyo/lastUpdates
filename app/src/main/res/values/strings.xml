@@ -2,5 +2,8 @@
 <resources>
 	<string name="app_name">Focusings World</string>
 	<string name="vlogsFragmentTitle">VLOGS</string>
+
+	<!-- main channel fragment -->
 	<string name="mainChannelFragmentTitle">VLOGS</string>
+    <string name="share">share</string>
 </resources>
