@@ -3,12 +3,14 @@ package com.focusings.focusingsworld.mainchannel.view.renderer.youtubevideo;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.mainchannel.model.YoutubeVideoModel;
+import com.focusings.focusingsworld.mainchannel.view.share.ShareVideoOnItemClickListener;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -23,6 +25,9 @@ public class YoutubeVideoViewHolder extends RecyclerView.ViewHolder {
 
     @InjectView(R.id.ivImage)
     ImageView image;
+
+    @InjectView(R.id.share)
+    Button share;
 
     protected View getView() {
         return rootView;
@@ -57,6 +62,10 @@ public class YoutubeVideoViewHolder extends RecyclerView.ViewHolder {
 
     private void renderImage(@NonNull YoutubeVideoModel youtubeVideoModel) {
         Glide.with(image.getContext()).load(youtubeVideoModel.getImage()).into(image);
+    }
+
+    public void setListeners(@NonNull YoutubeVideoModel youtubeVideoModel) {
+        share.setOnClickListener(new ShareVideoOnItemClickListener(youtubeVideoModel.getTitle(), youtubeVideoModel.getUrl()));
     }
 
     public interface OnViewHolderClickListener {

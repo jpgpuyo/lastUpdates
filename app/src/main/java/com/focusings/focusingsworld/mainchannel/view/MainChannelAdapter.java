@@ -47,6 +47,7 @@ public class MainChannelAdapter extends RecyclerView.Adapter<YoutubeVideoViewHol
     public void onBindViewHolder(YoutubeVideoViewHolder youtubeVideoViewHolder, int position) {
         YoutubeVideoModel youtubeVideoModel = items.get(position);
         youtubeVideoViewHolder.render(youtubeVideoModel);
+        youtubeVideoViewHolder.setListeners(youtubeVideoModel);
     }
 
     @Override
