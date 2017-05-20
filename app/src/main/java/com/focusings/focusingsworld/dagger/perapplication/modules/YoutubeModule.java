@@ -4,6 +4,7 @@ import android.content.Context;
 
 import com.focusings.focusingsworld.repository.YoutubeRepository;
 import com.focusings.focusingsworld.repository.YoutubeRepositoryImpl;
+import com.focusings.focusingsworld.repository.youtube.memory.RecentVideosCache;
 import com.focusings.focusingsworld.repository.youtube.remote.YoutubeRemoteDataStore;
 import com.focusings.focusingsworld.repository.youtube.remote.YoutubeService;
 
@@ -24,14 +25,21 @@ public class YoutubeModule {
 
     @Provides
     @Singleton
-    YoutubeRepository provideYoutubeRepository(YoutubeRemoteDataStore youtubeRemoteDataStore){
-        return new YoutubeRepositoryImpl(youtubeRemoteDataStore);
+    YoutubeRepository provideYoutubeRepository(YoutubeRemoteDataStore youtubeRemoteDataStore,
+                                               RecentVideosCache recentVideosCache) {
+        return new YoutubeRepositoryImpl(youtubeRemoteDataStore, recentVideosCache);
     }
 
     @Provides
     @Singleton
-    YoutubeRemoteDataStore provideYoutubeRemoteDataStore(Retrofit retrofit){
+    YoutubeRemoteDataStore provideYoutubeRemoteDataStore(Retrofit retrofit) {
         YoutubeService youtubeService = retrofit.create(YoutubeService.class);
         return new YoutubeRemoteDataStore(youtubeService);
+    }
+
+    @Provides
+    @Singleton
+    RecentVideosCache provideRecentVideosCache() {
+        return new RecentVideosCache();
     }
 }
