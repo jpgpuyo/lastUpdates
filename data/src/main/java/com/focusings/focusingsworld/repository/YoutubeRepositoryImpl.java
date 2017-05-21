@@ -2,7 +2,8 @@ package com.focusings.focusingsworld.repository;
 
 import com.fernandocejas.frodo.annotation.RxLogObservable;
 import com.focusings.focusingsworld.bo.YoutubeVideo;
-import com.focusings.focusingsworld.repository.youtube.local.YoutubeLocalDataStore;
+import com.focusings.focusingsworld.utils.prefs.PrefsCache;
+import com.focusings.focusingsworld.repository.youtube.cache.PrefsCacheFactory;
 import com.focusings.focusingsworld.repository.youtube.remote.YoutubeRemoteDataStore;
 
 import java.util.List;
@@ -17,25 +18,26 @@ public class YoutubeRepositoryImpl implements YoutubeRepository {
 
     private final YoutubeRemoteDataStore youtubeRemoteDataStore;
 
-    private final YoutubeLocalDataStore youtubeLocalDataStore;
+    private final PrefsCacheFactory prefsCacheFactory;
 
     public YoutubeRepositoryImpl(YoutubeRemoteDataStore youtubeRemoteDataStore,
-                                 YoutubeLocalDataStore youtubeLocalDataStore) {
+                                 PrefsCacheFactory prefsCacheFactory) {
         this.youtubeRemoteDataStore = youtubeRemoteDataStore;
-        this.youtubeLocalDataStore = youtubeLocalDataStore;
+        this.prefsCacheFactory = prefsCacheFactory;
     }
 
     @RxLogObservable(RxLogObservable.Scope.SCHEDULERS)
     @Override
     public Observable<List<YoutubeVideo>> getRecentVideosFromChannel(String channelId) {
-        if (!youtubeLocalDataStore.isEmpty()) {
-            return youtubeLocalDataStore.get();
+        final PrefsCache<List<YoutubeVideo>> recentVideosCache = prefsCacheFactory.get(PrefsCacheFactory.RECENT_VIDEOS);
+        if (recentVideosCache.exists()) {
+            return Observable.just(recentVideosCache.get());
         }
         return youtubeRemoteDataStore.getRecentVideosFromChannel(channelId)
                 .doOnNext(new Action1<List<YoutubeVideo>>() {
                     @Override
                     public void call(List<YoutubeVideo> youtubeVideoList) {
-                        youtubeLocalDataStore.put(youtubeVideoList);
+                        recentVideosCache.put(youtubeVideoList);
                     }
                 });
     }
