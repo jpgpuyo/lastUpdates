@@ -2,6 +2,7 @@ package com.focusings.focusingsworld;
 
 import android.app.Application;
 
+import com.facebook.stetho.Stetho;
 import com.focusings.focusingsworld.dagger.perapplication.components.ApplicationComponent;
 import com.focusings.focusingsworld.dagger.perapplication.components.DaggerApplicationComponent;
 import com.focusings.focusingsworld.dagger.perapplication.modules.ApplicationModule;
@@ -19,6 +20,10 @@ public class AndroidApplication extends Application {
     public void onCreate() {
         super.onCreate();
         initializeInjector();
+
+        if (BuildConfig.DEBUG) {
+            Stetho.initializeWithDefaults(this);
+        }
     }
 
     private void initializeInjector() {
