@@ -2,7 +2,7 @@ package com.focusings.focusingsworld.repository;
 
 import com.fernandocejas.frodo.annotation.RxLogObservable;
 import com.focusings.focusingsworld.bo.YoutubeVideo;
-import com.focusings.focusingsworld.repository.youtube.memory.RecentVideosCache;
+import com.focusings.focusingsworld.repository.youtube.local.YoutubeLocalDataStore;
 import com.focusings.focusingsworld.repository.youtube.remote.YoutubeRemoteDataStore;
 
 import java.util.List;
@@ -17,25 +17,25 @@ public class YoutubeRepositoryImpl implements YoutubeRepository {
 
     private final YoutubeRemoteDataStore youtubeRemoteDataStore;
 
-    private final RecentVideosCache recentVideosCache;
+    private final YoutubeLocalDataStore youtubeLocalDataStore;
 
     public YoutubeRepositoryImpl(YoutubeRemoteDataStore youtubeRemoteDataStore,
-                                 RecentVideosCache recentVideosCache) {
+                                 YoutubeLocalDataStore youtubeLocalDataStore) {
         this.youtubeRemoteDataStore = youtubeRemoteDataStore;
-        this.recentVideosCache = recentVideosCache;
+        this.youtubeLocalDataStore = youtubeLocalDataStore;
     }
 
     @RxLogObservable(RxLogObservable.Scope.SCHEDULERS)
     @Override
     public Observable<List<YoutubeVideo>> getRecentVideosFromChannel(String channelId) {
-        if (!recentVideosCache.isEmpty()) {
-            return recentVideosCache.get();
+        if (!youtubeLocalDataStore.isEmpty()) {
+            return youtubeLocalDataStore.get();
         }
         return youtubeRemoteDataStore.getRecentVideosFromChannel(channelId)
                 .doOnNext(new Action1<List<YoutubeVideo>>() {
                     @Override
                     public void call(List<YoutubeVideo> youtubeVideoList) {
-                        recentVideosCache.put(youtubeVideoList);
+                        youtubeLocalDataStore.put(youtubeVideoList);
                     }
                 });
     }

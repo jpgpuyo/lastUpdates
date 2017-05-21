@@ -4,7 +4,8 @@ import android.content.Context;
 
 import com.focusings.focusingsworld.repository.YoutubeRepository;
 import com.focusings.focusingsworld.repository.YoutubeRepositoryImpl;
-import com.focusings.focusingsworld.repository.youtube.memory.RecentVideosCache;
+import com.focusings.focusingsworld.repository.youtube.local.YoutubeLocalDataStore;
+import com.focusings.focusingsworld.repository.youtube.local.YoutubePrefsDataStore;
 import com.focusings.focusingsworld.repository.youtube.remote.YoutubeRemoteDataStore;
 import com.focusings.focusingsworld.repository.youtube.remote.YoutubeService;
 
@@ -14,20 +15,20 @@ import dagger.Module;
 import dagger.Provides;
 import retrofit2.Retrofit;
 
-@Module(includes = {NetworkModule.class})
+@Module(includes = {NetworkModule.class, LocalModule.class})
 public class YoutubeModule {
 
     private Context context;
 
     public YoutubeModule(Context context) {
-        this.context = context;
+        this.context = context.getApplicationContext();
     }
 
     @Provides
     @Singleton
     YoutubeRepository provideYoutubeRepository(YoutubeRemoteDataStore youtubeRemoteDataStore,
-                                               RecentVideosCache recentVideosCache) {
-        return new YoutubeRepositoryImpl(youtubeRemoteDataStore, recentVideosCache);
+                                               YoutubeLocalDataStore youtubeLocalDataStore) {
+        return new YoutubeRepositoryImpl(youtubeRemoteDataStore, youtubeLocalDataStore);
     }
 
     @Provides
@@ -39,7 +40,7 @@ public class YoutubeModule {
 
     @Provides
     @Singleton
-    RecentVideosCache provideRecentVideosCache() {
-        return new RecentVideosCache();
+    YoutubePrefsDataStore provideYoutubePrefsDataStore() {
+        return new YoutubePrefsDataStore(context);
     }
 }

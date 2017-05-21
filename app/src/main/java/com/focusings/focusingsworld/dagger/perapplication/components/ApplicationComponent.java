@@ -1,16 +1,12 @@
 package com.focusings.focusingsworld.dagger.perapplication.components;
 
 import com.focusings.focusingsworld.AndroidApplication;
-import com.focusings.focusingsworld.bo.YoutubeVideo;
 import com.focusings.focusingsworld.dagger.perapplication.modules.ApplicationModule;
 import com.focusings.focusingsworld.executor.PostExecutionThread;
 import com.focusings.focusingsworld.executor.ThreadExecutor;
 import com.focusings.focusingsworld.repository.YoutubeRepository;
-import com.focusings.focusingsworld.repository.youtube.memory.MemCache;
-import com.focusings.focusingsworld.repository.youtube.memory.RecentVideosCache;
+import com.focusings.focusingsworld.repository.youtube.local.YoutubePrefsDataStore;
 import com.focusings.focusingsworld.repository.youtube.remote.YoutubeRemoteDataStore;
-
-import java.util.List;
 
 import javax.inject.Singleton;
 
@@ -24,7 +20,7 @@ public interface ApplicationComponent {
 
     YoutubeRepository youtubeRepository();
     YoutubeRemoteDataStore youtubeRemoteDataStore();
-    RecentVideosCache recentVideosCache();
+    YoutubePrefsDataStore youtubePrefsDataStore();
 
     void inject(AndroidApplication androidApplication);
 }
