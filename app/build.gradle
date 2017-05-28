@@ -5,13 +5,15 @@ buildscript {
     }
     dependencies {
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
-        classpath "com.fernandocejas.frodo:frodo-plugin:0.8.3"
+        classpath 'com.fernandocejas.frodo:frodo-plugin:0.8.3'
+        classpath 'me.tatarka:gradle-retrolambda:3.6.1'
     }
 }
 
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.fernandocejas.frodo'
+apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 25
@@ -31,6 +33,11 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 

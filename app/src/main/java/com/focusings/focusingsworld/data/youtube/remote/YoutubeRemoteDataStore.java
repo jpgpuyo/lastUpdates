@@ -1,14 +1,11 @@
 package com.focusings.focusingsworld.data.youtube.remote;
 
 import com.focusings.focusingsworld.data.youtube.cache.PrefsCacheFactory;
-import com.focusings.focusingsworld.data.youtube.recentvideos.request.RecentVideosResponseDto;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 
 import java.util.List;
 
 import rx.Observable;
-import rx.functions.Action1;
-import rx.functions.Func1;
 
 public class YoutubeRemoteDataStore {
 
@@ -23,16 +20,7 @@ public class YoutubeRemoteDataStore {
 
     public Observable<List<YoutubeVideo>> getRecentVideosFromChannel(String channelId) {
         return youtubeService.getRecentVideosFromChannel(channelId, YoutubeApiConstants.API_KEY)
-                .map(new Func1<RecentVideosResponseDto, List<YoutubeVideo>>() {
-                    @Override
-                    public List<YoutubeVideo> call(RecentVideosResponseDto recentVideosResponseDto) {
-                        return YoutubeDataParser.parse(recentVideosResponseDto);
-                    }
-                }).doOnNext(new Action1<List<YoutubeVideo>>() {
-                    @Override
-                    public void call(List<YoutubeVideo> youtubeVideoList) {
-                        prefsCacheFactory.get(PrefsCacheFactory.RECENT_VIDEOS).put(youtubeVideoList);
-                    }
-        });
+                .map(YoutubeDataParser::parse)
+                .doOnNext(youtubeVideoList -> prefsCacheFactory.get(PrefsCacheFactory.RECENT_VIDEOS).put(youtubeVideoList));
     }
 }
