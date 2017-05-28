@@ -16,7 +16,7 @@ import dagger.Provides;
 /**
  * Dagger module that provides objects which will live during the application lifecycle.
  */
-@Module(includes = {YoutubeModule.class})
+@Module(includes = {InitAppModule.class, YoutubeModule.class})
 public class ApplicationModule {
     private final AndroidApplication application;
 

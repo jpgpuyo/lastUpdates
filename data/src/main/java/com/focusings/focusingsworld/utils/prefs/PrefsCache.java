@@ -3,6 +3,8 @@ package com.focusings.focusingsworld.utils.prefs;
 import com.github.pwittchen.prefser.library.Prefser;
 import com.github.pwittchen.prefser.library.TypeToken;
 
+import rx.Observable;
+
 public abstract class PrefsCache<D> {
 
     private final String key;
@@ -17,8 +19,15 @@ public abstract class PrefsCache<D> {
         this.prefser.put(key, data);
     }
 
-    public D get() {
-        return this.prefser.get(key, getTypeToken(), null);
+    public Observable<D> get() {
+
+        D data = this.prefser.get(key, getTypeToken(), null);
+
+        if (data != null) {
+            return Observable.just(data);
+        } else {
+            return Observable.empty();
+        }
     }
 
     public boolean exists() {

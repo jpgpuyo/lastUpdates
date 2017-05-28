@@ -10,6 +10,7 @@ import java.util.List;
 
 import rx.Observable;
 import rx.functions.Action1;
+import rx.functions.Func1;
 
 /**
  * Created by usuario on 14/08/2016.
@@ -30,15 +31,10 @@ public class YoutubeRepositoryImpl implements YoutubeRepository {
     @Override
     public Observable<List<YoutubeVideo>> getRecentVideosFromChannel(String channelId) {
         final PrefsCache<List<YoutubeVideo>> recentVideosCache = prefsCacheFactory.get(PrefsCacheFactory.RECENT_VIDEOS);
-        if (recentVideosCache.exists()) {
-            return Observable.just(recentVideosCache.get());
-        }
-        return youtubeRemoteDataStore.getRecentVideosFromChannel(channelId)
-                .doOnNext(new Action1<List<YoutubeVideo>>() {
-                    @Override
-                    public void call(List<YoutubeVideo> youtubeVideoList) {
-                        recentVideosCache.put(youtubeVideoList);
-                    }
-                });
+        return Observable
+                .concat(recentVideosCache.get(),
+                        youtubeRemoteDataStore.getRecentVideosFromChannel(channelId))
+                .first();
+
     }
 }

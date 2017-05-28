@@ -33,9 +33,9 @@ public class YoutubeModule {
 
     @Provides
     @Singleton
-    YoutubeRemoteDataStore provideYoutubeRemoteDataStore(Retrofit retrofit) {
+    YoutubeRemoteDataStore provideYoutubeRemoteDataStore(Retrofit retrofit, PrefsCacheFactory prefsCacheFactory) {
         YoutubeService youtubeService = retrofit.create(YoutubeService.class);
-        return new YoutubeRemoteDataStore(youtubeService);
+        return new YoutubeRemoteDataStore(youtubeService, prefsCacheFactory);
     }
 
     @Provides
