@@ -3,9 +3,6 @@ package com.focusings.focusingsworld.repository.youtube.remote;
 
 
 import com.focusings.focusingsworld.repository.youtube.recentvideos.request.RecentVideosResponseDto;
-import com.focusings.focusingsworld.repository.youtube.remote.dto.YoutubeVideoDto;
-
-import java.util.List;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;

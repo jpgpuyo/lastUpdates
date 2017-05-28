@@ -4,8 +4,10 @@ import android.content.Context;
 
 import com.focusings.focusingsworld.repository.YoutubeRepository;
 import com.focusings.focusingsworld.repository.YoutubeRepositoryImpl;
+import com.focusings.focusingsworld.repository.youtube.cache.PrefsCacheFactory;
 import com.focusings.focusingsworld.repository.youtube.remote.YoutubeRemoteDataStore;
 import com.focusings.focusingsworld.repository.youtube.remote.YoutubeService;
+import com.github.pwittchen.prefser.library.Prefser;
 
 import javax.inject.Singleton;
 
@@ -19,19 +21,27 @@ public class YoutubeModule {
     private Context context;
 
     public YoutubeModule(Context context) {
-        this.context = context;
+        this.context = context.getApplicationContext();
     }
 
     @Provides
     @Singleton
-    YoutubeRepository provideYoutubeRepository(YoutubeRemoteDataStore youtubeRemoteDataStore){
-        return new YoutubeRepositoryImpl(youtubeRemoteDataStore);
+    YoutubeRepository provideYoutubeRepository(YoutubeRemoteDataStore youtubeRemoteDataStore,
+                                               PrefsCacheFactory prefsCacheFactory) {
+        return new YoutubeRepositoryImpl(youtubeRemoteDataStore, prefsCacheFactory);
     }
 
     @Provides
     @Singleton
-    YoutubeRemoteDataStore provideYoutubeRemoteDataStore(Retrofit retrofit){
+    YoutubeRemoteDataStore provideYoutubeRemoteDataStore(Retrofit retrofit, PrefsCacheFactory prefsCacheFactory) {
         YoutubeService youtubeService = retrofit.create(YoutubeService.class);
-        return new YoutubeRemoteDataStore(youtubeService);
+        return new YoutubeRemoteDataStore(youtubeService, prefsCacheFactory);
+    }
+
+    @Provides
+    @Singleton
+    PrefsCacheFactory providePrefsCacheFactory() {
+        Prefser prefser = new Prefser(context.getSharedPreferences("youtubePrefs", Context.MODE_PRIVATE));
+        return new PrefsCacheFactory(prefser);
     }
 }
