@@ -3,12 +3,12 @@ package com.focusings.focusingsworld;
 import android.app.Application;
 
 import com.facebook.stetho.Stetho;
-import com.focusings.focusingsworld.dagger.perapplication.components.ApplicationComponent;
-import com.focusings.focusingsworld.dagger.perapplication.components.DaggerApplicationComponent;
-import com.focusings.focusingsworld.dagger.perapplication.modules.ApplicationModule;
-import com.focusings.focusingsworld.dagger.perapplication.modules.InitAppModule;
-import com.focusings.focusingsworld.dagger.perapplication.modules.YoutubeModule;
-import com.focusings.focusingsworld.init.InitAppPresenter;
+import com.focusings.focusingsworld.infrastructure.dagger.perapplication.components.ApplicationComponent;
+import com.focusings.focusingsworld.infrastructure.dagger.perapplication.components.DaggerApplicationComponent;
+import com.focusings.focusingsworld.infrastructure.dagger.perapplication.modules.ApplicationModule;
+import com.focusings.focusingsworld.presentation.init.InitAppModule;
+import com.focusings.focusingsworld.infrastructure.dagger.perapplication.modules.YoutubeModule;
+import com.focusings.focusingsworld.presentation.init.InitAppPresenter;
 
 import javax.inject.Inject;
 
