@@ -2,7 +2,7 @@ package com.focusings.focusingsworld.infrastructure.dagger.perapplication.module
 
 import android.content.Context;
 
-import com.focusings.focusingsworld.data.YoutubeRepositoryImpl;
+import com.focusings.focusingsworld.data.RecentVideosFromChannelRepository;
 import com.focusings.focusingsworld.data.youtube.cache.PrefsCacheFactory;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeRemoteDataStore;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeService;
@@ -28,7 +28,7 @@ public class YoutubeModule {
     @Singleton
     YoutubeRepository provideYoutubeRepository(YoutubeRemoteDataStore youtubeRemoteDataStore,
                                                PrefsCacheFactory prefsCacheFactory) {
-        return new YoutubeRepositoryImpl(youtubeRemoteDataStore, prefsCacheFactory);
+        return new RecentVideosFromChannelRepository(youtubeRemoteDataStore, prefsCacheFactory);
     }
 
     @Provides

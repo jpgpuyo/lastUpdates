@@ -11,17 +11,14 @@ import java.util.List;
 
 import rx.Observable;
 
-/**
- * Created by usuario on 14/08/2016.
- */
-public class YoutubeRepositoryImpl implements YoutubeRepository {
+public class RecentVideosFromChannelRepository implements YoutubeRepository {
 
     private final YoutubeRemoteDataStore youtubeRemoteDataStore;
 
     private final PrefsCacheFactory prefsCacheFactory;
 
-    public YoutubeRepositoryImpl(YoutubeRemoteDataStore youtubeRemoteDataStore,
-                                 PrefsCacheFactory prefsCacheFactory) {
+    public RecentVideosFromChannelRepository(YoutubeRemoteDataStore youtubeRemoteDataStore,
+                                             PrefsCacheFactory prefsCacheFactory) {
         this.youtubeRemoteDataStore = youtubeRemoteDataStore;
         this.prefsCacheFactory = prefsCacheFactory;
     }
