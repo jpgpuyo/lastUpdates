@@ -2,11 +2,11 @@ package com.focusings.focusingsworld.infrastructure.dagger.perapplication.module
 
 import android.content.Context;
 
-import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
 import com.focusings.focusingsworld.data.YoutubeRepositoryImpl;
 import com.focusings.focusingsworld.data.youtube.cache.PrefsCacheFactory;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeRemoteDataStore;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeService;
+import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
 import com.github.pwittchen.prefser.library.Prefser;
 
 import javax.inject.Singleton;
@@ -33,9 +33,9 @@ public class YoutubeModule {
 
     @Provides
     @Singleton
-    YoutubeRemoteDataStore provideYoutubeRemoteDataStore(Retrofit retrofit, PrefsCacheFactory prefsCacheFactory) {
+    YoutubeRemoteDataStore provideYoutubeRemoteDataStore(Retrofit retrofit) {
         YoutubeService youtubeService = retrofit.create(YoutubeService.class);
-        return new YoutubeRemoteDataStore(youtubeService, prefsCacheFactory);
+        return new YoutubeRemoteDataStore(youtubeService);
     }
 
     @Provides

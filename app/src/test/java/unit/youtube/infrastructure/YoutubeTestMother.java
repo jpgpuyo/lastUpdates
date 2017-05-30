@@ -14,7 +14,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class YoutubeTestMother {
 
     public static YoutubeRemoteDataStore givenYoutubeRemoteDataStore(ApiClientTest apiClientTest) {
-        return new YoutubeRemoteDataStore(YoutubeTestMother.givenYoutubeService(apiClientTest), null);
+        return new YoutubeRemoteDataStore(YoutubeTestMother.givenYoutubeService(apiClientTest));
     }
 
     public static YoutubeService givenYoutubeService(ApiClientTest apiClientTest) {
