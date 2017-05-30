@@ -13,7 +13,13 @@ public final class YoutubeMockDataStore implements YoutubeRepository {
     public YoutubeMockDataStore() {
     }
 
-    public Observable<List<YoutubeVideo>> getRecentVideosFromChannel(String channelId) {
+    @Override
+    public Observable<Void> refreshVideos(String channelId) {
+        return Observable.empty();
+    }
+
+    @Override
+    public Observable<List<YoutubeVideo>> getVideos() {
         List<YoutubeVideo> videosList = new ArrayList<YoutubeVideo>();
         videosList.add(new YoutubeVideo("https://i.ytimg.com/vi/a46Me73ykcQ/default.jpg", "¿ALGUNA VEZ ME HA GUSTADO UNA CHICA? #focurrespuestas", "https://www.youtube.com/watch?v=a46Me73ykcQ"));
         videosList.add(new YoutubeVideo("https://i.ytimg.com/vi/W1-w17bTv7s/default.jpg", "LAS SOBRAS DE NAVIDAD PARA MÍ!!! #focumail", "https://www.youtube.com/watch?v=W1-w17bTv7s"));

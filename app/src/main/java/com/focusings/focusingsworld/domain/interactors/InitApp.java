@@ -15,13 +15,15 @@ public class InitApp extends UseCase {
 
     private final YoutubeRepository youtubeRepository;
 
-    public InitApp(ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread, YoutubeRepository youtubeRepository) {
+    public InitApp(ThreadExecutor threadExecutor,
+                   PostExecutionThread postExecutionThread,
+                   YoutubeRepository youtubeRepository) {
         super(threadExecutor, postExecutionThread);
         this.youtubeRepository = youtubeRepository;
     }
 
     @Override
-    protected Observable buildUseCaseObservable() {
-        return youtubeRepository.getRecentVideosFromChannel(YoutubeChannel.FEATURED_CHANNEL_ID);
+    protected Observable<Void> buildUseCaseObservable() {
+        return youtubeRepository.refreshVideos(YoutubeChannel.FEATURED_CHANNEL_ID);
     }
 }

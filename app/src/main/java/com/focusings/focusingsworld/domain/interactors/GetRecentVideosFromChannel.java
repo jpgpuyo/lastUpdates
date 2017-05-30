@@ -1,6 +1,5 @@
 package com.focusings.focusingsworld.domain.interactors;
 
-import com.focusings.focusingsworld.domain.models.YoutubeChannel;
 import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
 import com.focusings.focusingsworld.infrastructure.executor.PostExecutionThread;
 import com.focusings.focusingsworld.infrastructure.executor.ThreadExecutor;
@@ -22,6 +21,6 @@ public class GetRecentVideosFromChannel extends UseCase {
 
     @Override
     protected Observable buildUseCaseObservable() {
-        return youtubeRepository.getRecentVideosFromChannel(YoutubeChannel.FEATURED_CHANNEL_ID);
+        return youtubeRepository.getVideos();
     }
 }
