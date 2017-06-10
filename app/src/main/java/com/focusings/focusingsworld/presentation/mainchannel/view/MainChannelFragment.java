@@ -2,6 +2,7 @@ package com.focusings.focusingsworld.presentation.mainchannel.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -31,13 +32,26 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     @InjectView(R.id.rv_youtube_videos)
     RecyclerView recyclerView;
 
+    @InjectView(R.id.swiperefresh)
+    SwipeRefreshLayout swipeRefreshLayout;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_channel_fragment, container, false);
         ButterKnife.inject(this, view);
+        setupPullToRefresh();
         setupRecyclerView();
         return view;
+    }
+
+    private void setupPullToRefresh() {
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mainChannelPresenter.getLastVideosFromYoutubeChannel(true);
+            }
+        });
     }
 
     private void setupRecyclerView() {
@@ -65,6 +79,11 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     }
 
     @Override
+    public void hideLoading() {
+        swipeRefreshLayout.setRefreshing(false);
+    }
+
+    @Override
     public void renderYoutubeVideoList(List<YoutubeVideoModel> youtubeVideoModelCollection) {
         mainChannelAdapter.clear();
         mainChannelAdapter.addAll(youtubeVideoModelCollection);
@@ -73,7 +92,7 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     @Override
     public void onResume() {
         super.onResume();
-        mainChannelPresenter.getLastVideosFromYoutubeChannel();
+        mainChannelPresenter.getLastVideosFromYoutubeChannel(false);
     }
 
     @Override
