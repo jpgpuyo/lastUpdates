@@ -1,5 +1,8 @@
 package com.focusings.focusingsworld.infrastructure.dagger.perapplication.modules;
 
+import android.content.Context;
+
+import com.focusings.focusingsworld.infrastructure.connectivity.NetworkConnection;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeApiConstants;
 
 import javax.inject.Singleton;
@@ -17,6 +20,12 @@ public class NetworkModule {
 
     @Provides
     @Singleton
+    NetworkConnection provideNetwork(Context context) {
+        return new NetworkConnection(context);
+    }
+
+    @Provides
+    @Singleton
     Retrofit provideRetrofit() {
 
         HttpLoggingInterceptor logging = new HttpLoggingInterceptor();
@@ -29,8 +38,8 @@ public class NetworkModule {
         return new Retrofit.Builder()
                 .baseUrl(YoutubeApiConstants.ENDPOINT)
                 .client(httpClient)
-                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
                 .build();
     }
 }

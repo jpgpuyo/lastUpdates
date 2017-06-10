@@ -34,6 +34,6 @@ public abstract class BaseActivity extends AppCompatActivity {
      * @return {@link ActivityModule}
      */
     public ActivityModule getActivityModule() {
-        return new ActivityModule(this);
+        return new ActivityModule();
     }
 }

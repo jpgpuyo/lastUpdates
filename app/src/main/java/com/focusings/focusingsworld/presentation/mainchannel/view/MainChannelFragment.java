@@ -53,7 +53,6 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initializePresenter();
-        mainChannelPresenter.getLastVideosFromYoutubeChannel();
     }
 
     @Override
@@ -69,5 +68,17 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     public void renderYoutubeVideoList(List<YoutubeVideoModel> youtubeVideoModelCollection) {
         mainChannelAdapter.clear();
         mainChannelAdapter.addAll(youtubeVideoModelCollection);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        mainChannelPresenter.getLastVideosFromYoutubeChannel();
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        mainChannelPresenter.destroy();
     }
 }

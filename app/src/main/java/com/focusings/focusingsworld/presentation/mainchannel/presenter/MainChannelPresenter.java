@@ -26,6 +26,10 @@ public class MainChannelPresenter {
         getYoutubeVideosFromChannelUseCase.execute(new GetYoutubeVideosFromChannelSubscriber());
     }
 
+    public void destroy() {
+        getYoutubeVideosFromChannelUseCase.unsubscribe();
+    }
+
     @RxLogSubscriber
     private final class GetYoutubeVideosFromChannelSubscriber extends DefaultSubscriber<List<YoutubeVideo>> {
 

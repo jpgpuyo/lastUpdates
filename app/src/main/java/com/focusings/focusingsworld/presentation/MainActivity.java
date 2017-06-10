@@ -68,7 +68,6 @@ public class MainActivity extends BaseActivity implements HasComponent<ActivityC
     private void setupToolbar() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.app_name);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void setupCollapsingToolbar() {

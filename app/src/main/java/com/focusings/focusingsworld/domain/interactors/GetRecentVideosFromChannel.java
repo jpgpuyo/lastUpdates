@@ -7,9 +7,6 @@ import com.focusings.focusingsworld.infrastructure.interactor.UseCase;
 
 import rx.Observable;
 
-/**
- * Created by usuario on 15/08/2016.
- */
 public class GetRecentVideosFromChannel extends UseCase {
 
     private final YoutubeRepository youtubeRepository;

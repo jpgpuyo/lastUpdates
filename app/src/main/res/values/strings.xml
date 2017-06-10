@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="app_name">Focusings World</string>
-	<string name="vlogsFragmentTitle">VLOGS</string>
+    <string name="app_name">Focusings World</string>
+    <string name="vlogsFragmentTitle">VLOGS</string>
 
-	<!-- main channel fragment -->
-	<string name="mainChannelFragmentTitle">VLOGS</string>
+    <!-- main channel fragment -->
+    <string name="mainChannelFragmentTitle">VLOGS</string>
     <string name="share">share</string>
-	<string name="shareVideoRecommendation">I recommend you to watch \"%1$s\" - %2$s</string>
-	<string name="shareVideoVia">Share this video via</string>
+    <string name="shareVideoRecommendation">I recommend you to watch \"%1$s\" - %2$s</string>
+    <string name="shareVideoVia">Share this video via</string>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>

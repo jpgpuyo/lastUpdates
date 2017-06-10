@@ -16,25 +16,4 @@ import dagger.Provides;
  */
 @Module(includes = {MainChannelModule.class})
 public class ActivityModule {
-
-    private final Activity activity;
-
-    public ActivityModule(Activity activity) {
-        this.activity = activity;
-    }
-
-    /**
-     * Expose the activity to dependents in the graph.
-     */
-    @Provides
-    @PerActivity
-    Activity activity() {
-        return this.activity;
-    }
-
-    @Provides
-    @PerActivity
-    Context provideContext(){
-        return this.activity;
-    }
 }

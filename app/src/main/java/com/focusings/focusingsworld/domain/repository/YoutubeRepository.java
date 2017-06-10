@@ -7,10 +7,7 @@ import java.util.List;
 
 import rx.Observable;
 
-/**
- * Created by usuario on 14/08/2016.
- */
 public interface YoutubeRepository {
-    Observable<Void> refreshVideos(String channelId);
+    Observable<List<YoutubeVideo>> refreshVideos(String channelId);
     Observable<List<YoutubeVideo>> getVideos();
 }

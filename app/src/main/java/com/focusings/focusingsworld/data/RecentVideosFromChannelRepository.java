@@ -25,10 +25,9 @@ public class RecentVideosFromChannelRepository implements YoutubeRepository {
 
     @RxLogObservable(RxLogObservable.Scope.SCHEDULERS)
     @Override
-    public Observable<Void> refreshVideos(String channelId) {
-        youtubeRemoteDataStore.getRecentVideosFromChannel(channelId)
+    public Observable<List<YoutubeVideo>> refreshVideos(String channelId) {
+        return youtubeRemoteDataStore.getRecentVideosFromChannel(channelId)
                 .doOnNext(youtubeVideoList -> prefsCacheFactory.get(PrefsCacheFactory.RECENT_VIDEOS).put(youtubeVideoList));
-        return Observable.empty();
     }
 
     @RxLogObservable(RxLogObservable.Scope.SCHEDULERS)

@@ -3,6 +3,8 @@ package com.focusings.focusingsworld.infrastructure.dagger.perapplication.module
 import android.content.Context;
 
 import com.focusings.focusingsworld.AndroidApplication;
+import com.focusings.focusingsworld.infrastructure.connectivity.Network;
+import com.focusings.focusingsworld.infrastructure.connectivity.NetworkConnection;
 import com.focusings.focusingsworld.infrastructure.executor.UIThread;
 import com.focusings.focusingsworld.infrastructure.executor.JobExecutor;
 import com.focusings.focusingsworld.infrastructure.executor.PostExecutionThread;
@@ -41,5 +43,11 @@ public class ApplicationModule {
     @Singleton
     PostExecutionThread providePostExecutionThread() {
         return new UIThread();
+    }
+
+    @Provides
+    @Singleton
+    Network provideNetwork() {
+        return new NetworkConnection(application);
     }
 }

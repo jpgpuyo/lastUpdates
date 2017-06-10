@@ -14,7 +14,7 @@ public final class YoutubeMockDataStore implements YoutubeRepository {
     }
 
     @Override
-    public Observable<Void> refreshVideos(String channelId) {
+    public Observable<List<YoutubeVideo>> refreshVideos(String channelId) {
         return Observable.empty();
     }
 
