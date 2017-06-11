@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.presentation.mainchannel.model.YoutubeVideoModel;
+import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import com.focusings.focusingsworld.presentation.mainchannel.view.renderer.youtubevideo.play.PlayVideoOnClickListener;
 import com.focusings.focusingsworld.presentation.mainchannel.view.renderer.youtubevideo.share.ShareVideoOnItemClickListener;
 
@@ -39,29 +39,29 @@ public class YoutubeVideoRenderer extends RecyclerView.ViewHolder {
         ButterKnife.inject(this, view);
     }
 
-    public void render(@NonNull YoutubeVideoModel youtubeVideoModel) {
-        renderTitle(youtubeVideoModel);
-        renderImage(youtubeVideoModel);
+    public void render(@NonNull YoutubeVideo youtubeVideo) {
+        renderTitle(youtubeVideo);
+        renderImage(youtubeVideo);
     }
 
-    private void renderTitle(@NonNull YoutubeVideoModel youtubeVideoModel) {
-        title.setText(youtubeVideoModel.getTitle());
+    private void renderTitle(@NonNull YoutubeVideo youtubeVideo) {
+        title.setText(youtubeVideo.getTitle());
     }
 
-    private void renderImage(@NonNull YoutubeVideoModel youtubeVideoModel) {
-        Glide.with(image.getContext()).load(youtubeVideoModel.getImage()).into(image);
+    private void renderImage(@NonNull YoutubeVideo youtubeVideo) {
+        Glide.with(image.getContext()).load(youtubeVideo.getImage()).into(image);
     }
 
-    public void setListeners(@NonNull YoutubeVideoModel youtubeVideoModel) {
-        setPlayVideoListener(youtubeVideoModel);
-        setShareVideoListener(youtubeVideoModel);
+    public void setListeners(@NonNull YoutubeVideo youtubeVideo) {
+        setPlayVideoListener(youtubeVideo);
+        setShareVideoListener(youtubeVideo);
     }
 
-    private void setShareVideoListener(@NonNull YoutubeVideoModel youtubeVideoModel) {
-        share.setOnClickListener(new ShareVideoOnItemClickListener(youtubeVideoModel.getTitle(), youtubeVideoModel.getUrl()));
+    private void setShareVideoListener(@NonNull YoutubeVideo youtubeVideo) {
+        share.setOnClickListener(new ShareVideoOnItemClickListener(youtubeVideo.getTitle(), youtubeVideo.getUrl()));
     }
 
-    private void setPlayVideoListener(@NonNull YoutubeVideoModel youtubeVideoModel) {
-        view.setOnClickListener(new PlayVideoOnClickListener(youtubeVideoModel.getUrl()));
+    private void setPlayVideoListener(@NonNull YoutubeVideo youtubeVideo) {
+        view.setOnClickListener(new PlayVideoOnClickListener(youtubeVideo.getUrl()));
     }
 }

@@ -12,11 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
+import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import com.focusings.focusingsworld.infrastructure.BaseFragment;
 import com.focusings.focusingsworld.infrastructure.dagger.peractivity.components.ActivityComponent;
 import com.focusings.focusingsworld.presentation.MainActivity;
 import com.focusings.focusingsworld.presentation.MainView;
-import com.focusings.focusingsworld.presentation.mainchannel.model.YoutubeVideoModel;
 import com.focusings.focusingsworld.presentation.mainchannel.presenter.MainChannelPresenter;
 
 import java.util.List;
@@ -100,10 +100,10 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     }
 
     @Override
-    public void renderYoutubeVideoList(List<YoutubeVideoModel> youtubeVideoModelCollection) {
+    public void renderYoutubeVideoList(List<YoutubeVideo> youtubeVideoList) {
         mainView.hideErrorMessage();
         mainChannelAdapter.clear();
-        mainChannelAdapter.addAll(youtubeVideoModelCollection);
+        mainChannelAdapter.addAll(youtubeVideoList);
     }
 
     @Override

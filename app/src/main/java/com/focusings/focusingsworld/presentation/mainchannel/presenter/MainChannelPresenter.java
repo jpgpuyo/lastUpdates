@@ -5,7 +5,6 @@ import com.focusings.focusingsworld.domain.interactors.GetRecentVideosFromChanne
 import com.focusings.focusingsworld.domain.interactors.GetRecentVideosRequest;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import com.focusings.focusingsworld.infrastructure.interactor.DefaultSubscriber;
-import com.focusings.focusingsworld.presentation.mainchannel.model.YoutubeVideoModel;
 import com.focusings.focusingsworld.presentation.mainchannel.view.MainChannelView;
 
 import java.util.ArrayList;
@@ -39,17 +38,17 @@ public class MainChannelPresenter {
     @RxLogSubscriber
     private final class GetYoutubeVideosFromChannelSubscriber extends DefaultSubscriber<List<YoutubeVideo>> {
 
-        List<YoutubeVideoModel> youtubeVideoModelList;
+        List<YoutubeVideo> youtubeVideoList;
 
         public GetYoutubeVideosFromChannelSubscriber() {
-            this.youtubeVideoModelList = new ArrayList<>();
+            this.youtubeVideoList = new ArrayList<>();
         }
 
         @Override
         public void onCompleted() {
             super.onCompleted();
             mainChannelView.hideLoading();
-            if (youtubeVideoModelList.isEmpty()) {
+            if (youtubeVideoList.isEmpty()) {
                 mainChannelView.showNetworkError();
             }
         }
@@ -61,10 +60,10 @@ public class MainChannelPresenter {
         }
 
         @Override
-        public void onNext(List<YoutubeVideo> youtubeVideoCollection) {
-            super.onNext(youtubeVideoCollection);
-            youtubeVideoModelList = new YoutubeVideoModelMapper().transform(youtubeVideoCollection);
-            mainChannelView.renderYoutubeVideoList(youtubeVideoModelList);
+        public void onNext(List<YoutubeVideo> youtubeVideoList) {
+            super.onNext(youtubeVideoList);
+            this.youtubeVideoList = youtubeVideoList;
+            mainChannelView.renderYoutubeVideoList(youtubeVideoList);
         }
     }
 }

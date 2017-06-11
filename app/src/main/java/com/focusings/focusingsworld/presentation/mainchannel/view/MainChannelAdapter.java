@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.presentation.mainchannel.model.YoutubeVideoModel;
+import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import com.focusings.focusingsworld.infrastructure.renderer.ItemsList;
 import com.focusings.focusingsworld.presentation.mainchannel.view.renderer.youtubevideo.YoutubeVideoRenderer;
 
@@ -14,7 +14,7 @@ import java.util.List;
 
 public class MainChannelAdapter extends RecyclerView.Adapter<YoutubeVideoRenderer> {
 
-    private final ItemsList<YoutubeVideoModel> items;
+    private final ItemsList<YoutubeVideo> items;
 
     public MainChannelAdapter() {
         this.items = new ItemsList(this);
@@ -24,8 +24,8 @@ public class MainChannelAdapter extends RecyclerView.Adapter<YoutubeVideoRendere
         items.clear();
     }
 
-    public void addAll(List<YoutubeVideoModel> youtubeVideoModelList) {
-        items.addAll(youtubeVideoModelList);
+    public void addAll(List<YoutubeVideo> youtubeVideoList) {
+        items.addAll(youtubeVideoList);
     }
 
     @Override
@@ -37,9 +37,9 @@ public class MainChannelAdapter extends RecyclerView.Adapter<YoutubeVideoRendere
 
     @Override
     public void onBindViewHolder(YoutubeVideoRenderer youtubeVideoRenderer, int position) {
-        YoutubeVideoModel youtubeVideoModel = items.get(position);
-        youtubeVideoRenderer.render(youtubeVideoModel);
-        youtubeVideoRenderer.setListeners(youtubeVideoModel);
+        YoutubeVideo youtubeVideo = items.get(position);
+        youtubeVideoRenderer.render(youtubeVideo);
+        youtubeVideoRenderer.setListeners(youtubeVideo);
     }
 
     @Override

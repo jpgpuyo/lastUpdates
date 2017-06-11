@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ItemsList<I extends ViewModel> {
+public class ItemsList<I> {
 
   private final List<I> items;
   private final RecyclerView.Adapter adapter;
