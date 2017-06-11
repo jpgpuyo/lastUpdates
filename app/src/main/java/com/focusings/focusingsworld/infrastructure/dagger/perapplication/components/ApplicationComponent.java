@@ -1,6 +1,7 @@
 package com.focusings.focusingsworld.infrastructure.dagger.perapplication.components;
 
 import com.focusings.focusingsworld.AndroidApplication;
+import com.focusings.focusingsworld.infrastructure.connectivity.Network;
 import com.focusings.focusingsworld.infrastructure.dagger.perapplication.modules.ApplicationModule;
 import com.focusings.focusingsworld.infrastructure.executor.PostExecutionThread;
 import com.focusings.focusingsworld.infrastructure.executor.ThreadExecutor;
@@ -19,6 +20,7 @@ import dagger.Component;
 public interface ApplicationComponent {
     ThreadExecutor threadExecutor();
     PostExecutionThread postExecutionThread();
+    Network network();
 
     YoutubeRepository youtubeRepository();
     YoutubeRemoteDataStore youtubeRemoteDataStore();
