@@ -15,7 +15,6 @@ public class YoutubeRemoteDataStore {
         this.youtubeService = youtubeService;
     }
 
-    @RxLogObservable(RxLogObservable.Scope.SCHEDULERS)
     public Observable<List<YoutubeVideo>> getRecentVideosFromChannel(String channelId) {
         return youtubeService.getRecentVideosFromChannel(channelId, YoutubeApiConstants.API_KEY)
                 .map(YoutubeDataParser::parse);

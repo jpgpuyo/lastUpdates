@@ -1,6 +1,6 @@
 package unit.youtube;
 
-import com.focusings.focusingsworld.data.youtube.recentvideos.request.RecentVideosResponseDto;
+import com.focusings.focusingsworld.data.youtube.remote.dto.recentvideos.RecentVideosResponseDto;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeRemoteDataStore;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeService;
 import com.focusings.focusingsworld.domain.models.Thumbnail;

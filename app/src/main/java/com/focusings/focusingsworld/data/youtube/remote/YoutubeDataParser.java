@@ -2,7 +2,7 @@ package com.focusings.focusingsworld.data.youtube.remote;
 
 import com.focusings.focusingsworld.data.youtube.remote.dto.SnippetDto;
 import com.focusings.focusingsworld.data.youtube.remote.dto.ThumbnailsDto;
-import com.focusings.focusingsworld.data.youtube.recentvideos.request.RecentVideosResponseDto;
+import com.focusings.focusingsworld.data.youtube.remote.dto.recentvideos.RecentVideosResponseDto;
 import com.focusings.focusingsworld.data.youtube.remote.dto.IdDto;
 import com.focusings.focusingsworld.data.youtube.remote.dto.ThumbnailDto;
 import com.focusings.focusingsworld.data.youtube.remote.dto.YoutubeVideoDto;

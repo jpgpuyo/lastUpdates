@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.data.youtube.recentvideos.request;
+package com.focusings.focusingsworld.data.youtube.remote.dto.recentvideos;
 
 import com.focusings.focusingsworld.data.youtube.remote.dto.PageInfoDto;
 import com.focusings.focusingsworld.data.youtube.remote.dto.YoutubeVideoDto;

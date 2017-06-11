@@ -2,7 +2,7 @@ package com.focusings.focusingsworld.data.youtube.remote;
 
 
 
-import com.focusings.focusingsworld.data.youtube.recentvideos.request.RecentVideosResponseDto;
+import com.focusings.focusingsworld.data.youtube.remote.dto.recentvideos.RecentVideosResponseDto;
 
 import retrofit2.http.GET;
 import retrofit2.http.Query;

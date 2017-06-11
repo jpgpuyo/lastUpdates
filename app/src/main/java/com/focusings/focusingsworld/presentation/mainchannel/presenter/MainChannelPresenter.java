@@ -1,8 +1,8 @@
 package com.focusings.focusingsworld.presentation.mainchannel.presenter;
 
 import com.fernandocejas.frodo.annotation.RxLogSubscriber;
-import com.focusings.focusingsworld.domain.interactors.GetRecentVideosFromChannel;
-import com.focusings.focusingsworld.domain.interactors.GetRecentVideosRequest;
+import com.focusings.focusingsworld.domain.interactors.recentvideos.GetRecentVideosFromChannel;
+import com.focusings.focusingsworld.domain.interactors.recentvideos.GetRecentVideosRequest;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import com.focusings.focusingsworld.infrastructure.interactor.DefaultSubscriber;
 import com.focusings.focusingsworld.presentation.mainchannel.view.MainChannelView;
