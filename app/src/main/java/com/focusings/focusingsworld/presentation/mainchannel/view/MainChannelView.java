@@ -4,10 +4,8 @@ import com.focusings.focusingsworld.presentation.mainchannel.model.YoutubeVideoM
 
 import java.util.List;
 
-/**
- * Created by usuario on 04/09/2016.
- */
 public interface MainChannelView {
     void hideLoading();
     void renderYoutubeVideoList(List<YoutubeVideoModel> youtubeVideoModelCollection);
+    void showNetworkError();
 }

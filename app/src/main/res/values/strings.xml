@@ -9,4 +9,5 @@
     <string name="shareVideoRecommendation">I recommend you to watch \"%1$s\" - %2$s</string>
     <string name="shareVideoVia">Share this video via</string>
     <string name="title_activity_splash">SplashActivity</string>
+    <string name="networkError">Please review your connection</string>
 </resources>

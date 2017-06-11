@@ -1,5 +1,7 @@
 package com.focusings.focusingsworld.presentation.mainchannel.view;
 
+import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -12,6 +14,8 @@ import android.view.ViewGroup;
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.infrastructure.BaseFragment;
 import com.focusings.focusingsworld.infrastructure.dagger.peractivity.components.ActivityComponent;
+import com.focusings.focusingsworld.presentation.MainActivity;
+import com.focusings.focusingsworld.presentation.MainView;
 import com.focusings.focusingsworld.presentation.mainchannel.model.YoutubeVideoModel;
 import com.focusings.focusingsworld.presentation.mainchannel.presenter.MainChannelPresenter;
 
@@ -35,6 +39,8 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     @InjectView(R.id.swiperefresh)
     SwipeRefreshLayout swipeRefreshLayout;
 
+    private MainView mainView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -43,6 +49,16 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
         setupPullToRefresh();
         setupRecyclerView();
         return view;
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        super.onAttach(context);
+        Activity activity = (Activity) context;
+        if (activity instanceof MainActivity) {
+            mainView = (MainView) activity;
+        }
     }
 
     private void setupPullToRefresh() {
@@ -85,8 +101,14 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
 
     @Override
     public void renderYoutubeVideoList(List<YoutubeVideoModel> youtubeVideoModelCollection) {
+        mainView.hideErrorMessage();
         mainChannelAdapter.clear();
         mainChannelAdapter.addAll(youtubeVideoModelCollection);
+    }
+
+    @Override
+    public void showNetworkError() {
+        mainView.showErrorMessage(R.string.networkError);
     }
 
     @Override
@@ -99,5 +121,12 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     public void onPause() {
         super.onPause();
         mainChannelPresenter.destroy();
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mainView.hideErrorMessage();
+        mainView = null;
     }
 }

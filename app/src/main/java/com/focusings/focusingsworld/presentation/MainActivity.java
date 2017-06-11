@@ -3,7 +3,10 @@ package com.focusings.focusingsworld.presentation;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -25,17 +28,25 @@ import java.util.List;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
 
-public class MainActivity extends BaseActivity implements HasComponent<ActivityComponent>{
+public class MainActivity extends BaseActivity implements HasComponent<ActivityComponent>, MainView{
+
+    @InjectView(R.id.rootLayout)
+    CoordinatorLayout rootLayout;
 
     @InjectView(R.id.collapse_toolbar)
     CollapsingToolbarLayout collapsingToolbar;
+
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
+
     @InjectView(R.id.tabs)
     TabLayout tabLayout;
+
     @InjectView(R.id.viewpager)
     ViewPager viewPager;
     private ActivityComponent activityComponent;
+
+    private Snackbar snackbar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,8 +58,13 @@ public class MainActivity extends BaseActivity implements HasComponent<ActivityC
         setupToolbar();
         setupViewPager();
         setupCollapsingToolbar();
+        setupSnackBar();
 
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    private void setupSnackBar() {
+        snackbar = Snackbar.make(rootLayout, "", Snackbar.LENGTH_INDEFINITE);
     }
 
     @Override
@@ -82,6 +98,17 @@ public class MainActivity extends BaseActivity implements HasComponent<ActivityC
         adapter.addFragment(new MainChannelFragment(), getString(R.string.mainChannelFragmentTitle));
 
         viewPager.setAdapter(adapter);
+    }
+
+    @Override
+    public void showErrorMessage(@StringRes int resourceId) {
+        snackbar.setText(resourceId);
+        snackbar.show();
+    }
+
+    @Override
+    public void hideErrorMessage() {
+        snackbar.dismiss();
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
