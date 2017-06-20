@@ -2,7 +2,9 @@ package com.focusings.focusingsworld.infrastructure.dagger.perapplication.module
 
 import android.content.Context;
 
+import com.focusings.focusingsworld.BuildConfig;
 import com.focusings.focusingsworld.data.RecentVideosFromChannelRepository;
+import com.focusings.focusingsworld.data.youtube.remote.YoutubeMockService;
 import com.focusings.focusingsworld.infrastructure.connectivity.NetworkConnection;
 import com.focusings.focusingsworld.data.youtube.cache.PrefsCacheFactory;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeRemoteDataStore;
@@ -35,8 +37,13 @@ public class YoutubeModule {
     @Provides
     @Singleton
     YoutubeRemoteDataStore provideYoutubeRemoteDataStore(NetworkConnection networkConnection, Retrofit retrofit) {
-        YoutubeService youtubeService = retrofit.create(YoutubeService.class);
-        return new YoutubeRemoteDataStore(youtubeService);
+        if (BuildConfig.ENABLE_MOCKS) {
+            YoutubeService youtubeService = new YoutubeMockService(context);
+            return new YoutubeRemoteDataStore(youtubeService);
+        } else {
+            YoutubeService youtubeService = retrofit.create(YoutubeService.class);
+            return new YoutubeRemoteDataStore(youtubeService);
+        }
     }
 
     @Provides

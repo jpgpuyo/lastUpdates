@@ -35,6 +35,16 @@ android {
         }
     }
 
+    productFlavors {
+        mock {
+            applicationIdSuffix = ".mock"
+            buildConfigField 'boolean', 'ENABLE_MOCKS', "true"
+        }
+        prod {
+            buildConfigField 'boolean', 'ENABLE_MOCKS', "false"
+        }
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
