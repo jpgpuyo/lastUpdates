@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.data.youtube.remote;
+package com.focusings.focusingsworld.data.youtube;
 
 import android.content.Context;
 import android.support.annotation.RawRes;

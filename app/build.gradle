@@ -38,10 +38,9 @@ android {
     productFlavors {
         mock {
             applicationIdSuffix = ".mock"
-            buildConfigField 'boolean', 'ENABLE_MOCKS', "true"
         }
         prod {
-            buildConfigField 'boolean', 'ENABLE_MOCKS', "false"
+
         }
     }
 
