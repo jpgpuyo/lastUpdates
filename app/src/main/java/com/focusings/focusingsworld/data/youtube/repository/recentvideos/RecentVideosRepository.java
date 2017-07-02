@@ -25,7 +25,7 @@ public class RecentVideosRepository implements YoutubeRepository {
     @Override
     public Observable<List<YoutubeVideo>> refreshVideos(String channelId) {
         return recentVideosCloud.getRecentVideosFromChannel(channelId)
-                .map(RecentVideosDataMapper::parse)
+                .map(RecentVideosDataMapper::transform)
                 .doOnNext(youtubeVideoList -> prefsCacheFactory.get(PrefsCacheFactory.RECENT_VIDEOS).put(youtubeVideoList));
     }
 
