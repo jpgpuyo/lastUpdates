@@ -43,6 +43,11 @@ public class MainChannelAdapter extends RecyclerView.Adapter<YoutubeVideoRendere
     }
 
     @Override
+    public long getItemId(int position) {
+        return items.get(position).hashCode();
+    }
+
+    @Override
     public int getItemCount() {
         return items.size();
     }

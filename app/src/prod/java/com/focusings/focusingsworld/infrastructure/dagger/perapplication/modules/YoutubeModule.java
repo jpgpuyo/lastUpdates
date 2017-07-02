@@ -3,7 +3,6 @@ package com.focusings.focusingsworld.infrastructure.dagger.perapplication.module
 import android.content.Context;
 
 import com.focusings.focusingsworld.data.RecentVideosFromChannelRepository;
-import com.focusings.focusingsworld.infrastructure.connectivity.NetworkConnection;
 import com.focusings.focusingsworld.data.youtube.cache.PrefsCacheFactory;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeRemoteDataStore;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeService;
@@ -34,7 +33,7 @@ public class YoutubeModule {
 
     @Provides
     @Singleton
-    YoutubeRemoteDataStore provideYoutubeRemoteDataStore(NetworkConnection networkConnection, Retrofit retrofit) {
+    YoutubeRemoteDataStore provideYoutubeRemoteDataStore(Retrofit retrofit) {
         YoutubeService youtubeService = retrofit.create(YoutubeService.class);
         return new YoutubeRemoteDataStore(youtubeService);
     }

@@ -4,7 +4,6 @@ package com.focusings.focusingsworld.presentation;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.annotation.StringRes;
-import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TabLayout;
@@ -33,9 +32,6 @@ public class MainActivity extends BaseActivity implements HasComponent<ActivityC
     @InjectView(R.id.rootLayout)
     CoordinatorLayout rootLayout;
 
-    @InjectView(R.id.collapse_toolbar)
-    CollapsingToolbarLayout collapsingToolbar;
-
     @InjectView(R.id.toolbar)
     Toolbar toolbar;
 
@@ -57,7 +53,6 @@ public class MainActivity extends BaseActivity implements HasComponent<ActivityC
 
         setupToolbar();
         setupViewPager();
-        setupCollapsingToolbar();
         setupSnackBar();
 
         tabLayout.setupWithViewPager(viewPager);
@@ -84,13 +79,6 @@ public class MainActivity extends BaseActivity implements HasComponent<ActivityC
     private void setupToolbar() {
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle(R.string.app_name);
-    }
-
-    private void setupCollapsingToolbar() {
-        final CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(
-                R.id.collapse_toolbar);
-
-        collapsingToolbar.setTitleEnabled(false);
     }
 
     private void setupViewPager() {

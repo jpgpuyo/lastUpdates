@@ -8,7 +8,6 @@ import com.focusings.focusingsworld.infrastructure.executor.ThreadExecutor;
 import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
 import com.focusings.focusingsworld.data.youtube.cache.PrefsCacheFactory;
 import com.focusings.focusingsworld.data.youtube.remote.YoutubeRemoteDataStore;
-import com.focusings.focusingsworld.presentation.MainActivity;
 import com.focusings.focusingsworld.presentation.init.SplashActivity;
 
 import javax.inject.Singleton;
