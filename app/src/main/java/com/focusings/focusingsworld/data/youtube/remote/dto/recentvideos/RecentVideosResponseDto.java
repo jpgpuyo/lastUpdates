@@ -1,7 +1,7 @@
 package com.focusings.focusingsworld.data.youtube.remote.dto.recentvideos;
 
-import com.focusings.focusingsworld.data.youtube.remote.dto.PageInfoDto;
-import com.focusings.focusingsworld.data.youtube.remote.dto.YoutubeVideoDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.PageInfoDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.YoutubeVideoDto;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
