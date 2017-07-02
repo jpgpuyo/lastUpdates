@@ -1,11 +1,11 @@
-package com.focusings.focusingsworld.data.youtube.remote;
+package com.focusings.focusingsworld.data.youtube.repository.recentvideos;
 
-import com.focusings.focusingsworld.data.youtube.remote.dto.SnippetDto;
-import com.focusings.focusingsworld.data.youtube.remote.dto.ThumbnailsDto;
-import com.focusings.focusingsworld.data.youtube.remote.dto.recentvideos.RecentVideosResponseDto;
-import com.focusings.focusingsworld.data.youtube.remote.dto.IdDto;
-import com.focusings.focusingsworld.data.youtube.remote.dto.ThumbnailDto;
-import com.focusings.focusingsworld.data.youtube.remote.dto.YoutubeVideoDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.SnippetDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.ThumbnailsDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.recentvideos.RecentVideosResponseDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.IdDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.ThumbnailDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.YoutubeVideoDto;
 import com.focusings.focusingsworld.domain.models.Thumbnail;
 import com.focusings.focusingsworld.domain.models.Thumbnails;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
@@ -13,11 +13,11 @@ import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class YoutubeDataParser {
+public final class RecentVideosDataMapper {
 
     private static final String YOUTUBE_WATCH_VIDEO_URL = "https://www.youtube.com/watch?v=";
 
-    private YoutubeDataParser() {
+    private RecentVideosDataMapper() {
     }
 
     public static List<YoutubeVideo> parse(RecentVideosResponseDto recentVideosResponseDto) {
