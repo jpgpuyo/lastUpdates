@@ -1,11 +1,11 @@
-package com.focusings.focusingsworld.data.youtube.remote;
+package com.focusings.focusingsworld.data.youtube.repository.recentvideos;
 
-import com.focusings.focusingsworld.data.youtube.remote.dto.SnippetDto;
-import com.focusings.focusingsworld.data.youtube.remote.dto.ThumbnailsDto;
-import com.focusings.focusingsworld.data.youtube.recentvideos.request.RecentVideosResponseDto;
-import com.focusings.focusingsworld.data.youtube.remote.dto.IdDto;
-import com.focusings.focusingsworld.data.youtube.remote.dto.ThumbnailDto;
-import com.focusings.focusingsworld.data.youtube.remote.dto.YoutubeVideoDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.SnippetDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.ThumbnailsDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.recentvideos.RecentVideosResponseDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.IdDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.ThumbnailDto;
+import com.focusings.focusingsworld.data.youtube.api.dto.YoutubeVideoDto;
 import com.focusings.focusingsworld.domain.models.Thumbnail;
 import com.focusings.focusingsworld.domain.models.Thumbnails;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
@@ -13,25 +13,25 @@ import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import java.util.ArrayList;
 import java.util.List;
 
-public final class YoutubeDataParser {
+public final class RecentVideosDataMapper {
 
     private static final String YOUTUBE_WATCH_VIDEO_URL = "https://www.youtube.com/watch?v=";
 
-    private YoutubeDataParser() {
+    private RecentVideosDataMapper() {
     }
 
-    public static List<YoutubeVideo> parse(RecentVideosResponseDto recentVideosResponseDto) {
+    public static List<YoutubeVideo> transform(RecentVideosResponseDto recentVideosResponseDto) {
         List<YoutubeVideo> youtubeVideoList = new ArrayList<>();
         if (recentVideosResponseDto != null) {
-            youtubeVideoList = parse(recentVideosResponseDto.getItems());
+            youtubeVideoList = transform(recentVideosResponseDto.getItems());
         }
         return youtubeVideoList;
     }
 
-    private static List<YoutubeVideo> parse(List<YoutubeVideoDto> youtubeVideoDtoList) {
+    private static List<YoutubeVideo> transform(List<YoutubeVideoDto> youtubeVideoDtoList) {
         List<YoutubeVideo> youtubeVideoList = new ArrayList<>();
         for (YoutubeVideoDto youtubeVideoDto : youtubeVideoDtoList) {
-            YoutubeVideo youtubeVideo = parse(youtubeVideoDto);
+            YoutubeVideo youtubeVideo = transform(youtubeVideoDto);
             if (youtubeVideo != null) {
                 youtubeVideoList.add(youtubeVideo);
             }
@@ -39,19 +39,19 @@ public final class YoutubeDataParser {
         return youtubeVideoList;
     }
 
-    private static YoutubeVideo parse(YoutubeVideoDto youtubeVideoDto) {
+    private static YoutubeVideo transform(YoutubeVideoDto youtubeVideoDto) {
         YoutubeVideo youtubeVideo = null;
         if (youtubeVideoDto != null) {
             youtubeVideo = new YoutubeVideo();
-            youtubeVideo.setUrl(parseUrl(youtubeVideoDto));
-            youtubeVideo.setTitle(parseTitle(youtubeVideoDto));
-            youtubeVideo.setImage(parseImage(youtubeVideoDto));
-            youtubeVideo.setThumbnails(parseThumbnails(youtubeVideoDto));
+            youtubeVideo.setUrl(transformUrl(youtubeVideoDto));
+            youtubeVideo.setTitle(transformTitle(youtubeVideoDto));
+            youtubeVideo.setImage(transformImage(youtubeVideoDto));
+            youtubeVideo.setThumbnails(transformThumbnails(youtubeVideoDto));
         }
         return youtubeVideo;
     }
 
-    private static String parseUrl(YoutubeVideoDto youtubeVideoDto) {
+    private static String transformUrl(YoutubeVideoDto youtubeVideoDto) {
         StringBuilder url = new StringBuilder();
         IdDto idDto = youtubeVideoDto.getId();
         if (idDto != null) {
@@ -64,7 +64,7 @@ public final class YoutubeDataParser {
         return url.toString();
     }
 
-    private static String parseTitle(YoutubeVideoDto youtubeVideoDto) {
+    private static String transformTitle(YoutubeVideoDto youtubeVideoDto) {
         StringBuilder title = new StringBuilder();
         SnippetDto snippetDto = youtubeVideoDto.getSnippet();
         if (snippetDto != null) {
@@ -73,7 +73,7 @@ public final class YoutubeDataParser {
         return title.toString();
     }
 
-    private static String parseImage(YoutubeVideoDto youtubeVideoDto) {
+    private static String transformImage(YoutubeVideoDto youtubeVideoDto) {
         StringBuilder image = new StringBuilder();
         SnippetDto snippetDto = youtubeVideoDto.getSnippet();
         if (snippetDto != null) {
@@ -88,16 +88,16 @@ public final class YoutubeDataParser {
         return image.toString();
     }
 
-    private static Thumbnails parseThumbnails(YoutubeVideoDto youtubeVideoDto) {
+    private static Thumbnails transformThumbnails(YoutubeVideoDto youtubeVideoDto) {
         Thumbnails thumbnails = null;
         SnippetDto snippetDto = youtubeVideoDto.getSnippet();
         if (snippetDto != null) {
             ThumbnailsDto thumbnailsDto = snippetDto.getThumbnails();
             if (thumbnailsDto != null) {
                 thumbnails = new Thumbnails();
-                Thumbnail defaultThumbnail = parseThumbnail(thumbnailsDto.getDefaultThumbnail());
-                Thumbnail mediumThumbnail = parseThumbnail(thumbnailsDto.getMediumThumbnail());
-                Thumbnail highThumbnail = parseThumbnail(thumbnailsDto.getHighThumbnail());
+                Thumbnail defaultThumbnail = transformThumbnail(thumbnailsDto.getDefaultThumbnail());
+                Thumbnail mediumThumbnail = transformThumbnail(thumbnailsDto.getMediumThumbnail());
+                Thumbnail highThumbnail = transformThumbnail(thumbnailsDto.getHighThumbnail());
 
                 if (defaultThumbnail != null) {
                     thumbnails.setDefaultThumbnail(defaultThumbnail);
@@ -115,7 +115,7 @@ public final class YoutubeDataParser {
         return thumbnails;
     }
 
-    private static Thumbnail parseThumbnail(ThumbnailDto thumbnailDto) {
+    private static Thumbnail transformThumbnail(ThumbnailDto thumbnailDto) {
         Thumbnail thumbnail = null;
         if (thumbnailDto != null) {
             thumbnail = new Thumbnail();

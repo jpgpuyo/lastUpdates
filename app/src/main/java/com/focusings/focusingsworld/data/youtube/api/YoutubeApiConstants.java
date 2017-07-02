@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.data.youtube.remote;
+package com.focusings.focusingsworld.data.youtube.api;
 
 public class YoutubeApiConstants {
 

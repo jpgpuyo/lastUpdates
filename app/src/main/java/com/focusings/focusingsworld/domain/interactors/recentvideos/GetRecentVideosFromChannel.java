@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.domain.interactors;
+package com.focusings.focusingsworld.domain.interactors.recentvideos;
 
 import com.focusings.focusingsworld.domain.models.YoutubeChannel;
 import com.focusings.focusingsworld.domain.repository.YoutubeRepository;

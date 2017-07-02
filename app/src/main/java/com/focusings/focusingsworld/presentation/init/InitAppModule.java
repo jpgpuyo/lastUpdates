@@ -4,7 +4,7 @@ import com.focusings.focusingsworld.infrastructure.connectivity.Network;
 import com.focusings.focusingsworld.infrastructure.executor.PostExecutionThread;
 import com.focusings.focusingsworld.infrastructure.executor.ThreadExecutor;
 import com.focusings.focusingsworld.presentation.init.presenter.InitAppPresenter;
-import com.focusings.focusingsworld.domain.interactors.InitApp;
+import com.focusings.focusingsworld.domain.interactors.init.InitApp;
 import com.focusings.focusingsworld.infrastructure.interactor.UseCase;
 import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
 

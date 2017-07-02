@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.domain.interactors;
+package com.focusings.focusingsworld.domain.interactors.recentvideos;
 
 public class GetRecentVideosRequest {
 
