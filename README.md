@@ -8,5 +8,6 @@ Fork created to:
 - Do experiments with approaches based on clean architecture
 - Do experiments with new libraries.
 - Improve my android skills
+- Confirm that gitkraken is better than sourcetree
 
 It is better doing experiments at home than at work :)
