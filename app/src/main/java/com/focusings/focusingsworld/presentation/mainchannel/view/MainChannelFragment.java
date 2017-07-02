@@ -62,11 +62,8 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     }
 
     private void setupPullToRefresh() {
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                mainChannelPresenter.getLastVideosFromYoutubeChannel(true);
-            }
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            mainChannelPresenter.getLastVideosFromYoutubeChannel(true);
         });
     }
 
@@ -76,6 +73,7 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
         recyclerView.setHasFixedSize(true);
 
         mainChannelAdapter = new MainChannelAdapter();
+        mainChannelAdapter.setHasStableIds(true);
         recyclerView.setAdapter(mainChannelAdapter);
     }
 
