@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.data.youtube.cache;
+package com.focusings.focusingsworld.data.youtube.repository.recentvideos.datasources;
 
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import com.focusings.focusingsworld.infrastructure.preferences.PrefsCache;

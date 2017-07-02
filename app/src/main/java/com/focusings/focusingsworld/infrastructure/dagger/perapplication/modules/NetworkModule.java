@@ -3,7 +3,7 @@ package com.focusings.focusingsworld.infrastructure.dagger.perapplication.module
 import android.content.Context;
 
 import com.focusings.focusingsworld.infrastructure.connectivity.NetworkConnection;
-import com.focusings.focusingsworld.data.youtube.remote.YoutubeApiConstants;
+import com.focusings.focusingsworld.data.youtube.api.YoutubeApiConstants;
 
 import javax.inject.Singleton;
 
