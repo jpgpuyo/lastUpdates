@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.infrastructure.executor;
+package com.jpuyo.android.infrastructure.executor;
 
 import android.os.Handler;
 import android.os.Looper;

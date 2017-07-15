@@ -3,13 +3,13 @@ package com.focusings.focusingsworld.infrastructure.dagger.perapplication.module
 import android.content.Context;
 
 import com.focusings.focusingsworld.AndroidApplication;
-import com.focusings.focusingsworld.infrastructure.connectivity.Network;
-import com.focusings.focusingsworld.infrastructure.connectivity.NetworkConnection;
-import com.focusings.focusingsworld.infrastructure.executor.UIThread;
-import com.focusings.focusingsworld.infrastructure.executor.JobExecutor;
-import com.focusings.focusingsworld.infrastructure.executor.PostExecutionThread;
-import com.focusings.focusingsworld.infrastructure.executor.ThreadExecutor;
 import com.focusings.focusingsworld.presentation.init.InitAppModule;
+import com.jpuyo.android.infrastructure.connectivity.Network;
+import com.jpuyo.android.infrastructure.connectivity.NetworkConnection;
+import com.jpuyo.android.infrastructure.executor.JobExecutor;
+import com.jpuyo.android.infrastructure.executor.PostExecutionThread;
+import com.jpuyo.android.infrastructure.executor.ThreadExecutor;
+import com.jpuyo.android.infrastructure.executor.UIThread;
 
 import javax.inject.Singleton;
 

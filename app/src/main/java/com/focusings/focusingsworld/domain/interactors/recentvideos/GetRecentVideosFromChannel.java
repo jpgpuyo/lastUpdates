@@ -2,10 +2,10 @@ package com.focusings.focusingsworld.domain.interactors.recentvideos;
 
 import com.focusings.focusingsworld.domain.models.YoutubeChannel;
 import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
-import com.focusings.focusingsworld.infrastructure.connectivity.Network;
-import com.focusings.focusingsworld.infrastructure.executor.PostExecutionThread;
-import com.focusings.focusingsworld.infrastructure.executor.ThreadExecutor;
-import com.focusings.focusingsworld.infrastructure.interactor.UseCase;
+import com.jpuyo.android.infrastructure.connectivity.Network;
+import com.jpuyo.android.infrastructure.executor.PostExecutionThread;
+import com.jpuyo.android.infrastructure.executor.ThreadExecutor;
+import com.jpuyo.android.infrastructure.interactor.UseCase;
 
 import rx.Observable;
 import rx.Subscriber;

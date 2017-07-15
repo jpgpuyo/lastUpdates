@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.infrastructure.renderer;
+package com.jpuyo.android.infrastructure.renderer;
 
 import android.support.v7.widget.RecyclerView;
 

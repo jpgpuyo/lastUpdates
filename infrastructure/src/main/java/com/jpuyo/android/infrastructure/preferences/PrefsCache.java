@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.infrastructure.preferences;
+package com.jpuyo.android.infrastructure.preferences;
 
 import com.github.pwittchen.prefser.library.Prefser;
 import com.github.pwittchen.prefser.library.TypeToken;
