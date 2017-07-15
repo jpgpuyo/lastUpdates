@@ -2,11 +2,12 @@ package com.focusings.focusingsworld.presentation.mainchannel;
 
 import com.focusings.focusingsworld.domain.interactors.recentvideos.GetRecentVideosFromChannel;
 import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
-import com.focusings.focusingsworld.infrastructure.connectivity.Network;
 import com.focusings.focusingsworld.infrastructure.dagger.PerActivity;
-import com.focusings.focusingsworld.infrastructure.executor.PostExecutionThread;
-import com.focusings.focusingsworld.infrastructure.executor.ThreadExecutor;
+
 import com.focusings.focusingsworld.presentation.mainchannel.presenter.MainChannelPresenter;
+import com.jpuyo.android.infrastructure.connectivity.Network;
+import com.jpuyo.android.infrastructure.executor.PostExecutionThread;
+import com.jpuyo.android.infrastructure.executor.ThreadExecutor;
 
 import dagger.Module;
 import dagger.Provides;

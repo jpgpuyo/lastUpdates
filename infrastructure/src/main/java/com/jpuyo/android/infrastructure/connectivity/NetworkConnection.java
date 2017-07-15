@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.infrastructure.connectivity;
+package com.jpuyo.android.infrastructure.connectivity;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

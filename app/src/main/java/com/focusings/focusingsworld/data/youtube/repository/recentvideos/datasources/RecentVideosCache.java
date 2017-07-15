@@ -1,9 +1,9 @@
 package com.focusings.focusingsworld.data.youtube.repository.recentvideos.datasources;
 
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
-import com.focusings.focusingsworld.infrastructure.preferences.PrefsCache;
 import com.github.pwittchen.prefser.library.Prefser;
 import com.github.pwittchen.prefser.library.TypeToken;
+import com.jpuyo.android.infrastructure.preferences.PrefsCache;
 
 import java.util.List;
 

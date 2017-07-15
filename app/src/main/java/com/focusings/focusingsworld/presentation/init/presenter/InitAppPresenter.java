@@ -2,9 +2,9 @@ package com.focusings.focusingsworld.presentation.init.presenter;
 
 import com.fernandocejas.frodo.annotation.RxLogSubscriber;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
-import com.focusings.focusingsworld.infrastructure.interactor.DefaultSubscriber;
-import com.focusings.focusingsworld.infrastructure.interactor.UseCase;
 import com.focusings.focusingsworld.presentation.init.view.SplashView;
+import com.jpuyo.android.infrastructure.interactor.DefaultSubscriber;
+import com.jpuyo.android.infrastructure.interactor.UseCase;
 
 import java.util.List;
 

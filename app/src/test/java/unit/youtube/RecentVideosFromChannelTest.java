@@ -10,7 +10,7 @@ import com.focusings.focusingsworld.data.youtube.repository.recentvideos.RecentV
 import com.focusings.focusingsworld.data.youtube.repository.recentvideos.datasources.RecentVideosCloud;
 import com.focusings.focusingsworld.domain.models.Thumbnail;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
-import com.focusings.focusingsworld.infrastructure.preferences.PrefsCache;
+import com.jpuyo.android.infrastructure.preferences.PrefsCache;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

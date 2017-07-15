@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.focusings.focusingsworld.infrastructure.interactor;
+package com.jpuyo.android.infrastructure.interactor;
 
-import com.focusings.focusingsworld.infrastructure.executor.PostExecutionThread;
-import com.focusings.focusingsworld.infrastructure.executor.ThreadExecutor;
+import com.jpuyo.android.infrastructure.executor.PostExecutionThread;
+import com.jpuyo.android.infrastructure.executor.ThreadExecutor;
 
 import rx.Observable;
 import rx.Subscriber;
