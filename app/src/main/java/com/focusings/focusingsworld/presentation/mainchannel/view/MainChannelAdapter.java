@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
-import com.focusings.focusingsworld.infrastructure.renderer.ItemsList;
+import com.jpuyo.android.infrastructure.renderer.ItemsList;
 import com.focusings.focusingsworld.presentation.mainchannel.view.renderer.youtubevideo.YoutubeVideoRenderer;
 
 import java.util.List;

@@ -13,21 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.focusings.focusingsworld.infrastructure.interactor;
+package com.jpuyo.android.infrastructure.executor;
+
+import rx.Scheduler;
 
 /**
- * Default subscriber base class to be used whenever you want default error handling.
+ * Thread abstraction created to change the execution context from any thread to any other thread.
+ * Useful to encapsulate a UI Thread for example, since some job will be done in background, an
+ * implementation of this interface will change context and update the UI.
  */
-public class DefaultSubscriber<T> extends rx.Subscriber<T> {
-    @Override public void onCompleted() {
-        // no-op by default.
-    }
-
-    @Override public void onError(Throwable e) {
-        // no-op by default.
-    }
-
-    @Override public void onNext(T t) {
-        // no-op by default.
-    }
+public interface PostExecutionThread {
+    Scheduler getScheduler();
 }

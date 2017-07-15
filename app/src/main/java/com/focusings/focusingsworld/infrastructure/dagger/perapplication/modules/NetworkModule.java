@@ -2,8 +2,8 @@ package com.focusings.focusingsworld.infrastructure.dagger.perapplication.module
 
 import android.content.Context;
 
-import com.focusings.focusingsworld.infrastructure.connectivity.NetworkConnection;
 import com.focusings.focusingsworld.data.youtube.api.YoutubeApiConstants;
+import com.jpuyo.android.infrastructure.connectivity.NetworkConnection;
 
 import javax.inject.Singleton;
 

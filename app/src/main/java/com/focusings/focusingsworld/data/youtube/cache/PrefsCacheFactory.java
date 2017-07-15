@@ -1,8 +1,8 @@
 package com.focusings.focusingsworld.data.youtube.cache;
 
 import com.focusings.focusingsworld.data.youtube.repository.recentvideos.datasources.RecentVideosCache;
-import com.focusings.focusingsworld.infrastructure.preferences.PrefsCache;
 import com.github.pwittchen.prefser.library.Prefser;
+import com.jpuyo.android.infrastructure.preferences.PrefsCache;
 
 /**
  * Created by usuario on 21/05/2017.
