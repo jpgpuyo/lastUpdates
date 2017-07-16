@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.app.Application;
 
 import com.facebook.stetho.Stetho;
-import com.focusings.focusingsworld.infrastructure.dagger.AppComponent;
 import com.focusings.focusingsworld.infrastructure.dagger.DaggerAppComponent;
 
 import javax.inject.Inject;
