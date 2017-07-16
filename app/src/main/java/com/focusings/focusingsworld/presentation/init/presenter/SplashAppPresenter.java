@@ -8,15 +8,16 @@ import com.jpuyo.android.infrastructure.interactor.UseCase;
 
 import java.util.List;
 
-public class InitAppPresenter {
+public class SplashAppPresenter {
 
     private final UseCase initAppUseCase;
 
     private SplashView splashView;
 
-    public InitAppPresenter(UseCase initAppUseCase) {
+    public SplashAppPresenter(UseCase initAppUseCase) {
         this.initAppUseCase = initAppUseCase;
     }
+
 
     public void execute(){
         initAppUseCase.execute(new InitAppSubscriber());

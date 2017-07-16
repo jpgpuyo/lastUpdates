@@ -4,18 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-import com.focusings.focusingsworld.AndroidApplication;
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.presentation.MainActivity;
-import com.focusings.focusingsworld.presentation.init.presenter.InitAppPresenter;
+import com.focusings.focusingsworld.presentation.init.presenter.SplashAppPresenter;
 import com.focusings.focusingsworld.presentation.init.view.SplashView;
 
 import javax.inject.Inject;
 
+import dagger.android.AndroidInjection;
+
 public class SplashActivity extends AppCompatActivity implements SplashView {
 
     @Inject
-    InitAppPresenter initAppPresenter;
+    SplashAppPresenter splashAppPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +25,12 @@ public class SplashActivity extends AppCompatActivity implements SplashView {
 
         initializeInjector();
 
-        initAppPresenter.setView(this);
-        initAppPresenter.execute();
+        splashAppPresenter.setView(this);
+        splashAppPresenter.execute();
     }
 
     private void initializeInjector() {
-        ((AndroidApplication) getApplication()).getApplicationComponent().inject(this);
+        AndroidInjection.inject(this);
     }
 
     @Override

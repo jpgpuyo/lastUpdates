@@ -15,32 +15,36 @@ import android.support.v7.widget.Toolbar;
 
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.infrastructure.BaseActivity;
-import com.focusings.focusingsworld.infrastructure.dagger.HasComponent;
-import com.focusings.focusingsworld.infrastructure.dagger.peractivity.components.ActivityComponent;
-import com.focusings.focusingsworld.infrastructure.dagger.peractivity.components.DaggerActivityComponent;
-import com.focusings.focusingsworld.presentation.mainchannel.MainChannelModule;
 import com.focusings.focusingsworld.presentation.mainchannel.view.MainChannelFragment;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.inject.Inject;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import dagger.android.AndroidInjection;
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.support.HasSupportFragmentInjector;
 
-public class MainActivity extends BaseActivity implements HasComponent<ActivityComponent>, MainView{
+public class MainActivity extends BaseActivity implements HasSupportFragmentInjector, MainView{
 
-    @InjectView(R.id.rootLayout)
+    @Inject
+    DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;
+
+    @BindView(R.id.rootLayout)
     CoordinatorLayout rootLayout;
 
-    @InjectView(R.id.toolbar)
+    @BindView(R.id.toolbar)
     Toolbar toolbar;
 
-    @InjectView(R.id.tabs)
+    @BindView(R.id.tabs)
     TabLayout tabLayout;
 
-    @InjectView(R.id.viewpager)
+    @BindView(R.id.viewpager)
     ViewPager viewPager;
-    private ActivityComponent activityComponent;
 
     private Snackbar snackbar;
 
@@ -49,7 +53,7 @@ public class MainActivity extends BaseActivity implements HasComponent<ActivityC
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ButterKnife.inject(this);
+        ButterKnife.bind(this);
 
         setupToolbar();
         setupViewPager();
@@ -64,16 +68,7 @@ public class MainActivity extends BaseActivity implements HasComponent<ActivityC
 
     @Override
     protected void initializeInjector() {
-        this.activityComponent = DaggerActivityComponent.builder()
-                .applicationComponent(getApplicationComponent())
-                .activityModule(getActivityModule())
-                .mainChannelModule(new MainChannelModule())
-                .build();
-    }
-
-    @Override
-    public ActivityComponent getComponent() {
-        return activityComponent;
+        AndroidInjection.inject(this);
     }
 
     private void setupToolbar() {
@@ -97,6 +92,11 @@ public class MainActivity extends BaseActivity implements HasComponent<ActivityC
     @Override
     public void hideErrorMessage() {
         snackbar.dismiss();
+    }
+
+    @Override
+    public AndroidInjector<Fragment> supportFragmentInjector() {
+        return fragmentDispatchingAndroidInjector;
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
