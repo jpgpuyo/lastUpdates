@@ -1,28 +1,20 @@
 package com.focusings.focusingsworld.infrastructure.dagger;
 
-import android.app.Activity;
-
 import com.focusings.focusingsworld.presentation.MainActivity;
-import com.focusings.focusingsworld.presentation.MainActivityComponent;
+import com.focusings.focusingsworld.presentation.MainActivityModule;
 import com.focusings.focusingsworld.presentation.init.SplashActivity;
-import com.focusings.focusingsworld.presentation.init.SplashActivityComponent;
+import com.focusings.focusingsworld.presentation.init.SplashActivityModule;
+import com.focusings.focusingsworld.presentation.MainActivityFragmentProvider;
 
-import dagger.Binds;
 import dagger.Module;
-import dagger.android.ActivityKey;
-import dagger.android.AndroidInjector;
-import dagger.multibindings.IntoMap;
+import dagger.android.ContributesAndroidInjector;
 
 @Module
 public abstract class ActivityProvider {
 
-    @Binds
-    @IntoMap
-    @ActivityKey(MainActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity> bindMainActivity(MainActivityComponent.Builder builder);
+    @ContributesAndroidInjector(modules = SplashActivityModule.class)
+    abstract SplashActivity bindSplashActivity();
 
-    @Binds
-    @IntoMap
-    @ActivityKey(SplashActivity.class)
-    abstract AndroidInjector.Factory<? extends Activity> bindSplashActivity(SplashActivityComponent.Builder builder);
+    @ContributesAndroidInjector(modules = {MainActivityModule.class, MainActivityFragmentProvider.class})
+    abstract MainActivity bindMainActivity();
 }

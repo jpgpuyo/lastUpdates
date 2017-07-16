@@ -9,8 +9,6 @@ import com.focusings.focusingsworld.data.youtube.cache.PrefsCacheFactory;
 import com.focusings.focusingsworld.data.youtube.repository.recentvideos.RecentVideosRepository;
 import com.focusings.focusingsworld.data.youtube.repository.recentvideos.datasources.RecentVideosCloud;
 import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
-import com.focusings.focusingsworld.presentation.MainActivityComponent;
-import com.focusings.focusingsworld.presentation.init.SplashActivityComponent;
 import com.github.pwittchen.prefser.library.Prefser;
 import com.jpuyo.android.infrastructure.connectivity.Network;
 import com.jpuyo.android.infrastructure.connectivity.NetworkConnection;
@@ -29,9 +27,7 @@ import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-@Module(subcomponents = {
-        MainActivityComponent.class,
-        SplashActivityComponent.class})
+@Module
 public class AppModule {
 
     @Provides
