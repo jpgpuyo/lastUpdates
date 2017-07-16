@@ -23,7 +23,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import dagger.android.support.AndroidSupportInjection;
 
 public class MainChannelFragment extends BaseFragment implements MainChannelView {
 
@@ -79,11 +78,6 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initializePresenter();
-    }
-
-    @Override
-    protected void initializeInjector() {
-        AndroidSupportInjection.inject(this);
     }
 
     private void initializePresenter() {

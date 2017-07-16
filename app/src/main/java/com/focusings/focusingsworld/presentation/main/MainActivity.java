@@ -24,7 +24,6 @@ import javax.inject.Inject;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import dagger.android.AndroidInjection;
 import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
@@ -64,11 +63,6 @@ public class MainActivity extends BaseActivity implements HasSupportFragmentInje
 
     private void setupSnackBar() {
         snackbar = Snackbar.make(rootLayout, "", Snackbar.LENGTH_INDEFINITE);
-    }
-
-    @Override
-    protected void initializeInjector() {
-        AndroidInjection.inject(this);
     }
 
     private void setupToolbar() {
