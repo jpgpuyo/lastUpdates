@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.presentation.mainchannel.view;
+package com.focusings.focusingsworld.presentation.main.mainchannel;
 
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 

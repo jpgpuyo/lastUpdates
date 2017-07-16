@@ -1,7 +1,8 @@
-package com.focusings.focusingsworld.presentation;
+package com.focusings.focusingsworld.presentation.main;
 
-import com.focusings.focusingsworld.presentation.mainchannel.MainChannelFragmentModule;
-import com.focusings.focusingsworld.presentation.mainchannel.view.MainChannelFragment;
+
+import com.focusings.focusingsworld.presentation.main.mainchannel.MainChannelFragment;
+import com.focusings.focusingsworld.presentation.main.mainchannel.MainChannelFragmentModule;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

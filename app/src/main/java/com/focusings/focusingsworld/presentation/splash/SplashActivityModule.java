@@ -1,8 +1,8 @@
-package com.focusings.focusingsworld.presentation.init;
+package com.focusings.focusingsworld.presentation.splash;
 
 import com.focusings.focusingsworld.domain.interactors.init.InitApp;
 import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
-import com.focusings.focusingsworld.presentation.init.presenter.SplashAppPresenter;
+import com.focusings.focusingsworld.presentation.splash.SplashAppPresenter;
 import com.jpuyo.android.infrastructure.connectivity.Network;
 import com.jpuyo.android.infrastructure.executor.PostExecutionThread;
 import com.jpuyo.android.infrastructure.executor.ThreadExecutor;

@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.presentation.mainchannel.view;
+package com.focusings.focusingsworld.presentation.main.mainchannel;
 
 import android.app.Activity;
 import android.content.Context;
@@ -14,9 +14,8 @@ import android.view.ViewGroup;
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import com.focusings.focusingsworld.infrastructure.BaseFragment;
-import com.focusings.focusingsworld.presentation.MainActivity;
-import com.focusings.focusingsworld.presentation.MainView;
-import com.focusings.focusingsworld.presentation.mainchannel.presenter.MainChannelPresenter;
+import com.focusings.focusingsworld.presentation.main.MainActivity;
+import com.focusings.focusingsworld.presentation.main.MainView;
 
 import java.util.List;
 
