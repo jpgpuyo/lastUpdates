@@ -14,7 +14,6 @@ import android.view.ViewGroup;
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import com.focusings.focusingsworld.infrastructure.BaseFragment;
-import com.focusings.focusingsworld.infrastructure.dagger.peractivity.components.ActivityComponent;
 import com.focusings.focusingsworld.presentation.MainActivity;
 import com.focusings.focusingsworld.presentation.MainView;
 import com.focusings.focusingsworld.presentation.mainchannel.presenter.MainChannelPresenter;
@@ -23,8 +22,9 @@ import java.util.List;
 
 import javax.inject.Inject;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
+import dagger.android.support.AndroidSupportInjection;
 
 public class MainChannelFragment extends BaseFragment implements MainChannelView {
 
@@ -33,10 +33,10 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     @Inject
     MainChannelPresenter mainChannelPresenter;
 
-    @InjectView(R.id.rv_youtube_videos)
+    @BindView(R.id.rv_youtube_videos)
     RecyclerView recyclerView;
 
-    @InjectView(R.id.swiperefresh)
+    @BindView(R.id.swiperefresh)
     SwipeRefreshLayout swipeRefreshLayout;
 
     private MainView mainView;
@@ -45,7 +45,7 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.main_channel_fragment, container, false);
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
         setupPullToRefresh();
         setupRecyclerView();
         return view;
@@ -53,7 +53,6 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
 
     @Override
     public void onAttach(Context context) {
-        super.onAttach(context);
         super.onAttach(context);
         Activity activity = (Activity) context;
         if (activity instanceof MainActivity) {
@@ -85,7 +84,7 @@ public class MainChannelFragment extends BaseFragment implements MainChannelView
 
     @Override
     protected void initializeInjector() {
-        this.getComponent(ActivityComponent.class).inject(this);
+        AndroidSupportInjection.inject(this);
     }
 
     private void initializePresenter() {

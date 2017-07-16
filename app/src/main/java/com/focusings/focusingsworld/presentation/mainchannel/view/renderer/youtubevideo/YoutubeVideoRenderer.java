@@ -13,20 +13,20 @@ import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import com.focusings.focusingsworld.presentation.mainchannel.view.renderer.youtubevideo.play.PlayVideoOnClickListener;
 import com.focusings.focusingsworld.presentation.mainchannel.view.renderer.youtubevideo.share.ShareVideoOnItemClickListener;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.InjectView;
 
 public class YoutubeVideoRenderer extends RecyclerView.ViewHolder {
 
     private final View view;
 
-    @InjectView(R.id.tvTitle)
+    @BindView(R.id.tvTitle)
     TextView title;
 
-    @InjectView(R.id.ivImage)
+    @BindView(R.id.ivImage)
     ImageView image;
 
-    @InjectView(R.id.share)
+    @BindView(R.id.share)
     Button share;
 
     protected View getView() {
@@ -36,7 +36,7 @@ public class YoutubeVideoRenderer extends RecyclerView.ViewHolder {
     public YoutubeVideoRenderer(@NonNull View view) {
         super(view);
         this.view = view;
-        ButterKnife.inject(this, view);
+        ButterKnife.bind(this, view);
     }
 
     public void render(@NonNull YoutubeVideo youtubeVideo) {
