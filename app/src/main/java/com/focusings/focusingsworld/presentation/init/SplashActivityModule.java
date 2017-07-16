@@ -1,30 +1,25 @@
 package com.focusings.focusingsworld.presentation.init;
 
-import com.focusings.focusingsworld.presentation.init.presenter.InitAppPresenter;
 import com.focusings.focusingsworld.domain.interactors.init.InitApp;
-
 import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
+import com.focusings.focusingsworld.presentation.init.presenter.SplashAppPresenter;
 import com.jpuyo.android.infrastructure.connectivity.Network;
 import com.jpuyo.android.infrastructure.executor.PostExecutionThread;
 import com.jpuyo.android.infrastructure.executor.ThreadExecutor;
 import com.jpuyo.android.infrastructure.interactor.UseCase;
 
-import javax.inject.Singleton;
-
 import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class InitAppModule {
+public class SplashActivityModule {
 
     @Provides
-    @Singleton
-    InitAppPresenter provideInitAppPresenter(UseCase initAppUseCase){
-        return new InitAppPresenter(initAppUseCase);
+    SplashAppPresenter provideInitAppPresenter(UseCase initAppUseCase){
+        return new SplashAppPresenter(initAppUseCase);
     }
 
     @Provides
-    @Singleton
     UseCase provideInitAppUseCase(ThreadExecutor threadExecutor,
                                   PostExecutionThread postExecutionThread,
                                   Network network,

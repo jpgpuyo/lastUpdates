@@ -4,10 +4,9 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
-import com.focusings.focusingsworld.AndroidApplication;
-import com.focusings.focusingsworld.infrastructure.dagger.peractivity.modules.ActivityModule;
-import com.focusings.focusingsworld.infrastructure.dagger.perapplication.components.ApplicationComponent;
-
+/**
+ * Base {@link AppCompatActivity} class for every activity in this application.
+ */
 public abstract class BaseActivity extends AppCompatActivity {
 
     @Override
@@ -18,22 +17,4 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     protected abstract void initializeInjector();
-
-    /**
-     * Get the Main Application component for dependency injection.
-     *
-     * @return {@link ApplicationComponent}
-     */
-    public ApplicationComponent getApplicationComponent() {
-        return ((AndroidApplication) getApplication()).getApplicationComponent();
-    }
-
-    /**
-     * Get an Activity module for dependency injection.
-     *
-     * @return {@link ActivityModule}
-     */
-    public ActivityModule getActivityModule() {
-        return new ActivityModule();
-    }
 }

@@ -1,21 +1,21 @@
 package com.focusings.focusingsworld;
 
+import android.app.Activity;
 import android.app.Application;
 
 import com.facebook.stetho.Stetho;
-import com.focusings.focusingsworld.infrastructure.dagger.perapplication.components.ApplicationComponent;
-import com.focusings.focusingsworld.infrastructure.dagger.perapplication.components.DaggerApplicationComponent;
-import com.focusings.focusingsworld.infrastructure.dagger.perapplication.modules.ApplicationModule;
-import com.focusings.focusingsworld.infrastructure.dagger.perapplication.modules.YoutubeModule;
-import com.focusings.focusingsworld.presentation.init.InitAppModule;
+import com.focusings.focusingsworld.infrastructure.dagger.DaggerAppComponent;
 
-public class AndroidApplication extends Application {
+import javax.inject.Inject;
 
-    private ApplicationComponent applicationComponent;
+import dagger.android.AndroidInjector;
+import dagger.android.DispatchingAndroidInjector;
+import dagger.android.HasActivityInjector;
 
-    public ApplicationComponent getApplicationComponent() {
-        return applicationComponent;
-    }
+public class AndroidApplication extends Application implements HasActivityInjector {
+
+    @Inject
+    DispatchingAndroidInjector<Activity> activityDispatchingAndroidInjector;
 
     @Override
     public void onCreate() {
@@ -28,11 +28,15 @@ public class AndroidApplication extends Application {
     }
 
     private void initializeInjector() {
-        applicationComponent = DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(this))
-                .initAppModule(new InitAppModule())
-                .youtubeModule(new YoutubeModule(this))
-                .build();
-        applicationComponent.inject(this);
+        DaggerAppComponent
+                .builder()
+                .application(this)
+                .build()
+                .inject(this);
+    }
+
+    @Override
+    public AndroidInjector<Activity> activityInjector() {
+        return activityDispatchingAndroidInjector;
     }
 }

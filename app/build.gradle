@@ -4,14 +4,12 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
         classpath 'com.fernandocejas.frodo:frodo-plugin:0.8.3'
         classpath 'me.tatarka:gradle-retrolambda:3.6.1'
     }
 }
 
 apply plugin: 'com.android.application'
-apply plugin: 'com.neenbedankt.android-apt'
 apply plugin: 'com.fernandocejas.frodo'
 apply plugin: 'me.tatarka.retrolambda'
 
@@ -63,8 +61,13 @@ dependencies {
 
     //infrastructure
     compile project(':infrastructure')
-    compile 'com.google.dagger:dagger:2.6.1'
-    apt 'com.google.dagger:dagger-compiler:2.6.1'
+    compile 'com.google.dagger:dagger:2.11'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.11'
+    annotationProcessor 'com.google.dagger:dagger-android-processor:2.11'
+    compile 'com.google.dagger:dagger-android-support:2.11'
+
+    compile 'com.jakewharton:butterknife:8.7.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.7.0'
 
     //data
     compile 'com.facebook.stetho:stetho:1.5.0'
@@ -76,6 +79,7 @@ dependencies {
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
+    androidTestCompile 'com.google.code.findbugs:jsr305:3.0.1'
     testCompile 'junit:junit:4.12'
     testCompile "org.mockito:mockito-core:2.7.22"
     testCompile 'com.squareup.okhttp3:mockwebserver:3.6.0'
