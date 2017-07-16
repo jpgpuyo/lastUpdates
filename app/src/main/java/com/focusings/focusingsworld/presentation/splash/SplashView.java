@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.presentation.init.view;
+package com.focusings.focusingsworld.presentation.splash;
 
 /**
  * Created by usuario on 31/05/2017.

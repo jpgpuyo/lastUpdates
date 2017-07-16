@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.presentation.mainchannel.view;
+package com.focusings.focusingsworld.presentation.main.mainchannel;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
 import com.jpuyo.android.infrastructure.renderer.ItemsList;
-import com.focusings.focusingsworld.presentation.mainchannel.view.renderer.youtubevideo.YoutubeVideoRenderer;
+import com.focusings.focusingsworld.presentation.main.mainchannel.renderer.YoutubeVideoRenderer;
 
 import java.util.List;
 

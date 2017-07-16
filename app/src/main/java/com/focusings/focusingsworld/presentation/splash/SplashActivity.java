@@ -1,13 +1,11 @@
-package com.focusings.focusingsworld.presentation.init;
+package com.focusings.focusingsworld.presentation.splash;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.presentation.MainActivity;
-import com.focusings.focusingsworld.presentation.init.presenter.SplashAppPresenter;
-import com.focusings.focusingsworld.presentation.init.view.SplashView;
+import com.focusings.focusingsworld.presentation.main.MainActivity;
 
 import javax.inject.Inject;
 

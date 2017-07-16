@@ -1,9 +1,9 @@
 package com.focusings.focusingsworld.infrastructure.dagger;
 
-import com.focusings.focusingsworld.presentation.MainActivity;
-import com.focusings.focusingsworld.presentation.MainActivityModule;
-import com.focusings.focusingsworld.presentation.init.SplashActivity;
-import com.focusings.focusingsworld.presentation.init.SplashActivityModule;
+import com.focusings.focusingsworld.presentation.main.MainActivity;
+import com.focusings.focusingsworld.presentation.main.MainActivityModule;
+import com.focusings.focusingsworld.presentation.splash.SplashActivity;
+import com.focusings.focusingsworld.presentation.splash.SplashActivityModule;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;

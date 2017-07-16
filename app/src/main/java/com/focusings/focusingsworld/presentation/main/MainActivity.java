@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.presentation;
+package com.focusings.focusingsworld.presentation.main;
 
 
 import android.os.Bundle;
@@ -15,7 +15,7 @@ import android.support.v7.widget.Toolbar;
 
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.infrastructure.BaseActivity;
-import com.focusings.focusingsworld.presentation.mainchannel.view.MainChannelFragment;
+import com.focusings.focusingsworld.presentation.main.mainchannel.MainChannelFragment;
 
 import java.util.ArrayList;
 import java.util.List;

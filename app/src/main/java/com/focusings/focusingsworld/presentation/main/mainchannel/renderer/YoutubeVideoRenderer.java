@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.presentation.mainchannel.view.renderer.youtubevideo;
+package com.focusings.focusingsworld.presentation.main.mainchannel.renderer;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -10,8 +10,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
-import com.focusings.focusingsworld.presentation.mainchannel.view.renderer.youtubevideo.play.PlayVideoOnClickListener;
-import com.focusings.focusingsworld.presentation.mainchannel.view.renderer.youtubevideo.share.ShareVideoOnItemClickListener;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
