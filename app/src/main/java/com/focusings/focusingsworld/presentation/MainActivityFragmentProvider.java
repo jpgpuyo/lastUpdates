@@ -10,5 +10,5 @@ import dagger.android.ContributesAndroidInjector;
 public abstract class MainActivityFragmentProvider {
 
     @ContributesAndroidInjector(modules = MainChannelFragmentModule.class)
-    abstract MainChannelFragment provideMainChannelFragmentFactory();
+    abstract MainChannelFragment mainChannelFragment();
 }
