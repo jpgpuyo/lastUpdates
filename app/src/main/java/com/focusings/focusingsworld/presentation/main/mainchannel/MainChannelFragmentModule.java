@@ -1,8 +1,7 @@
-package com.focusings.focusingsworld.presentation.mainchannel;
+package com.focusings.focusingsworld.presentation.main.mainchannel;
 
 import com.focusings.focusingsworld.domain.interactors.recentvideos.GetRecentVideosFromChannel;
 import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
-import com.focusings.focusingsworld.presentation.mainchannel.presenter.MainChannelPresenter;
 import com.jpuyo.android.infrastructure.connectivity.Network;
 import com.jpuyo.android.infrastructure.executor.PostExecutionThread;
 import com.jpuyo.android.infrastructure.executor.ThreadExecutor;

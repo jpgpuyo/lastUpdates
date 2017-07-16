@@ -1,10 +1,9 @@
-package com.focusings.focusingsworld.presentation.mainchannel.presenter;
+package com.focusings.focusingsworld.presentation.main.mainchannel;
 
 import com.fernandocejas.frodo.annotation.RxLogSubscriber;
 import com.focusings.focusingsworld.domain.interactors.recentvideos.GetRecentVideosFromChannel;
 import com.focusings.focusingsworld.domain.interactors.recentvideos.GetRecentVideosRequest;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
-import com.focusings.focusingsworld.presentation.mainchannel.view.MainChannelView;
 import com.jpuyo.android.infrastructure.interactor.DefaultSubscriber;
 
 import java.util.ArrayList;

@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.presentation;
+package com.focusings.focusingsworld.presentation.main;
 
 import android.support.annotation.StringRes;
 
