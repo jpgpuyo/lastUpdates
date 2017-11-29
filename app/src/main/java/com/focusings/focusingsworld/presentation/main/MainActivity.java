@@ -14,7 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.infrastructure.BaseActivity;
+import com.focusings.focusingsworld.infrastructure.RootActivity;
 import com.focusings.focusingsworld.presentation.main.mainchannel.MainChannelFragment;
 
 import java.util.ArrayList;
@@ -28,7 +28,7 @@ import dagger.android.AndroidInjector;
 import dagger.android.DispatchingAndroidInjector;
 import dagger.android.support.HasSupportFragmentInjector;
 
-public class MainActivity extends BaseActivity implements HasSupportFragmentInjector, MainView{
+public class MainActivity extends RootActivity implements HasSupportFragmentInjector, MainView{
 
     @Inject
     DispatchingAndroidInjector<Fragment> fragmentDispatchingAndroidInjector;

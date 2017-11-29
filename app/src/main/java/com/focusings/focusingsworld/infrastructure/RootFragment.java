@@ -9,7 +9,7 @@ import dagger.android.support.AndroidSupportInjection;
 /**
  * Base {@link Fragment} class for every fragment in this application.
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class RootFragment extends Fragment {
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {

@@ -9,7 +9,7 @@ import dagger.android.AndroidInjection;
 /**
  * Base {@link AppCompatActivity} class for every activity in this application.
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class RootActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

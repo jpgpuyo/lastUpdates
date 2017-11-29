@@ -4,12 +4,12 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.infrastructure.BaseActivity;
+import com.focusings.focusingsworld.infrastructure.RootActivity;
 import com.focusings.focusingsworld.presentation.main.MainActivity;
 
 import javax.inject.Inject;
 
-public class SplashActivity extends BaseActivity implements SplashView {
+public class SplashActivity extends RootActivity implements SplashView {
 
     @Inject
     SplashAppPresenter splashAppPresenter;

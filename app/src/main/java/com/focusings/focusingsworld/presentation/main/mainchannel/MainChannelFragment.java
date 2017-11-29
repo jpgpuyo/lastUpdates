@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.domain.models.YoutubeVideo;
-import com.focusings.focusingsworld.infrastructure.BaseFragment;
+import com.focusings.focusingsworld.infrastructure.RootFragment;
 import com.focusings.focusingsworld.presentation.main.MainActivity;
 import com.focusings.focusingsworld.presentation.main.MainView;
 
@@ -24,7 +24,7 @@ import javax.inject.Inject;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-public class MainChannelFragment extends BaseFragment implements MainChannelView {
+public class MainChannelFragment extends RootFragment implements MainChannelView {
 
     private MainChannelAdapter mainChannelAdapter;
 
