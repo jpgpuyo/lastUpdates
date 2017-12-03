@@ -5,11 +5,11 @@ import com.focusings.focusingsworld.data.youtube.api.dto.SnippetDto;
 import com.focusings.focusingsworld.data.youtube.api.dto.ThumbnailDto;
 import com.focusings.focusingsworld.data.youtube.api.dto.YoutubeVideoDto;
 import com.focusings.focusingsworld.data.youtube.api.dto.recentvideos.RecentVideosResponseDto;
-import com.focusings.focusingsworld.data.youtube.cache.PrefsCacheFactory;
-import com.focusings.focusingsworld.data.youtube.repository.recentvideos.RecentVideosRepository;
-import com.focusings.focusingsworld.data.youtube.repository.recentvideos.datasources.RecentVideosCloud;
-import com.focusings.focusingsworld.domain.models.Thumbnail;
-import com.focusings.focusingsworld.domain.models.YoutubeVideo;
+import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.PrefsCacheFactory;
+import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.RecentVideosRepository;
+import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.RecentVideosCloud;
+import com.focusings.focusingsworld.models.Thumbnail;
+import com.focusings.focusingsworld.models.YoutubeVideo;
 import com.jpuyo.android.infrastructure.preferences.PrefsCache;
 
 import org.junit.Test;
