@@ -5,10 +5,9 @@ import android.content.Context;
 
 import com.focusings.focusingsworld.data.youtube.api.YoutubeApi;
 import com.focusings.focusingsworld.data.youtube.api.YoutubeApiConstants;
-import com.focusings.focusingsworld.data.youtube.cache.PrefsCacheFactory;
-import com.focusings.focusingsworld.data.youtube.repository.recentvideos.RecentVideosRepository;
-import com.focusings.focusingsworld.data.youtube.repository.recentvideos.datasources.RecentVideosCloud;
-import com.focusings.focusingsworld.domain.repository.YoutubeRepository;
+import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.PrefsCacheFactory;
+import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.RecentVideosRepository;
+import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.RecentVideosCloud;
 import com.github.pwittchen.prefser.library.Prefser;
 import com.jpuyo.android.infrastructure.connectivity.Network;
 import com.jpuyo.android.infrastructure.connectivity.NetworkConnection;
@@ -76,7 +75,7 @@ public class AppModule {
 
     @Provides
     @Singleton
-    YoutubeRepository provideYoutubeRepository(RecentVideosCloud recentVideosCloud,
+    RecentVideosRepository provideRcentVideosRepository(RecentVideosCloud recentVideosCloud,
                                                PrefsCacheFactory prefsCacheFactory) {
         return new RecentVideosRepository(recentVideosCloud, prefsCacheFactory);
     }
