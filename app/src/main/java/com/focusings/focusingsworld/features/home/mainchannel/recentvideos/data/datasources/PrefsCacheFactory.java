@@ -4,10 +4,6 @@ import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.
 import com.github.pwittchen.prefser.library.Prefser;
 import com.jpuyo.android.infrastructure.preferences.PrefsCache;
 
-/**
- * Created by usuario on 21/05/2017.
- */
-
 public class PrefsCacheFactory {
 
     private Prefser prefser;

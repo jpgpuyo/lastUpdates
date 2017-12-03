@@ -2,10 +2,6 @@ package com.focusings.focusingsworld.data.youtube.api.dto;
 
 import com.google.gson.annotations.SerializedName;
 
-/**
- * Created by usuario on 04/04/2017.
- */
-
 public class SnippetDto {
 
     @SerializedName("publishedAt")

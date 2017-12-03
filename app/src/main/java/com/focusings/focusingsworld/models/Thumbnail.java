@@ -1,9 +1,5 @@
 package com.focusings.focusingsworld.models;
 
-/**
- * Created by usuario on 04/04/2017.
- */
-
 public class Thumbnail {
 
     private String url;
