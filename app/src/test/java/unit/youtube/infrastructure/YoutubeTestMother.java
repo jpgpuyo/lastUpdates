@@ -1,6 +1,6 @@
 package unit.youtube.infrastructure;
 
-import com.focusings.focusingsworld.data.youtube.repository.recentvideos.datasources.RecentVideosCloud;
+import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.RecentVideosCloud;
 import com.focusings.focusingsworld.data.youtube.api.YoutubeApi;
 
 import retrofit2.Retrofit;
