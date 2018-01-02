@@ -27,13 +27,11 @@ public class SplashAppPresenter {
         this.splashView = splashView;
     }
 
-    @RxLogSubscriber
     private final class InitAppSubscriber extends DefaultSubscriber<List<YoutubeVideo>> {
 
         @Override
         public void onCompleted() {
             super.onCompleted();
-            splashView.onInitAppFinished();
         }
 
         @Override
