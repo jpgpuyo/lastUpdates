@@ -41,8 +41,8 @@ public class SplashAppPresenterShould {
     @Test
     public void call_init_app_finished_when_init_app_use_case_has_finished() {
         doAnswer(invocation -> {
-            ((Subscriber) invocation.getArguments()[0]).onNext(givenYoutubeVideoList());
-            ((Subscriber) invocation.getArguments()[0]).onCompleted();
+            ((Subscriber) invocation.getArgument(0)).onNext(givenYoutubeVideoList());
+            ((Subscriber) invocation.getArgument(0)).onCompleted();
             return null;
         }).when(initAppUseCase).execute(any(Subscriber.class));
 
