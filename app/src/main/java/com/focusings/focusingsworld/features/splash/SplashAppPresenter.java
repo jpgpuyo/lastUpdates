@@ -1,9 +1,9 @@
 package com.focusings.focusingsworld.features.splash;
 
 import com.fernandocejas.frodo.annotation.RxLogSubscriber;
+import com.focusings.focusingsworld.core.interactor.DefaultSubscriber;
+import com.focusings.focusingsworld.core.interactor.UseCase;
 import com.focusings.focusingsworld.models.YoutubeVideo;
-import com.jpuyo.android.infrastructure.interactor.DefaultSubscriber;
-import com.jpuyo.android.infrastructure.interactor.UseCase;
 
 import java.util.List;
 

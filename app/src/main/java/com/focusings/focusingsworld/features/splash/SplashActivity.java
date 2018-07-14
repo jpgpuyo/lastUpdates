@@ -3,10 +3,9 @@ package com.focusings.focusingsworld.features.splash;
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatDelegate;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.infrastructure.RootActivity;
+import com.focusings.focusingsworld.core.RootActivity;
 import com.focusings.focusingsworld.features.home.MainActivity;
 
 import javax.inject.Inject;

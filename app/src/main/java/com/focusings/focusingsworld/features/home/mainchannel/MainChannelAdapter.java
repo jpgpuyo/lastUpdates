@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
+import com.focusings.focusingsworld.core.renderer.ItemsList;
 import com.focusings.focusingsworld.models.YoutubeVideo;
-import com.jpuyo.android.infrastructure.renderer.ItemsList;
 import com.focusings.focusingsworld.features.home.mainchannel.renderer.YoutubeVideoRenderer;
 
 import java.util.List;

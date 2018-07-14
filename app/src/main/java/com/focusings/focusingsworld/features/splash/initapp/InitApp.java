@@ -1,11 +1,11 @@
 package com.focusings.focusingsworld.features.splash.initapp;
 
+import com.focusings.focusingsworld.core.connectivity.Network;
+import com.focusings.focusingsworld.core.executor.PostExecutionThread;
+import com.focusings.focusingsworld.core.executor.ThreadExecutor;
+import com.focusings.focusingsworld.core.interactor.UseCase;
 import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.RecentVideosRepository;
 import com.focusings.focusingsworld.models.YoutubeChannel;
-import com.jpuyo.android.infrastructure.connectivity.Network;
-import com.jpuyo.android.infrastructure.executor.PostExecutionThread;
-import com.jpuyo.android.infrastructure.executor.ThreadExecutor;
-import com.jpuyo.android.infrastructure.interactor.UseCase;
 
 import rx.Observable;
 

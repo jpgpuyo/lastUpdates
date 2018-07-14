@@ -1,10 +1,10 @@
 package com.focusings.focusingsworld.features.home.mainchannel;
 
 import com.fernandocejas.frodo.annotation.RxLogSubscriber;
+import com.focusings.focusingsworld.core.interactor.DefaultSubscriber;
 import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.GetRecentVideosFromChannel;
 import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.GetRecentVideosRequest;
 import com.focusings.focusingsworld.models.YoutubeVideo;
-import com.jpuyo.android.infrastructure.interactor.DefaultSubscriber;
 
 import java.util.ArrayList;
 import java.util.List;

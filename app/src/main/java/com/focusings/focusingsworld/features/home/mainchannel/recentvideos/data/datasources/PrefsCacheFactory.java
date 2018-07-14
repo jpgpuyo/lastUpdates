@@ -1,8 +1,7 @@
 package com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources;
 
-import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.RecentVideosCache;
+import com.focusings.focusingsworld.core.preferences.PrefsCache;
 import com.github.pwittchen.prefser.library.Prefser;
-import com.jpuyo.android.infrastructure.preferences.PrefsCache;
 
 public class PrefsCacheFactory {
 

@@ -13,7 +13,7 @@ import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.models.YoutubeVideo;
-import com.focusings.focusingsworld.infrastructure.RootFragment;
+import com.focusings.focusingsworld.core.RootFragment;
 import com.focusings.focusingsworld.features.home.MainActivity;
 import com.focusings.focusingsworld.features.home.MainView;
 
