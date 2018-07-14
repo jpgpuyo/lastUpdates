@@ -22,8 +22,7 @@ public class SplashActivityModule {
     @Provides
     UseCase provideInitAppUseCase(ThreadExecutor threadExecutor,
                                   PostExecutionThread postExecutionThread,
-                                  NetworkUtils networkUtils,
                                   RecentVideosRepository recentVideosRepository){
-        return new InitAppUseCase(threadExecutor, postExecutionThread, networkUtils, recentVideosRepository);
+        return new InitAppUseCase(threadExecutor, postExecutionThread, recentVideosRepository);
     }
 }

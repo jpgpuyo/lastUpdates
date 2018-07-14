@@ -45,15 +45,14 @@ public class MainChannelPresenter {
         public void onCompleted() {
             super.onCompleted();
             mainChannelView.hideLoading();
-            if (youtubeVideoList.isEmpty()) {
-                mainChannelView.showNetworkError();
-            }
+            showNetworkErrorIfListIsEmpty();
         }
 
         @Override
         public void onError(Throwable e) {
             super.onError(e);
             mainChannelView.hideLoading();
+            showNetworkErrorIfListIsEmpty();
         }
 
         @Override
@@ -61,6 +60,12 @@ public class MainChannelPresenter {
             super.onNext(youtubeVideoList);
             this.youtubeVideoList = youtubeVideoList;
             mainChannelView.renderYoutubeVideoList(youtubeVideoList);
+        }
+
+        private void showNetworkErrorIfListIsEmpty() {
+            if (youtubeVideoList.isEmpty()) {
+                mainChannelView.showNetworkError();
+            }
         }
     }
 }

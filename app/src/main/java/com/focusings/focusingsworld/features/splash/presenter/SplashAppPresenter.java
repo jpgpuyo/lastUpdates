@@ -39,12 +39,12 @@ public class SplashAppPresenter {
         @Override
         public void onError(Throwable e) {
             super.onError(e);
+            splashView.onInitAppFinished();
         }
 
         @Override
         public void onNext(List<YoutubeVideo> youtubeVideos) {
             super.onNext(youtubeVideos);
-            splashView.onInitAppFinished();
         }
     }
 }

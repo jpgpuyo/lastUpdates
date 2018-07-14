@@ -4,6 +4,7 @@ import com.focusings.focusingsworld.data.youtube.core.memory.MemoryYoutubeDataSt
 import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 
@@ -19,13 +20,22 @@ public class RecentVideosRepository {
         this.memoryYoutubeDataStore = memoryRecentVideosDataStore;
     }
 
-    public Observable<List<YoutubeVideo>> refreshVideos(String channelId) {
+    public Observable<List<YoutubeVideo>> getVideos(boolean refresh, String channelId) {
+        return Observable.defer(() -> {
+            if (refresh) {
+                memoryYoutubeDataStore.clearRecentVideos();
+            }
+            return Observable.concat(
+                    memoryYoutubeDataStore.getRecentVideosFromChannel(),
+                    getNetworkRecentVideos(channelId))
+                    .first(recentVideosList -> !recentVideosList.isEmpty())
+                    .timeout(5, TimeUnit.SECONDS);
+        });
+    }
+
+    private Observable<List<YoutubeVideo>> getNetworkRecentVideos(String channelId) {
         return cloudRecentVideosDataStore.getRecentVideosFromChannel(channelId)
                 .map(RecentVideosDataMapper::transform)
                 .doOnNext(youtubeVideoList -> memoryYoutubeDataStore.saveRecentVideosFromChannel(youtubeVideoList));
-    }
-
-    public Observable<List<YoutubeVideo>> getVideos() {
-        return Observable.just(memoryYoutubeDataStore.getRecentVideosFromChannel());
     }
 }

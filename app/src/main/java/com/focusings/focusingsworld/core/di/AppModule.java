@@ -74,21 +74,21 @@ public class AppModule {
 
     @Provides
     @Singleton
-    RecentVideosRepository provideRcentVideosRepository(CloudRecentVideosDataStore cloudRecentVideosDataStore,
+    RecentVideosRepository provideRecentVideosRepository(CloudRecentVideosDataStore cloudRecentVideosDataStore,
                                                         MemoryYoutubeDataStore memoryYoutubeDataStore) {
         return new RecentVideosRepository(cloudRecentVideosDataStore, memoryYoutubeDataStore);
     }
 
     @Provides
     @Singleton
-    CloudRecentVideosDataStore provideYoutubeRemoteDataStore(Retrofit retrofit) {
+    CloudRecentVideosDataStore provideCloudRecentVideosDataStore(Retrofit retrofit) {
         YoutubeApi youtubeApi = retrofit.create(YoutubeApi.class);
         return new CloudRecentVideosDataStore(youtubeApi);
     }
 
     @Provides
     @Singleton
-    MemoryYoutubeDataStore provideMemoryDataStore() {
+    MemoryYoutubeDataStore provideMemoryYoutubeDataStore() {
         return new MemoryYoutubeDataStore();
     }
 }
