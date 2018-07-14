@@ -3,7 +3,6 @@ package com.focusings.focusingsworld.features.home.mainchannel.presenter;
 import com.fernandocejas.frodo.annotation.RxLogSubscriber;
 import com.focusings.focusingsworld.core.interactor.DefaultSubscriber;
 import com.focusings.focusingsworld.features.home.mainchannel.usecase.GetRecentVideosFromChannelUseCase;
-import com.focusings.focusingsworld.features.home.mainchannel.usecase.GetRecentVideosRequest;
 import com.focusings.focusingsworld.features.home.mainchannel.view.MainChannelView;
 import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
 
@@ -24,11 +23,9 @@ public class MainChannelPresenter {
     }
 
     public void getLastVideosFromYoutubeChannel(boolean refresh) {
-        GetRecentVideosRequest getRecentVideosRequest = new GetRecentVideosRequest();
-        getRecentVideosRequest.setRefresh(refresh);
         getRecentVideosFromChannelUseCase.execute(
                 new GetYoutubeVideosFromChannelSubscriber(),
-                getRecentVideosRequest);
+                GetRecentVideosFromChannelUseCase.Params.refresh(refresh));
     }
 
     public void destroy() {

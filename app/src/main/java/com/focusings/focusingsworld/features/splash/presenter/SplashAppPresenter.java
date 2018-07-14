@@ -3,8 +3,8 @@ package com.focusings.focusingsworld.features.splash.presenter;
 import com.fernandocejas.frodo.annotation.RxLogSubscriber;
 import com.focusings.focusingsworld.core.interactor.DefaultSubscriber;
 import com.focusings.focusingsworld.core.interactor.UseCase;
-import com.focusings.focusingsworld.features.splash.view.SplashView;
 import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
+import com.focusings.focusingsworld.features.splash.view.SplashView;
 
 import java.util.List;
 
@@ -19,8 +19,8 @@ public class SplashAppPresenter {
     }
 
 
-    public void execute(){
-        initAppUseCase.execute(new InitAppSubscriber());
+    public void execute() {
+        initAppUseCase.execute(new InitAppSubscriber(), null);
     }
 
     public void setView(SplashView splashView) {
