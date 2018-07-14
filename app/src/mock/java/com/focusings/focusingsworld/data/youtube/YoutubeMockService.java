@@ -3,14 +3,14 @@ package com.focusings.focusingsworld.data.youtube;
 import android.content.Context;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.data.youtube.recentvideos.request.RecentVideosResponseDto;
-import com.focusings.focusingsworld.data.youtube.remote.YoutubeService;
+import com.focusings.focusingsworld.data.youtube.api.YoutubeApi;
+import com.focusings.focusingsworld.data.youtube.api.dto.recentvideos.RecentVideosResponseDto;
 import com.google.gson.Gson;
 
 import retrofit2.http.Query;
 import rx.Observable;
 
-public final class YoutubeMockService implements YoutubeService {
+public final class YoutubeMockService implements YoutubeApi {
 
     private final Context context;
 

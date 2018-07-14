@@ -5,13 +5,11 @@ buildscript {
     }
     dependencies {
         classpath 'com.fernandocejas.frodo:frodo-plugin:0.8.3'
-        classpath 'me.tatarka:gradle-retrolambda:3.6.1'
     }
 }
 
 apply plugin: 'com.android.application'
 apply plugin: 'com.fernandocejas.frodo'
-apply plugin: 'me.tatarka.retrolambda'
 
 android {
     compileSdkVersion 26
@@ -41,6 +39,11 @@ android {
         prod {
 
         }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 }
 
