@@ -9,11 +9,11 @@ import com.focusings.focusingsworld.core.executor.JobExecutor;
 import com.focusings.focusingsworld.core.executor.PostExecutionThread;
 import com.focusings.focusingsworld.core.executor.ThreadExecutor;
 import com.focusings.focusingsworld.core.executor.UIThread;
-import com.focusings.focusingsworld.data.youtube.api.YoutubeApi;
-import com.focusings.focusingsworld.data.youtube.api.YoutubeApiConstants;
-import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.MemoryDataStore;
-import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.RecentVideosRepository;
-import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.RecentVideosCloud;
+import com.focusings.focusingsworld.data.youtube.core.api.YoutubeApi;
+import com.focusings.focusingsworld.data.youtube.core.api.YoutubeApiConstants;
+import com.focusings.focusingsworld.data.youtube.core.memory.MemoryYoutubeDataStore;
+import com.focusings.focusingsworld.data.youtube.recentvideos.RecentVideosRepository;
+import com.focusings.focusingsworld.data.youtube.recentvideos.CloudRecentVideosDataStore;
 
 import javax.inject.Singleton;
 
@@ -74,21 +74,21 @@ public class AppModule {
 
     @Provides
     @Singleton
-    RecentVideosRepository provideRcentVideosRepository(RecentVideosCloud recentVideosCloud,
-                                                        MemoryDataStore memoryDataStore) {
-        return new RecentVideosRepository(recentVideosCloud, memoryDataStore);
+    RecentVideosRepository provideRcentVideosRepository(CloudRecentVideosDataStore cloudRecentVideosDataStore,
+                                                        MemoryYoutubeDataStore memoryYoutubeDataStore) {
+        return new RecentVideosRepository(cloudRecentVideosDataStore, memoryYoutubeDataStore);
     }
 
     @Provides
     @Singleton
-    RecentVideosCloud provideYoutubeRemoteDataStore(Retrofit retrofit) {
+    CloudRecentVideosDataStore provideYoutubeRemoteDataStore(Retrofit retrofit) {
         YoutubeApi youtubeApi = retrofit.create(YoutubeApi.class);
-        return new RecentVideosCloud(youtubeApi);
+        return new CloudRecentVideosDataStore(youtubeApi);
     }
 
     @Provides
     @Singleton
-    MemoryDataStore provideMemoryDataStore() {
-        return new MemoryDataStore();
+    MemoryYoutubeDataStore provideMemoryDataStore() {
+        return new MemoryYoutubeDataStore();
     }
 }

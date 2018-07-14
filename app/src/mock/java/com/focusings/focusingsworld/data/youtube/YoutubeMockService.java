@@ -3,8 +3,8 @@ package com.focusings.focusingsworld.data.youtube;
 import android.content.Context;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.data.youtube.api.YoutubeApi;
-import com.focusings.focusingsworld.data.youtube.api.dto.recentvideos.RecentVideosResponseDto;
+import com.focusings.focusingsworld.data.youtube.core.api.YoutubeApi;
+import com.focusings.focusingsworld.data.youtube.core.api.dto.recentvideos.RecentVideosResponseDto;
 import com.google.gson.Gson;
 
 import retrofit2.http.Query;
