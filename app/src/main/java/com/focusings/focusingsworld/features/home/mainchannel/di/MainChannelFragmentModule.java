@@ -1,6 +1,6 @@
 package com.focusings.focusingsworld.features.home.mainchannel.di;
 
-import com.focusings.focusingsworld.core.connectivity.Network;
+import com.focusings.focusingsworld.core.utils.network.NetworkUtils;
 import com.focusings.focusingsworld.core.executor.PostExecutionThread;
 import com.focusings.focusingsworld.core.executor.ThreadExecutor;
 import com.focusings.focusingsworld.features.home.mainchannel.presenter.MainChannelPresenter;
@@ -22,9 +22,9 @@ public class MainChannelFragmentModule {
     GetRecentVideosFromChannelUseCase provideGetRecentVideosFromChannel(
             ThreadExecutor threadExecutor,
             PostExecutionThread postExecutionThread,
-            Network network,
+            NetworkUtils networkUtils,
             RecentVideosRepository recentVideosRepository) {
-        return new GetRecentVideosFromChannelUseCase(threadExecutor, postExecutionThread, network, recentVideosRepository);
+        return new GetRecentVideosFromChannelUseCase(threadExecutor, postExecutionThread, networkUtils, recentVideosRepository);
     }
 
 }

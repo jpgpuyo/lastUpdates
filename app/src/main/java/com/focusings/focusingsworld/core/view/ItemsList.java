@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.core.renderer;
+package com.focusings.focusingsworld.core.view;
 
 import android.support.v7.widget.RecyclerView;
 

@@ -1,10 +1,10 @@
-package com.focusings.focusingsworld.core.dagger;
+package com.focusings.focusingsworld.core.di;
 
 import android.app.Application;
 import android.content.Context;
 
-import com.focusings.focusingsworld.core.connectivity.Network;
-import com.focusings.focusingsworld.core.connectivity.NetworkConnection;
+import com.focusings.focusingsworld.core.utils.network.NetworkUtils;
+import com.focusings.focusingsworld.core.utils.network.AndroidNetworkUtils;
 import com.focusings.focusingsworld.core.executor.JobExecutor;
 import com.focusings.focusingsworld.core.executor.PostExecutionThread;
 import com.focusings.focusingsworld.core.executor.ThreadExecutor;
@@ -49,8 +49,8 @@ public class AppModule {
 
     @Provides
     @Singleton
-    Network provideNetwork(Context context) {
-        return new NetworkConnection(context);
+    NetworkUtils provideNetwork(Context context) {
+        return new AndroidNetworkUtils(context);
     }
 
     @Provides

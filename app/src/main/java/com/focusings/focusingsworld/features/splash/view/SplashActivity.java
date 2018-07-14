@@ -5,7 +5,7 @@ import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.core.RootActivity;
+import com.focusings.focusingsworld.core.view.RootActivity;
 import com.focusings.focusingsworld.features.home.view.HomeActivity;
 import com.focusings.focusingsworld.features.splash.presenter.SplashAppPresenter;
 

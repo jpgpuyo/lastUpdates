@@ -1,18 +1,18 @@
-package com.focusings.focusingsworld.core.connectivity;
+package com.focusings.focusingsworld.core.utils.network;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
-public class NetworkConnection implements Network {
+public class AndroidNetworkUtils implements NetworkUtils {
 
     private Context context;
 
-    public NetworkConnection(Context context) {
+    public AndroidNetworkUtils(Context context) {
         this.context = context.getApplicationContext();
     }
 
-    public boolean isAvailable() {
+    public boolean isNetworkAvailable() {
         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo networkInfo = manager.getActiveNetworkInfo();
         boolean isAvailable = false;

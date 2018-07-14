@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.core.dagger;
+package com.focusings.focusingsworld.core.di;
 
 import android.app.Application;
 

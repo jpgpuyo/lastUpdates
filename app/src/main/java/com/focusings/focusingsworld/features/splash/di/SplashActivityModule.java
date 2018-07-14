@@ -1,6 +1,6 @@
 package com.focusings.focusingsworld.features.splash.di;
 
-import com.focusings.focusingsworld.core.connectivity.Network;
+import com.focusings.focusingsworld.core.utils.network.NetworkUtils;
 import com.focusings.focusingsworld.core.executor.PostExecutionThread;
 import com.focusings.focusingsworld.core.executor.ThreadExecutor;
 import com.focusings.focusingsworld.core.interactor.UseCase;
@@ -22,8 +22,8 @@ public class SplashActivityModule {
     @Provides
     UseCase provideInitAppUseCase(ThreadExecutor threadExecutor,
                                   PostExecutionThread postExecutionThread,
-                                  Network network,
+                                  NetworkUtils networkUtils,
                                   RecentVideosRepository recentVideosRepository){
-        return new InitAppUseCase(threadExecutor, postExecutionThread, network, recentVideosRepository);
+        return new InitAppUseCase(threadExecutor, postExecutionThread, networkUtils, recentVideosRepository);
     }
 }

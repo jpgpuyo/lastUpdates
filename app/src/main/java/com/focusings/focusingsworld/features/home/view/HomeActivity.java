@@ -14,7 +14,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 
 import com.focusings.focusingsworld.R;
-import com.focusings.focusingsworld.core.RootActivity;
+import com.focusings.focusingsworld.core.view.RootActivity;
 import com.focusings.focusingsworld.features.home.mainchannel.view.MainChannelFragment;
 
 import java.util.ArrayList;

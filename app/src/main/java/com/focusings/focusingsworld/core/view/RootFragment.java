@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.core;
+package com.focusings.focusingsworld.core.view;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

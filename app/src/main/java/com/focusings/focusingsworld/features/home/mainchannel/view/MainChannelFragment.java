@@ -15,7 +15,7 @@ import com.focusings.focusingsworld.R;
 import com.focusings.focusingsworld.features.home.view.HomeActivity;
 import com.focusings.focusingsworld.features.home.mainchannel.presenter.MainChannelPresenter;
 import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
-import com.focusings.focusingsworld.core.RootFragment;
+import com.focusings.focusingsworld.core.view.RootFragment;
 import com.focusings.focusingsworld.features.home.view.HomeView;
 
 import java.util.List;

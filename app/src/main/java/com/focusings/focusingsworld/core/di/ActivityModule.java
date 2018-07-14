@@ -1,4 +1,4 @@
-package com.focusings.focusingsworld.core.dagger;
+package com.focusings.focusingsworld.core.di;
 
 import com.focusings.focusingsworld.features.home.view.HomeActivity;
 import com.focusings.focusingsworld.features.home.di.HomeActivityModule;
