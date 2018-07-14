@@ -4,5 +4,6 @@ import android.support.annotation.StringRes;
 
 public interface HomeView {
     void showErrorMessage(@StringRes int resourceId);
+    void showErrorMessage(String message);
     void hideErrorMessage();
 }

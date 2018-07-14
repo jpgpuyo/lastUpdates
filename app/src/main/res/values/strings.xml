@@ -10,4 +10,8 @@
     <string name="shareVideoVia">Share this video via</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="networkError">Please review your connection</string>
+
+    //Exception messages
+    <string name="exception_message_generic">There was an application error</string>
+    <string name="exception_message_no_connection">There is no internet connection</string>
 </resources>

@@ -84,6 +84,12 @@ public class HomeActivity extends RootActivity implements HasSupportFragmentInje
     }
 
     @Override
+    public void showErrorMessage(String message) {
+        snackbar.setText(message);
+        snackbar.show();
+    }
+
+    @Override
     public void hideErrorMessage() {
         snackbar.dismiss();
     }

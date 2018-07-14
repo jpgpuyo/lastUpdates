@@ -6,6 +6,7 @@ import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
+import rx.Completable;
 import rx.Observable;
 
 public class RecentVideosRepository {
@@ -21,21 +22,19 @@ public class RecentVideosRepository {
     }
 
     public Observable<List<YoutubeVideo>> getVideos(boolean refresh, String channelId) {
-        return Observable.defer(() -> {
+        return Completable.defer(() -> {
             if (refresh) {
-                memoryYoutubeDataStore.clearRecentVideos();
+                return fetchNetworkRecentVideos(channelId).timeout(10, TimeUnit.SECONDS);
+            } else {
+                return Completable.complete();
             }
-            return Observable.concat(
-                    memoryYoutubeDataStore.getRecentVideosFromChannel(),
-                    getNetworkRecentVideos(channelId))
-                    .first(recentVideosList -> !recentVideosList.isEmpty())
-                    .timeout(5, TimeUnit.SECONDS);
-        });
+        }).andThen(memoryYoutubeDataStore.getRecentVideosFromChannel());
     }
 
-    private Observable<List<YoutubeVideo>> getNetworkRecentVideos(String channelId) {
+    private Completable fetchNetworkRecentVideos(String channelId) {
         return cloudRecentVideosDataStore.getRecentVideosFromChannel(channelId)
                 .map(RecentVideosDataMapper::transform)
-                .doOnNext(youtubeVideoList -> memoryYoutubeDataStore.saveRecentVideosFromChannel(youtubeVideoList));
+                .doOnNext(youtubeVideoList -> memoryYoutubeDataStore.saveRecentVideosFromChannel(youtubeVideoList))
+                .toCompletable();
     }
 }

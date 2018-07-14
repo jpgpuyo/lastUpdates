@@ -3,9 +3,9 @@ package com.focusings.focusingsworld.features.splash.usecase;
 import com.focusings.focusingsworld.core.executor.PostExecutionThread;
 import com.focusings.focusingsworld.core.executor.ThreadExecutor;
 import com.focusings.focusingsworld.core.interactor.UseCase;
+import com.focusings.focusingsworld.data.youtube.models.YoutubeChannel;
 import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
 import com.focusings.focusingsworld.data.youtube.recentvideos.RecentVideosRepository;
-import com.focusings.focusingsworld.data.youtube.models.YoutubeChannel;
 
 import java.util.List;
 

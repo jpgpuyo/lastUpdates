@@ -1,10 +1,11 @@
 package com.focusings.focusingsworld.features.home.mainchannel.presenter;
 
 import com.fernandocejas.frodo.annotation.RxLogSubscriber;
+import com.focusings.focusingsworld.core.exception.DefaultErrorBundle;
 import com.focusings.focusingsworld.core.interactor.DefaultSubscriber;
+import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
 import com.focusings.focusingsworld.features.home.mainchannel.usecase.GetRecentVideosFromChannelUseCase;
 import com.focusings.focusingsworld.features.home.mainchannel.view.MainChannelView;
-import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,14 +46,16 @@ public class MainChannelPresenter {
         public void onCompleted() {
             super.onCompleted();
             mainChannelView.hideLoading();
-            showNetworkErrorIfListIsEmpty();
+            if (youtubeVideoList.isEmpty()) {
+                mainChannelView.showNetworkError();
+            }
         }
 
         @Override
         public void onError(Throwable e) {
             super.onError(e);
             mainChannelView.hideLoading();
-            showNetworkErrorIfListIsEmpty();
+            mainChannelView.showError(new DefaultErrorBundle((Exception) e));
         }
 
         @Override
@@ -60,12 +63,6 @@ public class MainChannelPresenter {
             super.onNext(youtubeVideoList);
             this.youtubeVideoList = youtubeVideoList;
             mainChannelView.renderYoutubeVideoList(youtubeVideoList);
-        }
-
-        private void showNetworkErrorIfListIsEmpty() {
-            if (youtubeVideoList.isEmpty()) {
-                mainChannelView.showNetworkError();
-            }
         }
     }
 }

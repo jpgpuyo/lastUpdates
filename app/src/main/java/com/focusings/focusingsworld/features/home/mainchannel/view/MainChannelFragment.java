@@ -12,6 +12,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.focusings.focusingsworld.R;
+import com.focusings.focusingsworld.core.exception.DefaultErrorBundle;
+import com.focusings.focusingsworld.core.exception.ErrorMessageFactory;
 import com.focusings.focusingsworld.features.home.view.HomeActivity;
 import com.focusings.focusingsworld.features.home.mainchannel.presenter.MainChannelPresenter;
 import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
@@ -100,6 +102,12 @@ public class MainChannelFragment extends RootFragment implements MainChannelView
     @Override
     public void showNetworkError() {
         homeView.showErrorMessage(R.string.networkError);
+    }
+
+    @Override
+    public void showError(DefaultErrorBundle errorBundle) {
+        String errorMessage = ErrorMessageFactory.create(getContext(), errorBundle.getException());
+        homeView.showErrorMessage(errorMessage);
     }
 
     @Override
