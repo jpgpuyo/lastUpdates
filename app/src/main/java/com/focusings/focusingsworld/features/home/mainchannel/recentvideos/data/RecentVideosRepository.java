@@ -1,7 +1,5 @@
 package com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data;
 
-import com.focusings.focusingsworld.core.preferences.PrefsCache;
-import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.PrefsCacheFactory;
 import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.RecentVideosCloud;
 import com.focusings.focusingsworld.models.YoutubeVideo;
 
@@ -13,22 +11,21 @@ public class RecentVideosRepository {
 
     private final RecentVideosCloud recentVideosCloud;
 
-    private final PrefsCacheFactory prefsCacheFactory;
+    private final MemoryDataStore memoryDataStore;
 
     public RecentVideosRepository(RecentVideosCloud recentVideosCloud,
-                                  PrefsCacheFactory prefsCacheFactory) {
+                                  MemoryDataStore memoryRecentVideosDataStore) {
         this.recentVideosCloud = recentVideosCloud;
-        this.prefsCacheFactory = prefsCacheFactory;
+        this.memoryDataStore = memoryRecentVideosDataStore;
     }
 
     public Observable<List<YoutubeVideo>> refreshVideos(String channelId) {
         return recentVideosCloud.getRecentVideosFromChannel(channelId)
                 .map(RecentVideosDataMapper::transform)
-                .doOnNext(youtubeVideoList -> prefsCacheFactory.get(PrefsCacheFactory.RECENT_VIDEOS).put(youtubeVideoList));
+                .doOnNext(youtubeVideoList -> memoryDataStore.saveRecentVideosFromChannel(youtubeVideoList));
     }
 
     public Observable<List<YoutubeVideo>> getVideos() {
-        final PrefsCache<List<YoutubeVideo>> recentVideosCache = prefsCacheFactory.get(PrefsCacheFactory.RECENT_VIDEOS);
-        return recentVideosCache.get();
+        return Observable.just(memoryDataStore.getRecentVideosFromChannel());
     }
 }

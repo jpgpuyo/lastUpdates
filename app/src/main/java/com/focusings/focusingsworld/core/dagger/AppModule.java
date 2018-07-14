@@ -11,10 +11,9 @@ import com.focusings.focusingsworld.core.executor.ThreadExecutor;
 import com.focusings.focusingsworld.core.executor.UIThread;
 import com.focusings.focusingsworld.data.youtube.api.YoutubeApi;
 import com.focusings.focusingsworld.data.youtube.api.YoutubeApiConstants;
-import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.PrefsCacheFactory;
+import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.MemoryDataStore;
 import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.RecentVideosRepository;
 import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.RecentVideosCloud;
-import com.github.pwittchen.prefser.library.Prefser;
 
 import javax.inject.Singleton;
 
@@ -76,8 +75,8 @@ public class AppModule {
     @Provides
     @Singleton
     RecentVideosRepository provideRcentVideosRepository(RecentVideosCloud recentVideosCloud,
-                                                        PrefsCacheFactory prefsCacheFactory) {
-        return new RecentVideosRepository(recentVideosCloud, prefsCacheFactory);
+                                                        MemoryDataStore memoryDataStore) {
+        return new RecentVideosRepository(recentVideosCloud, memoryDataStore);
     }
 
     @Provides
@@ -89,8 +88,7 @@ public class AppModule {
 
     @Provides
     @Singleton
-    PrefsCacheFactory providePrefsCacheFactory(Context context) {
-        Prefser prefser = new Prefser(context.getSharedPreferences("youtubePrefs", Context.MODE_PRIVATE));
-        return new PrefsCacheFactory(prefser);
+    MemoryDataStore provideMemoryDataStore() {
+        return new MemoryDataStore();
     }
 }
