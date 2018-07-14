@@ -1,20 +1,18 @@
 package unit.youtube;
 
-import com.focusings.focusingsworld.data.youtube.api.YoutubeApi;
-import com.focusings.focusingsworld.data.youtube.api.dto.SnippetDto;
-import com.focusings.focusingsworld.data.youtube.api.dto.ThumbnailDto;
-import com.focusings.focusingsworld.data.youtube.api.dto.YoutubeVideoDto;
-import com.focusings.focusingsworld.data.youtube.api.dto.recentvideos.RecentVideosResponseDto;
-import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.PrefsCacheFactory;
-import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.RecentVideosRepository;
-import com.focusings.focusingsworld.features.home.mainchannel.recentvideos.data.datasources.RecentVideosCloud;
-import com.focusings.focusingsworld.models.Thumbnail;
-import com.focusings.focusingsworld.models.YoutubeVideo;
-import com.jpuyo.android.infrastructure.preferences.PrefsCache;
+import com.focusings.focusingsworld.data.youtube.core.api.YoutubeApi;
+import com.focusings.focusingsworld.data.youtube.core.api.dto.SnippetDto;
+import com.focusings.focusingsworld.data.youtube.core.api.dto.ThumbnailDto;
+import com.focusings.focusingsworld.data.youtube.core.api.dto.YoutubeVideoDto;
+import com.focusings.focusingsworld.data.youtube.core.api.dto.recentvideos.RecentVideosResponseDto;
+import com.focusings.focusingsworld.data.youtube.core.memory.MemoryYoutubeDataStore;
+import com.focusings.focusingsworld.data.youtube.recentvideos.RecentVideosRepository;
+import com.focusings.focusingsworld.data.youtube.recentvideos.CloudRecentVideosDataStore;
+import com.focusings.focusingsworld.data.youtube.models.Thumbnail;
+import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
@@ -24,18 +22,9 @@ import unit.youtube.infrastructure.ApiClientTest;
 import unit.youtube.infrastructure.YoutubeTestMother;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.when;
-
 
 @RunWith(MockitoJUnitRunner.class)
 public class RecentVideosFromChannelTest extends ApiClientTest {
-
-    @Mock
-    PrefsCacheFactory prefsCacheFactory;
-
-    @Mock
-    PrefsCache<List<YoutubeVideo>> cacheRecentVideos;
 
     private static final String ANY_CHANNEL_ID = "1234";
     private static final String ANY_API_KEY = "abcd";
@@ -65,11 +54,11 @@ public class RecentVideosFromChannelTest extends ApiClientTest {
 
     @Test
     public void first_video_from_response_should_be_properly_transformed_to_dto() throws Exception {
-        RecentVideosCloud recentVideosCloud = YoutubeTestMother.givenYoutubeRemoteDataStore(this);
+        CloudRecentVideosDataStore cloudRecentVideosDataStore = YoutubeTestMother.givenYoutubeRemoteDataStore(this);
         enqueueMockResponse("getRecentVideosFromChannel.json");
 
         RecentVideosResponseDto recentVideosResponseDto =
-                recentVideosCloud.getRecentVideosFromChannel(ANY_CHANNEL_ID)
+                cloudRecentVideosDataStore.getRecentVideosFromChannel(ANY_CHANNEL_ID)
                         .toBlocking().first();
 
         assertFirstVideoIsProperlyTransformedToDto(recentVideosResponseDto);
@@ -107,12 +96,10 @@ public class RecentVideosFromChannelTest extends ApiClientTest {
 
     @Test
     public void first_video_from_response_should_be_properly_transformed_to_bo() throws Exception {
-        RecentVideosCloud recentVideosCloud = YoutubeTestMother.givenYoutubeRemoteDataStore(this);
+        CloudRecentVideosDataStore cloudRecentVideosDataStore = YoutubeTestMother.givenYoutubeRemoteDataStore(this);
         enqueueMockResponse("getRecentVideosFromChannel.json");
 
-        when(prefsCacheFactory.get(anyString())).thenReturn(cacheRecentVideos);
-
-        RecentVideosRepository recentVideosRepository = new RecentVideosRepository(recentVideosCloud, prefsCacheFactory);
+        RecentVideosRepository recentVideosRepository = new RecentVideosRepository(cloudRecentVideosDataStore, new MemoryYoutubeDataStore());
         List<YoutubeVideo> youtubeVideoList =
                 recentVideosRepository.refreshVideos(ANY_CHANNEL_ID)
                         .toBlocking().first();
