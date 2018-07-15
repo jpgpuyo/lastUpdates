@@ -9,8 +9,8 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 
-import java.io.IOException;
-
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -31,9 +31,9 @@ public class CloudRecentVideosDataStoreShould {
     }
 
     @Test
-    public void transform_cloud_response_to_youtube_video_list() throws IOException {
+    public void get_recent_videos_from_channel_using_youtube_api() {
         cloudRecentVideosDataStore.getRecentVideosFromChannel(ANY_CHANNEL_ID);
 
-        verify(youtubeApi, times(1)).getRecentVideosFromChannel(ANY_CHANNEL_ID, ANY_API_KEY);
+        verify(youtubeApi, times(1)).getRecentVideosFromChannel(eq(ANY_CHANNEL_ID), anyString());
     }
 }
