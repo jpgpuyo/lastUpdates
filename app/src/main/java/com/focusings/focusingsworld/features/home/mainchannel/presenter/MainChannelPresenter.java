@@ -1,8 +1,8 @@
 package com.focusings.focusingsworld.features.home.mainchannel.presenter;
 
-import com.fernandocejas.frodo.annotation.RxLogSubscriber;
 import com.focusings.focusingsworld.core.exception.DefaultErrorBundle;
 import com.focusings.focusingsworld.core.interactor.DefaultSubscriber;
+import com.focusings.focusingsworld.core.interactor.UseCase;
 import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
 import com.focusings.focusingsworld.features.home.mainchannel.usecase.GetRecentVideosFromChannelUseCase;
 import com.focusings.focusingsworld.features.home.mainchannel.view.MainChannelView;
@@ -12,10 +12,10 @@ import java.util.List;
 
 public class MainChannelPresenter {
 
-    private final GetRecentVideosFromChannelUseCase getRecentVideosFromChannelUseCase;
+    private final UseCase getRecentVideosFromChannelUseCase;
     private MainChannelView mainChannelView;
 
-    public MainChannelPresenter(GetRecentVideosFromChannelUseCase getRecentVideosFromChannelUseCase) {
+    public MainChannelPresenter(UseCase getRecentVideosFromChannelUseCase) {
         this.getRecentVideosFromChannelUseCase = getRecentVideosFromChannelUseCase;
     }
 
@@ -33,7 +33,6 @@ public class MainChannelPresenter {
         getRecentVideosFromChannelUseCase.unsubscribe();
     }
 
-    @RxLogSubscriber
     private final class GetYoutubeVideosFromChannelSubscriber extends DefaultSubscriber<List<YoutubeVideo>> {
 
         List<YoutubeVideo> youtubeVideoList;
@@ -62,7 +61,9 @@ public class MainChannelPresenter {
         public void onNext(List<YoutubeVideo> youtubeVideoList) {
             super.onNext(youtubeVideoList);
             this.youtubeVideoList = youtubeVideoList;
-            mainChannelView.renderYoutubeVideoList(youtubeVideoList);
+            if (!youtubeVideoList.isEmpty()) {
+                mainChannelView.renderYoutubeVideoList(youtubeVideoList);
+            }
         }
     }
 }

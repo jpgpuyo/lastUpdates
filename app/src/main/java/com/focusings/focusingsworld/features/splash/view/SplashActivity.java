@@ -20,10 +20,25 @@ public class SplashActivity extends RootActivity implements SplashView {
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.SplashTheme);
         super.onCreate(savedInstanceState);
-        getSplashAnimation().start();
 
+        initializePresenter();
+    }
+
+    private void initializePresenter() {
         splashAppPresenter.setView(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        getSplashAnimation().start();
         splashAppPresenter.execute();
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        splashAppPresenter.destroy();
     }
 
     private AnimationDrawable getSplashAnimation() {
@@ -38,4 +53,6 @@ public class SplashActivity extends RootActivity implements SplashView {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+
+
 }

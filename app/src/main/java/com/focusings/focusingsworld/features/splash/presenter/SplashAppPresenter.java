@@ -18,7 +18,6 @@ public class SplashAppPresenter {
         this.initAppUseCase = initAppUseCase;
     }
 
-
     public void execute() {
         initAppUseCase.execute(new InitAppSubscriber(), null);
     }
@@ -27,7 +26,6 @@ public class SplashAppPresenter {
         this.splashView = splashView;
     }
 
-    @RxLogSubscriber
     private final class InitAppSubscriber extends DefaultSubscriber<List<YoutubeVideo>> {
 
         @Override
@@ -46,5 +44,9 @@ public class SplashAppPresenter {
         public void onNext(List<YoutubeVideo> youtubeVideos) {
             super.onNext(youtubeVideos);
         }
+    }
+
+    public void destroy() {
+        initAppUseCase.unsubscribe();
     }
 }

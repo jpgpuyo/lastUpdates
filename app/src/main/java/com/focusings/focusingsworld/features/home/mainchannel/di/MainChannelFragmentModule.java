@@ -2,6 +2,7 @@ package com.focusings.focusingsworld.features.home.mainchannel.di;
 
 import com.focusings.focusingsworld.core.executor.PostExecutionThread;
 import com.focusings.focusingsworld.core.executor.ThreadExecutor;
+import com.focusings.focusingsworld.core.interactor.UseCase;
 import com.focusings.focusingsworld.features.home.mainchannel.presenter.MainChannelPresenter;
 import com.focusings.focusingsworld.data.youtube.recentvideos.RecentVideosRepository;
 import com.focusings.focusingsworld.features.home.mainchannel.usecase.GetRecentVideosFromChannelUseCase;
@@ -13,12 +14,12 @@ import dagger.Provides;
 public class MainChannelFragmentModule {
 
     @Provides
-    MainChannelPresenter provideMainChannelPresenter(GetRecentVideosFromChannelUseCase getYoutubeVideosFromChannelUseCase) {
+    MainChannelPresenter provideMainChannelPresenter(UseCase getYoutubeVideosFromChannelUseCase) {
         return new MainChannelPresenter(getYoutubeVideosFromChannelUseCase);
     }
 
     @Provides
-    GetRecentVideosFromChannelUseCase provideGetRecentVideosFromChannel(
+    UseCase provideGetRecentVideosFromChannel(
             ThreadExecutor threadExecutor,
             PostExecutionThread postExecutionThread,
             RecentVideosRepository recentVideosRepository) {

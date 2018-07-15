@@ -13,11 +13,9 @@
  *   limitations under the License.
  */
 
-package unit.youtube.infrastructure;
+package com.focusings.focusingsworld.utils.mockwebserver;
 
-import org.hamcrest.core.StringContains;
 import org.junit.After;
-import org.junit.Assert;
 import org.junit.Before;
 
 import java.io.IOException;
@@ -25,10 +23,11 @@ import java.io.IOException;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
+import com.focusings.focusingsworld.utils.testfiles.FileExtensions;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
-public class ApiClientTest {
+public class TestApiClient {
 
     private static final int OK_CODE = 200;
 
@@ -68,14 +67,14 @@ public class ApiClientTest {
 
     protected void assertRequestSentTo(String url) throws InterruptedException {
         RecordedRequest request = server.takeRequest();
-        assertEquals(url, request.getPath());
+        assertThat(url).isEqualTo(request.getPath());
     }
 
     protected void assertRequestSentToContains(String... paths) throws InterruptedException {
         RecordedRequest request = server.takeRequest();
 
         for (String path : paths) {
-            Assert.assertThat(request.getPath(), StringContains.containsString(path));
+            assertThat(request.getPath()).contains(path);
         }
     }
 
