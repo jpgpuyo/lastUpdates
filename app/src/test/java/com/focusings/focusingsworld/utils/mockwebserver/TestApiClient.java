@@ -13,7 +13,7 @@
  *   limitations under the License.
  */
 
-package unit.youtube.infrastructure;
+package com.focusings.focusingsworld.utils.mockwebserver;
 
 import org.junit.After;
 import org.junit.Before;
@@ -23,10 +23,11 @@ import java.io.IOException;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 import okhttp3.mockwebserver.RecordedRequest;
+import com.focusings.focusingsworld.utils.testfiles.FileExtensions;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
-public class ApiClientTest {
+public class TestApiClient {
 
     private static final int OK_CODE = 200;
 

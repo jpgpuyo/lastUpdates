@@ -18,7 +18,6 @@ public class SplashAppPresenter {
         this.initAppUseCase = initAppUseCase;
     }
 
-
     public void execute() {
         initAppUseCase.execute(new InitAppSubscriber(), null);
     }
@@ -32,6 +31,7 @@ public class SplashAppPresenter {
         @Override
         public void onCompleted() {
             super.onCompleted();
+            splashView.onInitAppFinished();
         }
 
         @Override
@@ -44,5 +44,9 @@ public class SplashAppPresenter {
         public void onNext(List<YoutubeVideo> youtubeVideos) {
             super.onNext(youtubeVideos);
         }
+    }
+
+    public void destroy() {
+        initAppUseCase.unsubscribe();
     }
 }

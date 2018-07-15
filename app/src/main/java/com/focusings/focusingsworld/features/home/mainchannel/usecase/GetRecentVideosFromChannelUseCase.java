@@ -8,7 +8,6 @@ import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
 import com.focusings.focusingsworld.data.youtube.recentvideos.RecentVideosRepository;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 import rx.Observable;
 
@@ -27,7 +26,6 @@ public class GetRecentVideosFromChannelUseCase extends UseCase<List<YoutubeVideo
     protected Observable<List<YoutubeVideo>> buildUseCaseObservable(Params params) {
         return recentVideosRepository.getVideos(params.refresh, YoutubeChannel.FEATURED_CHANNEL_ID);
     }
-
 
     public static final class Params {
 

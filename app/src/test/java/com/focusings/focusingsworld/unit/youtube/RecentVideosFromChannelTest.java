@@ -1,4 +1,4 @@
-package unit.youtube;
+package com.focusings.focusingsworld.unit.youtube;
 
 import com.focusings.focusingsworld.data.youtube.core.api.YoutubeApi;
 import com.focusings.focusingsworld.data.youtube.core.api.dto.SnippetDto;
@@ -6,10 +6,10 @@ import com.focusings.focusingsworld.data.youtube.core.api.dto.ThumbnailDto;
 import com.focusings.focusingsworld.data.youtube.core.api.dto.YoutubeVideoDto;
 import com.focusings.focusingsworld.data.youtube.core.api.dto.recentvideos.RecentVideosResponseDto;
 import com.focusings.focusingsworld.data.youtube.core.memory.MemoryYoutubeDataStore;
-import com.focusings.focusingsworld.data.youtube.recentvideos.RecentVideosRepository;
-import com.focusings.focusingsworld.data.youtube.recentvideos.CloudRecentVideosDataStore;
 import com.focusings.focusingsworld.data.youtube.models.Thumbnail;
 import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
+import com.focusings.focusingsworld.data.youtube.recentvideos.CloudRecentVideosDataStore;
+import com.focusings.focusingsworld.data.youtube.recentvideos.RecentVideosRepository;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,13 +18,13 @@ import org.mockito.junit.MockitoJUnitRunner;
 import java.util.List;
 
 import rx.observers.TestSubscriber;
-import unit.youtube.infrastructure.ApiClientTest;
-import unit.youtube.infrastructure.YoutubeTestMother;
+import com.focusings.focusingsworld.utils.mockwebserver.TestApiClient;
+import com.focusings.focusingsworld.utils.objectmother.YoutubeTestMother;
 
-import static org.junit.Assert.assertEquals;
+import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(MockitoJUnitRunner.class)
-public class RecentVideosFromChannelTest extends ApiClientTest {
+public class RecentVideosFromChannelTest extends TestApiClient {
 
     private static final String ANY_CHANNEL_ID = "1234";
     private static final String ANY_API_KEY = "abcd";
@@ -48,8 +48,8 @@ public class RecentVideosFromChannelTest extends ApiClientTest {
                 youtubeApi.getRecentVideosFromChannel(ANY_CHANNEL_ID, ANY_API_KEY)
                         .toBlocking().first();
 
-        assertEquals("youtube#searchListResponse", recentVideosResponseDto.getKind());
-        assertEquals(5, recentVideosResponseDto.getItems().size());
+        assertThat("youtube#searchListResponse").isEqualTo(recentVideosResponseDto.getKind());
+        assertThat(5).isEqualTo(recentVideosResponseDto.getItems().size());
     }
 
     @Test
@@ -67,31 +67,31 @@ public class RecentVideosFromChannelTest extends ApiClientTest {
     private void assertFirstVideoIsProperlyTransformedToDto(RecentVideosResponseDto recentVideosResponseDto) {
         List<YoutubeVideoDto> youtubeVideoDtoList = recentVideosResponseDto.getItems();
         YoutubeVideoDto firstVideo = youtubeVideoDtoList.get(0);
-        assertEquals(firstVideo.getId().getVideoId(), "yA2aXLboWBM");
+        assertThat(firstVideo.getId().getVideoId()).isEqualTo("yA2aXLboWBM");
 
         SnippetDto snippetDto = firstVideo.getSnippet();
-        assertEquals(snippetDto.getPublishedAt(), "2017-04-14T15:00:08.000Z");
-        assertEquals(snippetDto.getChannelId(), "UCNyRuOgL3IZ-smtoB3xeMbQ");
-        assertEquals(snippetDto.getTitle(), "Es hora de hablar claro");
-        assertEquals(snippetDto.getDescription(), "LINKS DE HILOS Y TWEETS HABLANDO SOBRE LA BISEXUALIDAD Y LA PANSEXUALIDAD: https://twitter.com/WintxrsWeather/status/848123225817194496 ...");
-        assertEquals(snippetDto.getChannelTitle(), "focusingsvlogs");
-        assertEquals(snippetDto.getLiveBroadcastContent(), "none");
+        assertThat(snippetDto.getPublishedAt()).isEqualTo("2017-04-14T15:00:08.000Z");
+        assertThat(snippetDto.getChannelId()).isEqualTo("UCNyRuOgL3IZ-smtoB3xeMbQ");
+        assertThat(snippetDto.getTitle()).isEqualTo("Es hora de hablar claro");
+        assertThat(snippetDto.getDescription()).isEqualTo("LINKS DE HILOS Y TWEETS HABLANDO SOBRE LA BISEXUALIDAD Y LA PANSEXUALIDAD: https://twitter.com/WintxrsWeather/status/848123225817194496 ...");
+        assertThat(snippetDto.getChannelTitle()).isEqualTo("focusingsvlogs");
+        assertThat(snippetDto.getLiveBroadcastContent()).isEqualTo("none");
 
         ThumbnailDto defaultThumbnail = snippetDto.getThumbnails().getDefaultThumbnail();
         ThumbnailDto mediumThumbnail = snippetDto.getThumbnails().getMediumThumbnail();
         ThumbnailDto highThumbnail = snippetDto.getThumbnails().getHighThumbnail();
 
-        assertEquals("https://i.ytimg.com/vi/yA2aXLboWBM/default.jpg", defaultThumbnail.getUrl());
-        assertEquals(120, (long) defaultThumbnail.getWidth());
-        assertEquals(90, (long) defaultThumbnail.getHeight());
+        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/default.jpg").isEqualTo(defaultThumbnail.getUrl());
+        assertThat(120).isEqualTo(defaultThumbnail.getWidth());
+        assertThat(90).isEqualTo(defaultThumbnail.getHeight());
 
-        assertEquals("https://i.ytimg.com/vi/yA2aXLboWBM/mqdefault.jpg", mediumThumbnail.getUrl());
-        assertEquals(320, (long) mediumThumbnail.getWidth());
-        assertEquals(180, (long) mediumThumbnail.getHeight());
+        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/mqdefault.jpg").isEqualTo(mediumThumbnail.getUrl());
+        assertThat(320).isEqualTo(mediumThumbnail.getWidth());
+        assertThat(180).isEqualTo(mediumThumbnail.getHeight());
 
-        assertEquals("https://i.ytimg.com/vi/yA2aXLboWBM/hqdefault.jpg", highThumbnail.getUrl());
-        assertEquals(480, (long) highThumbnail.getWidth());
-        assertEquals(360, (long) highThumbnail.getHeight());
+        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/hqdefault.jpg").isEqualTo(highThumbnail.getUrl());
+        assertThat(480).isEqualTo(highThumbnail.getWidth());
+        assertThat(360).isEqualTo(highThumbnail.getHeight());
     }
 
     @Test
@@ -109,24 +109,24 @@ public class RecentVideosFromChannelTest extends ApiClientTest {
 
     private void assertFirstVideoIsProperlyTransformedToBo(List<YoutubeVideo> youtubeVideoList) {
         YoutubeVideo youtubeVideo = youtubeVideoList.get(0);
-        assertEquals("Es hora de hablar claro", youtubeVideo.getTitle());
-        assertEquals("https://www.youtube.com/watch?v=yA2aXLboWBM", youtubeVideo.getUrl());
-        assertEquals("https://i.ytimg.com/vi/yA2aXLboWBM/mqdefault.jpg", youtubeVideo.getImage());
+        assertThat("Es hora de hablar claro").isEqualTo(youtubeVideo.getTitle());
+        assertThat("https://www.youtube.com/watch?v=yA2aXLboWBM").isEqualTo(youtubeVideo.getUrl());
+        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/mqdefault.jpg").isEqualTo(youtubeVideo.getImage());
 
         Thumbnail defaultThumbnail = youtubeVideo.getThumbnails().getDefaultThumbnail();
         Thumbnail mediumThumbnail = youtubeVideo.getThumbnails().getMediumThumbnail();
         Thumbnail highThumbnail = youtubeVideo.getThumbnails().getHighThumbnail();
 
-        assertEquals("https://i.ytimg.com/vi/yA2aXLboWBM/default.jpg", defaultThumbnail.getUrl());
-        assertEquals(120, defaultThumbnail.getWidth());
-        assertEquals(90, defaultThumbnail.getHeight());
+        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/default.jpg").isEqualTo(defaultThumbnail.getUrl());
+        assertThat(120).isEqualTo(defaultThumbnail.getWidth());
+        assertThat(90).isEqualTo(defaultThumbnail.getHeight());
 
-        assertEquals("https://i.ytimg.com/vi/yA2aXLboWBM/mqdefault.jpg", mediumThumbnail.getUrl());
-        assertEquals(320, mediumThumbnail.getWidth());
-        assertEquals(180, mediumThumbnail.getHeight());
+        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/mqdefault.jpg").isEqualTo(mediumThumbnail.getUrl());
+        assertThat(320).isEqualTo(mediumThumbnail.getWidth());
+        assertThat(180).isEqualTo(mediumThumbnail.getHeight());
 
-        assertEquals("https://i.ytimg.com/vi/yA2aXLboWBM/hqdefault.jpg", highThumbnail.getUrl());
-        assertEquals(480, highThumbnail.getWidth());
-        assertEquals(360, highThumbnail.getHeight());
+        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/hqdefault.jpg").isEqualTo(highThumbnail.getUrl());
+        assertThat(480).isEqualTo(highThumbnail.getWidth());
+        assertThat(360).isEqualTo(highThumbnail.getHeight());
     }
 }

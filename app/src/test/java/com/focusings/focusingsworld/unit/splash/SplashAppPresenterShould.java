@@ -1,9 +1,10 @@
-package unit.splash;
+package com.focusings.focusingsworld.unit.splash;
 
-import com.focusings.focusingsworld.features.splash.SplashAppPresenter;
-import com.focusings.focusingsworld.features.splash.SplashView;
-import com.focusings.focusingsworld.models.YoutubeVideo;
-import com.jpuyo.android.infrastructure.interactor.UseCase;
+
+import com.focusings.focusingsworld.core.interactor.UseCase;
+import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
+import com.focusings.focusingsworld.features.splash.presenter.SplashAppPresenter;
+import com.focusings.focusingsworld.features.splash.view.SplashView;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -33,18 +34,37 @@ public class SplashAppPresenterShould {
     SplashView splashView;
 
     @Before
-    public void setUp() throws Exception {
+    public void setUp() {
         splashAppPresenter = new SplashAppPresenter(initAppUseCase);
         splashAppPresenter.setView(splashView);
     }
 
+    @Test public void unsubscribe_all_uses_cases_when_presenter_is_destroyed() {
+
+        splashAppPresenter.destroy();
+
+        verify(initAppUseCase, times(1)).unsubscribe();
+    }
+
     @Test
-    public void call_init_app_finished_when_init_app_use_case_has_finished() {
+    public void call_init_app_finished_when_init_app_success() {
         doAnswer(invocation -> {
             ((Subscriber) invocation.getArgument(0)).onNext(givenYoutubeVideoList());
             ((Subscriber) invocation.getArgument(0)).onCompleted();
             return null;
-        }).when(initAppUseCase).execute(any(Subscriber.class));
+        }).when(initAppUseCase).execute(any(Subscriber.class), any());
+
+        splashAppPresenter.execute();
+
+        verify(splashView, times(1)).onInitAppFinished();
+    }
+
+    @Test
+    public void call_init_app_finished_when_init_app_fails() {
+        doAnswer(invocation -> {
+            ((Subscriber) invocation.getArgument(0)).onError(new Exception());
+            return null;
+        }).when(initAppUseCase).execute(any(Subscriber.class), any());
 
         splashAppPresenter.execute();
 
