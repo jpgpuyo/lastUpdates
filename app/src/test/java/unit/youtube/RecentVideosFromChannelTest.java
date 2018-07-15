@@ -101,7 +101,7 @@ public class RecentVideosFromChannelTest extends ApiClientTest {
 
         RecentVideosRepository recentVideosRepository = new RecentVideosRepository(cloudRecentVideosDataStore, new MemoryYoutubeDataStore());
         List<YoutubeVideo> youtubeVideoList =
-                recentVideosRepository.refreshVideos(ANY_CHANNEL_ID)
+                recentVideosRepository.getVideos(true, ANY_CHANNEL_ID)
                         .toBlocking().first();
 
         assertFirstVideoIsProperlyTransformedToBo(youtubeVideoList);
