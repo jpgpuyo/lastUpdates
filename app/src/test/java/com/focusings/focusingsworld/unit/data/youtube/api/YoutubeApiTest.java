@@ -1,15 +1,11 @@
-package com.focusings.focusingsworld.unit.youtube;
+package com.focusings.focusingsworld.unit.data.youtube.api;
 
 import com.focusings.focusingsworld.data.youtube.core.api.YoutubeApi;
 import com.focusings.focusingsworld.data.youtube.core.api.dto.SnippetDto;
 import com.focusings.focusingsworld.data.youtube.core.api.dto.ThumbnailDto;
 import com.focusings.focusingsworld.data.youtube.core.api.dto.YoutubeVideoDto;
 import com.focusings.focusingsworld.data.youtube.core.api.dto.recentvideos.RecentVideosResponseDto;
-import com.focusings.focusingsworld.data.youtube.core.memory.MemoryYoutubeDataStore;
-import com.focusings.focusingsworld.data.youtube.models.Thumbnail;
-import com.focusings.focusingsworld.data.youtube.models.YoutubeVideo;
-import com.focusings.focusingsworld.data.youtube.recentvideos.CloudRecentVideosDataStore;
-import com.focusings.focusingsworld.data.youtube.recentvideos.RecentVideosRepository;
+import com.focusings.focusingsworld.utils.mockwebserver.TestApiClient;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -17,21 +13,22 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.List;
 
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
 import rx.observers.TestSubscriber;
-import com.focusings.focusingsworld.utils.mockwebserver.TestApiClient;
-import com.focusings.focusingsworld.utils.objectmother.YoutubeTestMother;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(MockitoJUnitRunner.class)
-public class RecentVideosFromChannelTest extends TestApiClient {
+public class YoutubeApiTest extends TestApiClient {
 
     private static final String ANY_CHANNEL_ID = "1234";
     private static final String ANY_API_KEY = "abcd";
 
     @Test
     public void the_request_should_contain_channel_id_and_api_key_as_params() throws Exception {
-        YoutubeApi youtubeApi = YoutubeTestMother.givenYoutubeService(this);
+        YoutubeApi youtubeApi = givenYoutubeApi(this);
         enqueueMockResponse();
 
         youtubeApi.getRecentVideosFromChannel(ANY_CHANNEL_ID, ANY_API_KEY).subscribe(new TestSubscriber<>());
@@ -41,7 +38,7 @@ public class RecentVideosFromChannelTest extends TestApiClient {
 
     @Test
     public void the_response_should_be_properly_parsed() throws Exception {
-        YoutubeApi youtubeApi = YoutubeTestMother.givenYoutubeService(this);
+        YoutubeApi youtubeApi = givenYoutubeApi(this);
         enqueueMockResponse("getRecentVideosFromChannel.json");
 
         RecentVideosResponseDto recentVideosResponseDto =
@@ -54,11 +51,11 @@ public class RecentVideosFromChannelTest extends TestApiClient {
 
     @Test
     public void first_video_from_response_should_be_properly_transformed_to_dto() throws Exception {
-        CloudRecentVideosDataStore cloudRecentVideosDataStore = YoutubeTestMother.givenYoutubeRemoteDataStore(this);
+        YoutubeApi youtubeApi = givenYoutubeApi(this);
         enqueueMockResponse("getRecentVideosFromChannel.json");
 
         RecentVideosResponseDto recentVideosResponseDto =
-                cloudRecentVideosDataStore.getRecentVideosFromChannel(ANY_CHANNEL_ID)
+                youtubeApi.getRecentVideosFromChannel(ANY_CHANNEL_ID, ANY_API_KEY)
                         .toBlocking().first();
 
         assertFirstVideoIsProperlyTransformedToDto(recentVideosResponseDto);
@@ -94,39 +91,12 @@ public class RecentVideosFromChannelTest extends TestApiClient {
         assertThat(360).isEqualTo(highThumbnail.getHeight());
     }
 
-    @Test
-    public void first_video_from_response_should_be_properly_transformed_to_bo() throws Exception {
-        CloudRecentVideosDataStore cloudRecentVideosDataStore = YoutubeTestMother.givenYoutubeRemoteDataStore(this);
-        enqueueMockResponse("getRecentVideosFromChannel.json");
-
-        RecentVideosRepository recentVideosRepository = new RecentVideosRepository(cloudRecentVideosDataStore, new MemoryYoutubeDataStore());
-        List<YoutubeVideo> youtubeVideoList =
-                recentVideosRepository.getVideos(true, ANY_CHANNEL_ID)
-                        .toBlocking().first();
-
-        assertFirstVideoIsProperlyTransformedToBo(youtubeVideoList);
-    }
-
-    private void assertFirstVideoIsProperlyTransformedToBo(List<YoutubeVideo> youtubeVideoList) {
-        YoutubeVideo youtubeVideo = youtubeVideoList.get(0);
-        assertThat("Es hora de hablar claro").isEqualTo(youtubeVideo.getTitle());
-        assertThat("https://www.youtube.com/watch?v=yA2aXLboWBM").isEqualTo(youtubeVideo.getUrl());
-        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/mqdefault.jpg").isEqualTo(youtubeVideo.getImage());
-
-        Thumbnail defaultThumbnail = youtubeVideo.getThumbnails().getDefaultThumbnail();
-        Thumbnail mediumThumbnail = youtubeVideo.getThumbnails().getMediumThumbnail();
-        Thumbnail highThumbnail = youtubeVideo.getThumbnails().getHighThumbnail();
-
-        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/default.jpg").isEqualTo(defaultThumbnail.getUrl());
-        assertThat(120).isEqualTo(defaultThumbnail.getWidth());
-        assertThat(90).isEqualTo(defaultThumbnail.getHeight());
-
-        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/mqdefault.jpg").isEqualTo(mediumThumbnail.getUrl());
-        assertThat(320).isEqualTo(mediumThumbnail.getWidth());
-        assertThat(180).isEqualTo(mediumThumbnail.getHeight());
-
-        assertThat("https://i.ytimg.com/vi/yA2aXLboWBM/hqdefault.jpg").isEqualTo(highThumbnail.getUrl());
-        assertThat(480).isEqualTo(highThumbnail.getWidth());
-        assertThat(360).isEqualTo(highThumbnail.getHeight());
+    public static YoutubeApi givenYoutubeApi(TestApiClient testApiClient) {
+        Retrofit retrofit = new Retrofit.Builder()
+                .baseUrl(testApiClient.getBaseEndpoint())
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+        return retrofit.create(YoutubeApi.class);
     }
 }

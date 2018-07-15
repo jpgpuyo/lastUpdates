@@ -3,18 +3,17 @@ package com.focusings.focusingsworld.core.di;
 import android.app.Application;
 import android.content.Context;
 
-import com.focusings.focusingsworld.core.exception.ErrorMessageFactory;
-import com.focusings.focusingsworld.core.utils.network.NetworkUtils;
-import com.focusings.focusingsworld.core.utils.network.AndroidNetworkUtils;
 import com.focusings.focusingsworld.core.executor.JobExecutor;
 import com.focusings.focusingsworld.core.executor.PostExecutionThread;
 import com.focusings.focusingsworld.core.executor.ThreadExecutor;
 import com.focusings.focusingsworld.core.executor.UIThread;
+import com.focusings.focusingsworld.core.utils.network.AndroidNetworkUtils;
+import com.focusings.focusingsworld.core.utils.network.NetworkUtils;
 import com.focusings.focusingsworld.data.youtube.core.api.YoutubeApi;
 import com.focusings.focusingsworld.data.youtube.core.api.YoutubeApiConstants;
 import com.focusings.focusingsworld.data.youtube.core.memory.MemoryYoutubeDataStore;
-import com.focusings.focusingsworld.data.youtube.recentvideos.RecentVideosRepository;
 import com.focusings.focusingsworld.data.youtube.recentvideos.CloudRecentVideosDataStore;
+import com.focusings.focusingsworld.data.youtube.recentvideos.RecentVideosRepository;
 
 import javax.inject.Singleton;
 

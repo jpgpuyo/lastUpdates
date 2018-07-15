@@ -14,6 +14,12 @@ import com.focusings.focusingsworld.utils.testfiles.JsonReader;
 
 public class RecentVideosMother {
 
+    public static RecentVideosResponseDto givenRecentVideosResponseDtoFromJson() throws IOException {
+        JsonReader<RecentVideosResponseDto> jsonReader = new JsonReader<>();
+        RecentVideosResponseDto expectedRecentVideosResponseDto = jsonReader.fromJson("getRecentVideosFromChannel.json", RecentVideosResponseDto.class);
+        return expectedRecentVideosResponseDto;
+    }
+
     public static YoutubeVideoDto givenFirstVideoFromJson() throws IOException {
         JsonReader<RecentVideosResponseDto> jsonReader = new JsonReader<>();
         RecentVideosResponseDto expectedRecentVideosResponseDto = jsonReader.fromJson("getRecentVideosFromChannel.json", RecentVideosResponseDto.class);
